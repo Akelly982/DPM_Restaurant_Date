@@ -1,0 +1,22 @@
+
+/*removes padding from around whole page*/
+body{
+    margin:0px;
+}
+
+.content{
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.foot{
+    text-align: center;
+    background-color: grey;
+}
+
+.nav{
+    text-align: center;
+    background-color: grey;
+}
+
+
