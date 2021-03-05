@@ -27,6 +27,7 @@ submitBtn.addEventListener('click', (e) =>{
     var email = myForm.email.value;
     var password = myForm.password.value;
     
+    var userName = myForm.userName.value;
     var firstName = myForm.firstName.value;
     var lastName = myForm.lastName.value;
     var phone = myForm.phone.value;
@@ -38,6 +39,7 @@ submitBtn.addEventListener('click', (e) =>{
     //test by logging
     console.log(password);
     console.log(email);
+    console.log(userName);
     console.log(firstName);
     console.log(lastName);
     console.log(phone);
@@ -60,7 +62,8 @@ submitBtn.addEventListener('click', (e) =>{
         //add to firestore
         //.add takes in an object as the value
         db.collection('users').doc(user.uid).set({
-            name: firstName,
+            username: userName,
+            firstName: firstName,
             lastName: lastName,
             email: email,
             phone: phone,
@@ -69,7 +72,7 @@ submitBtn.addEventListener('click', (e) =>{
             //imgPath: user.uid,
             imgPath: "tempUserImg",
             imgExt: ".png",
-            type: "user"
+            userType: "user"
         })    
         .then((docRef) => {
             console.log("Document successfully updated!");
@@ -77,6 +80,7 @@ submitBtn.addEventListener('click', (e) =>{
             if(false){
                 //reset values
                 // all done reset form values to zero
+                myForm.userName.value="";
                 myForm.firstName.value = "";
                 myForm.lastName.value = "";
                 myForm.email.value = "";
@@ -87,7 +91,7 @@ submitBtn.addEventListener('click', (e) =>{
                 //summary access == different than others
                 summary.value = "";
             }else{
-                return home
+                //return home
                 window.location.href = 'index.php';
             }
             

@@ -1,8 +1,10 @@
 <!doctype>
 <html lang="en">
     <div class="nav">
-        <h1> navigation logged out</h1>
-        <a href="index.php">home</a>
+        <!-- available pages  -->
+        <div id="pgContent">
+            <a href="index.php">Home</a>
+        </div>
     </div>
     
 </html>

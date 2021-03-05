@@ -57,7 +57,7 @@ submitBtn.addEventListener('click', (e) =>{
             summary: summary,
             imgPath: "tempResImg",
             imgExt: ".png",
-            type: "restraunt"
+            userType: "restraunt"
             
         })    
         
@@ -76,7 +76,7 @@ submitBtn.addEventListener('click', (e) =>{
                 summary.value = "";
             }else{
                 //return home
-                //window.location.href = 'index.php';
+                window.location.href = 'index.php';
             }
             
 

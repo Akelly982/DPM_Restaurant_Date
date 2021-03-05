@@ -57,7 +57,7 @@
     
     
     
-    <footer>
+    <footer class="foot">
         <?php
             include "modularContent/footer/footer.php";
         ?>

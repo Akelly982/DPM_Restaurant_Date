@@ -9,7 +9,7 @@
     
     <navigation class="nav">
         <?php
-            include "modularContent/nav/navLoggedOut.php"
+            include "modularContent/nav/nav.php"
         ?>
     </navigation>
     
@@ -23,8 +23,8 @@
              include"modularContent/firebaseInit.php";  
         ?>
         <!-- javascript for the page that we are on -->
+        <script src="scripts/javascript/firebaseUser.js"></script>
         <script src="scripts/javascript/home.js"></script>
-        
     </div>
     
     <footer class="foot">

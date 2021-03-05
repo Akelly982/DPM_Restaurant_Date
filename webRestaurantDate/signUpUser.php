@@ -26,6 +26,9 @@
 
             <label>Last Name:</label>
             <input type="text" name="lastName">
+            
+            <label>Username:</label>
+            <input type="text" name="userName">
 
             <label>Email:</label>
             <input type="text" name="email">
@@ -56,14 +59,14 @@
         <?php
             include "modularContent/firebaseInit.php";
         ?>
-
+        
         <script src="scripts/javascript/signUpUser.js"></script>
     </body>
     
     
     
     
-    <footer>
+    <footer class="foot">
         <?php
             include "modularContent/footer/footer.php";
         ?>
