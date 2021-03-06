@@ -23,11 +23,13 @@
 
 function displayUserDataNav(doc){
     
+    console.log("entered function");
+    
     //get target navElement
-    var navUser = document.getElementById("userNav");
+    let navUser = document.querySelector("#userNav");
     
     // empty nav element for rebuild
-    navUser.innerHtml = "";
+    navUser.innerHTML = "";
     
     
     // create elements
@@ -40,14 +42,17 @@ function displayUserDataNav(doc){
     
     //p element
     //check to see if fields exists
-    var isUser = doc.getBoolean("username");
-    var isRes = doc.getBoolean("resName");
+    //var isUser = doc.contains("username");  
+    //var isUser = doc.getBoolean("username");
     
-    //depending on type of user set p 
-    if(isUser){
+    var isUser = doc.data().username;
+    var isRes = doc.data().resName;
+    
+    //depending on type of user set p element 
+    if(isUser != null){
         uName.textContent=doc.data().username;
     }else{
-        if(isRes){
+        if(isRes != null){
             uName.textContent=doc.data().resName;
         }else{
             uName.textContent="undefined";
@@ -67,8 +72,6 @@ function displayUserDataNav(doc){
     uSettings.textContent = "Settings";
     
     
-    
-    
     //input elements
     //set value
     uInputId.setAttribute("value",doc.id);
@@ -76,6 +79,18 @@ function displayUserDataNav(doc){
     //set id 
     uInputId.setAttribute("id","currentUserId");
     uInputType.setAttribute("id","currentUserType");
+    //set type
+    uInputId.setAttribute("type","hidden");
+    uInputType.setAttribute("type","hidden");
+    
+    
+    
+    //append data to userNav
+    navUser.append(uName);
+    navUser.append(uLogout);
+    navUser.append(uSettings);
+    navUser.append(uInputId);
+    navUser.append(uInputType);
     
 }
 
@@ -88,26 +103,56 @@ function displayUserDataNav(doc){
 
 // ---- start pg content ------ 
 
-console.log("firebaseUser has ran");
-var user = firebase.auth().currentUser;
-console.log(user);
 
-if (user) {
-    // User is signed in
-    // get user data
+//console.log("firebaseUser has ran");
+//var user = firebase.auth().currentUser;
+//console.log(user);
+//
+//if (user) {
+//    // User is signed in
+//    // get user data
+//    db.collection("users").doc(user.uid).get().then((doc) =>{
+//        if(doc.exists){
+//            //found connect user doc
+//            console.log("auth user exists and connected doc");
+//            //display data in nav
+//            displayUserDataNav(doc);
+//        }else{
+//            //cant find user doc connect to AUTH user
+//            console.log("no such document but auth user exists.");
+//        }
+//    });
+//    
+//} else {
+//    // No user is signed in.
+//    // change nothing in navigation
+//}
+
+
+
+
+// using observer 
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    //var uid = user.uid;
     db.collection("users").doc(user.uid).get().then((doc) =>{
         if(doc.exists){
-            //found connect user doc
-            console.log("auth user exists and connected doc");
-            //display data in nav
-            displayUserDataNav(doc);
-        }else{
-            //cant find user doc connect to AUTH user
-            console.log("no such document but auth user exists.");
-        }
+                //found connect user doc
+                console.log("auth user exists and connected doc");
+                console.log("user id: " + user.uid);
+                //display data in nav
+                displayUserDataNav(doc);
+            }else{
+                //cant find user doc connect to AUTH user
+                console.log("no such document but auth user exists.");
+            }
     });
-    
-} else {
-    // No user is signed in.
-    // change nothing in navigation
-}
+
+  } else {
+    // User is signed out
+    // ...
+  }
+});

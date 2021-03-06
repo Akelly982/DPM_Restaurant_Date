@@ -1,3 +1,6 @@
+
+<!-- people probably wont see this page just quickly run code to log user out and send-->
+<!-- them back to the home page index.php-->
 <!doctype>
 <html lang="en">
     
@@ -5,7 +8,7 @@
         <?php
             include "modularContent/head/header.php";
         ?>
-        <title>Login</title>
+        <title>Logout</title>
     </head>
     
     <navigation>
@@ -18,25 +21,13 @@
     
     
     <body>
-        <h1>Login</h1>
-
-        <form id="loginForm">
-            <label>Email:</label>
-            <input type="text" name="email">
-
-            <label>Password:</label>
-            <input type="password" name="password">
-
-            <button id="submitBtn">submit</button>
-        </form>
+        <h1>logout</h1>
     
-        
-        
         <!-- firestore added at end of body      -->
         <?php
             include "modularContent/firebaseInit.php";
         ?>
-        <script src="scripts/javascript/login.js"></script>
+        <script src="scripts/javascript/logout.js"></script>
     </body>
     
     
