@@ -21,6 +21,27 @@
 
 //functions--------
 
+
+
+
+function logout(){
+    
+    //sign out
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        //alert("sign out successfull");
+        window.location.href = "index.php";
+        
+    }).catch((error) => {
+    // An error happened.
+        console.log("Error code: " + error.code);
+        alert("error: " + error.message);
+    });
+
+}
+
+
+
 function displayUserDataNav(doc){
     
     console.log("entered function");
@@ -44,6 +65,8 @@ function displayUserDataNav(doc){
     //check to see if fields exists
     //var isUser = doc.contains("username");  //didnt work  
     //var isUser = doc.getBoolean("username"); //didnt work
+
+    //both userTypes now have username;
     
     var isUser = doc.data().username;   //either will or wont get a value one will result null
     var isRes = doc.data().resName;
@@ -56,7 +79,6 @@ function displayUserDataNav(doc){
             uName.textContent=doc.data().resName;
         }else{
             uName.textContent="undefined";
-            console.log("both fields did not exist for username / resName");
         }
     }
     

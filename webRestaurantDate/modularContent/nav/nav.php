@@ -5,6 +5,7 @@
         <!-- available pages  -->
         <div id="pgContent">
             <a href="index.php">Home</a>
+            <a href="findRestraunts.php"> Find Restraunt </a>
         </div>
         <!-- if user is logged in add data here -->
         <div id="userNav">

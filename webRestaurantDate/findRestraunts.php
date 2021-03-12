@@ -19,8 +19,17 @@
     
     <div>
         
-        <h2>This is some text</h2>
-        <p> show content here...... <p>
+        <div class="findResContainer">
+            <div class="findResSearch">
+                <input type="text" id="nameTextField">
+                <a id="serchByName"> Name </a>
+                <p> search by type: </p>
+                <a id="search"
+            </div>
+            <div class="findResContent"  id="resContent">
+                    <p> No content found </p>
+            </div>
+        </div>
     
         
         <?php
