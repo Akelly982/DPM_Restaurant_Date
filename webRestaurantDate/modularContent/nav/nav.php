@@ -8,8 +8,7 @@
         </div>
         <!-- if user is logged in add data here -->
         <div id="userNav">
-            <a href="signUpRestraunt.php">signUp Restraunt</a>
-            <a href="signUpUser.php">signUp User</a>
+            <a href="signUpPg1.php">signUp</a>
             <a href="login.php">login</a>
         </div>
     </div>

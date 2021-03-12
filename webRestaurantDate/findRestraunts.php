@@ -1,37 +1,43 @@
 <!doctype html>
 <html lang="en">
+    
     <head>
         <?php
             include "modularContent/head/header.php";
         ?>
-        <title>Home</title>
+        <title>undefined</title>
     </head>
     
-    <navigation class="nav">
+    <navigation>
         <?php
             include "modularContent/nav/nav.php"
         ?>
     </navigation>
     
     
-    <div class="content">
-        
-        <h2> Home page </h2>
-        <p> show content here...... I exist</p>
     
+    
+    <div>
+        
+        <h2>This is some text</h2>
+        <p> show content here...... <p>
+    
+        
         <?php
              include"modularContent/firebaseInit.php";  
         ?>
-        <!-- javascript for the page that we are on -->
+        <!-- javascript identify if user is logged in -->
         <script src="scripts/javascript/firebaseUser.js"></script>
-        <script src="scripts/javascript/home.js"></script>
+        <!-- javascript for the page that we are on -->
+        <script src="scripts/javascript/myScript.js"></script>
     </div>
     
-    <footer class="foot">
+    
+    
+    <footer>
         <?php
             include "modularContent/footer/footer.php"
         ?>
     </footer>
-    
 
 </html>

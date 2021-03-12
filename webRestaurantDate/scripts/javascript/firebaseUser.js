@@ -42,10 +42,10 @@ function displayUserDataNav(doc){
     
     //p element
     //check to see if fields exists
-    //var isUser = doc.contains("username");  
-    //var isUser = doc.getBoolean("username");
+    //var isUser = doc.contains("username");  //didnt work  
+    //var isUser = doc.getBoolean("username"); //didnt work
     
-    var isUser = doc.data().username;
+    var isUser = doc.data().username;   //either will or wont get a value one will result null
     var isRes = doc.data().resName;
     
     //depending on type of user set p element 
@@ -138,21 +138,44 @@ firebase.auth().onAuthStateChanged((user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     //var uid = user.uid;
+    // only using user.uid 
+    // all our other properties will be saved in the firestore
+    console.log("A userType is logged in.");
+
+    //check if user
     db.collection("users").doc(user.uid).get().then((doc) =>{
         if(doc.exists){
                 //found connect user doc
-                console.log("auth user exists and connected doc");
+                console.log("auth user exists and connected user doc");
                 console.log("user id: " + user.uid);
                 //display data in nav
                 displayUserDataNav(doc);
             }else{
-                //cant find user doc connect to AUTH user
-                console.log("no such document but auth user exists.");
+                
+                 //check if user
+                db.collection("restraunts").doc(user.uid).get().then((doc) =>{
+                    if(doc.exists){
+                        //found connect Restraunt User doc
+                        console.log("auth user exists and connected restraunt doc");
+                        console.log("user id: " + user.uid);
+                        //display data in nav
+                        displayUserDataNav(doc);
+                    }else{
+                        //cant find user doc connect to AUTH user
+                        console.log("no such document in Restraunts collection.");
+                }
+    });
             }
     });
 
+
+   
+
+
+
+
   } else {
-    // User is signed out
+    // No user is logged in
     // ...
   }
 });
