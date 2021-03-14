@@ -9,12 +9,15 @@
     </head>
     
     <navigation>
+
+        <!-- base navigation -->
         <?php
             include "modularContent/nav/nav.php"
         ?>
     
-        
-<!--        navigation logged in -->
+        <div class="spacer"></div>
+
+        <!--    navigation logged in -->
         <div class="nav">
             <h1> Navigation</h1>
             <!-- available pages  -->
@@ -37,11 +40,97 @@
     
     
     <div>
+
+
+        <div class="spacer"></div>
         
-        <h2>This is some text</h2>
-        <p> show content here...... <p>
-    
+        <div style="spacer" >
+            <h4 style="text-align:center;"> findRestraunt Items </h4>
+        </div>
         
+
+        <div class="spacer"></div>
+        
+        
+        <div class="findResContainer">
+            <div class="findResSearch">
+                <!-- Search field -->
+                <p> Search: </p>
+                <div class="frSearchField">
+                    <input type="text" id="searchByNameTextField">
+                    <button id="searchByNameBtn">X</button>
+                </div>
+                <!-- Search catagories -->
+                <p> search by type: </p>
+                <a id="searchMexican" href="">Mexican</a>
+                <a id="searchThai" href="">Thai</a>
+                <a id="searchFastFood" href="">FastFood</a>
+            </div>
+            <div class="findResContentGrid"  id="resContent">
+
+                    <!-- The item to be created in JS for every res returned -->
+                    <div class="findResContentItem">             
+                                                                     <!-- userImage/tempResImg.png -->
+                        <div class="frImage" style="background-image: url(userImage/tempResImg.png);">
+                        </div>
+                        <div class="frText">
+                            <h2>my Restraunt name</h2>
+                            <h4>Cafe: location of my cafe </h4>
+                            <p class="frSummary">Summary of my cafe. lorum ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum 
+                            ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+                            ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+                            ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+                            ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+                            ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+                            </p>
+                            <button class="frBtn"> Enter </button>
+                        </div>
+                    </div>
+
+                    <!--  what will be shown before js runs -->
+                    <div class="findResContentItem">
+                        <div class="frText">
+                            <h3>Loading in Restraunt Content...</h3>
+                        </div>
+                    </div>
+
+
+                    <!-- what will be shown if Firestore returns empty list of docs -->
+                    <div class="findResContentItem">
+                        <div class="frText">
+                            <h3>No restraunts by that type found. <br> Try again.</h3>
+                        </div>
+                    </div>
+
+
+                    <!-- spacer to cover excess height needed so that the --->
+                    <!-- footer clears the bottom of the screen -->
+                    <div class="frContentSpacer"></div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <?php
              include"modularContent/firebaseInit.php";  
         ?>

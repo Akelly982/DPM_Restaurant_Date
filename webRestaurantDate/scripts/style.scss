@@ -1,15 +1,123 @@
+$basicBkgColor: lightGrey;
 
+body{
+    margin: 0px; //fixes edging around whole site page
+}
+
+@mixin flexBasic($direction){   //functions are called mixin
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;;
+}
+
+
+.nav{
+    background-color:$basicBkgColor;
+    @include flexBasic(column);
+}
+
+
+footer{
+    background-color:$basicBkgColor;
+    height:200px;
+    @include flexBasic(column)
+}
+
+.spacer{
+    background-color: lightsteelblue;
+    height:50px;
+    width:100%;
+}
+
+.frContentSpacer{  
+    // findRestraunt spacer
+    // added if content item is only 1 
+    // stops the bottom of the website being
+    // smaller than the height of the screen
+    width:100%;
+    height:100px;
+}
 
 
 
 .findResContainer{
     display: flex;
-    flex-direction: column;
-    
-    findResSearch{
+    flex-direction: row;
+
+    .findResSearch{
+        background-color: lightblue;
+        width: 20%; //side column
+        display:flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+        padding-top: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        .frSearchField{
+            display:flex;
+            flex-direction: row;
+        }
+    }
+
+    .findResContentGrid{
+
+        justify-self: center;
+        align-self: center;
+        width: 80%; //content column
+        height: auto;
+        min-height: 150px;
+        padding: 25px;
+        padding-left: 100px;
+        padding-right: 100px;
+        background-color:lightgreen;
+        display:grid;
+        grid-gap: 25px;
+        grid-template-columns: 100%; //Note dont use commas
+        grid-template-rows: auto;
+        
+    }
+
+    .findResContentItem{
+        //this allows item to follow parent grid
+        width:100%;
+        //height however is determined by item
+        height: auto;
+        background-color: lightgrey;
+        display:flex;
+        flex-direction: Row;
+        justify-content: center;
+
+        .frImage{
+
+            background-color: peachpuff;
+            //background image set in html by js (on doc item load)
+            background-size: cover;
+            width: 250px; 
+            // min-width: 50px; 
+            height: 250px;
+        }
+
+        .frText{
+            background-color: lightseagreen;
+            padding: 25px;
+        }
+
+        .frSummary{
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-box-orient: vertical; 
+        }
+
+        .frBtn{
+            text-align: center; //dosent do anything but removes empty warning
+        }
+
 
     }
-    findResContent{
 
-    }
 }

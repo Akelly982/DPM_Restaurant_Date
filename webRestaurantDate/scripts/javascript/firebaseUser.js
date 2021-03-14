@@ -44,8 +44,6 @@ function logout(){
 
 function displayUserDataNav(doc){
     
-    console.log("entered function");
-    
     //get target navElement
     let navUser = document.querySelector("#userNav");
     
@@ -124,31 +122,6 @@ function displayUserDataNav(doc){
 
 
 // ---- start pg content ------ 
-
-
-//console.log("firebaseUser has ran");
-//var user = firebase.auth().currentUser;
-//console.log(user);
-//
-//if (user) {
-//    // User is signed in
-//    // get user data
-//    db.collection("users").doc(user.uid).get().then((doc) =>{
-//        if(doc.exists){
-//            //found connect user doc
-//            console.log("auth user exists and connected doc");
-//            //display data in nav
-//            displayUserDataNav(doc);
-//        }else{
-//            //cant find user doc connect to AUTH user
-//            console.log("no such document but auth user exists.");
-//        }
-//    });
-//    
-//} else {
-//    // No user is signed in.
-//    // change nothing in navigation
-//}
 
 
 

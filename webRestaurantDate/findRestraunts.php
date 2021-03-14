@@ -16,18 +16,36 @@
     
     
     
-    
+    <!-- page content -->
     <div>
+
+        <div class="spacer"></div>
         
         <div class="findResContainer">
             <div class="findResSearch">
-                <input type="text" id="nameTextField">
-                <a id="serchByName"> Name </a>
+                <!-- Search field -->
+                <p> Search: </p>
+                <div class="frSearchField">
+                    <input type="text" id="searchByNameTextField">
+                    <button id="searchByNameBtn">X</button>
+                </div>
+                <!-- Search catagories -->
                 <p> search by type: </p>
-                <a id="search"
+                <a id="searchMexican" href="">Mexican</a>
+                <a id="searchThai" href="">Thai</a>
+                <a id="searchFastFood" href="">FastFood</a>
             </div>
-            <div class="findResContent"  id="resContent">
-                    <p> No content found </p>
+            <!-- THis is where we put our firebase firestore restraunt items/docs -->
+            <div class="findResContentGrid"  id="resContent">
+
+                <div class="frContentSpacer"></div>
+                    <div class="findResContentItem">
+                        <div class="frText">
+                            <h4>Loading in Restraunt Content...</h4>
+                        </div>
+                    </div>
+                <div class="frContentSpacer"></div>
+
             </div>
         </div>
     
@@ -37,8 +55,10 @@
         ?>
         <!-- javascript identify if user is logged in -->
         <script src="scripts/javascript/firebaseUser.js"></script>
+
         <!-- javascript for the page that we are on -->
-        <script src="scripts/javascript/myScript.js"></script>
+        <script src="scripts/javascript/findRestraunts.js"></script>
+        
     </div>
     
     

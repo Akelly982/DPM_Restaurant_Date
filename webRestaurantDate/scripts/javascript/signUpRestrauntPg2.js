@@ -49,7 +49,9 @@ submitBtn.addEventListener('click', (e) =>{
     // console.log(summary);
     
     
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
+    
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
         // Signed in 
         // dont try return values here like a method / function
         // this is run on response from the auth host firebase
@@ -65,14 +67,14 @@ submitBtn.addEventListener('click', (e) =>{
             firstName: firstName,
             lastName: lastName,
             address: address,
-            loaction: location,
+            location: location,
             resName: resName,
             email: email,
             phone: phone,
             summary: summary,
-            category1: cat1,
-            category2: cat2,
-            category3: cat3,
+            category1: category1,
+            category2: category2,
+            category3: category3,
             imgPath: "tempResImg",
             imgExt: ".png",
             userType: "restraunt"
