@@ -24,7 +24,7 @@
     
         
         <?php
-             include"modularContent/firebaseInit.php";  
+            include "modularContent/firebaseInit.php";  
         ?>
         <!-- javascript for the page that we are on -->
         <script src="myScript.js"></script>

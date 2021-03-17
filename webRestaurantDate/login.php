@@ -3,14 +3,14 @@
     
     <head>        
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>Login</title>
     </head>
     
     <navigation>
         <?php
-            include "modularContent/nav/navEmpty.php";
+            include "modularContent/navEmpty.php";
         ?>
     </navigation>
     
@@ -43,7 +43,7 @@
     
     <footer class="foot">
         <?php
-            include "modularContent/footer/footer.php";
+            include "modularContent/footer.php";
         ?>
     </footer>
     

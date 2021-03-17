@@ -3,14 +3,14 @@
     
     <head>
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>undefined</title>
     </head>
     
     <navigation>
         <?php
-            include "modularContent/nav/nav.php"
+            include "modularContent/nav.php"
         ?>
     </navigation>
     
@@ -48,16 +48,6 @@
 
             </div>
         </div>
-    
-        
-        <?php
-             include"modularContent/firebaseInit.php";  
-        ?>
-        <!-- javascript identify if user is logged in -->
-        <script src="scripts/javascript/firebaseUser.js"></script>
-
-        <!-- javascript for the page that we are on -->
-        <script src="scripts/javascript/findRestraunts.js"></script>
         
     </div>
     
@@ -65,8 +55,17 @@
     
     <footer>
         <?php
-            include "modularContent/footer/footer.php"
+            include "modularContent/footer.php"
         ?>
     </footer>
+
+    <?php
+        include "modularContent/firebaseInit.php";  
+    ?>
+        <!-- javascript identify if user is logged in -->
+        <script src="scripts/javascript/firebaseUser.js"></script>
+
+        <!-- javascript for the page that we are on -->
+        <script src="scripts/javascript/findRestraunts.js"></script>
 
 </html>
