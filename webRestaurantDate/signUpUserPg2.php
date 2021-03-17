@@ -82,6 +82,5 @@
         ?>
     </footer>
     
-    <!-- Ig small change -->
 
 </html>
