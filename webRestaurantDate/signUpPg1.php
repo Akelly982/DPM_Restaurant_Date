@@ -36,10 +36,11 @@
             <label>Email:</label>
             <input type="text" name="email">
 
-            <!-- <label>Password:</label>
-            <input type="password" name="password"> -->
+            <label>Password:</label>
+            <input type="password" name="password">
 
             <button type="submit">submit</button>
+            
         </form>
     
         
@@ -48,7 +49,6 @@
         <?php
             include "modularContent/firebaseInit.php";
         ?>
-
         <script src="scripts/javascript/signUpPg1.js"></script>
     </body>
     
