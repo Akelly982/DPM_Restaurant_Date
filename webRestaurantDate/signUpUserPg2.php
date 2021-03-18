@@ -2,20 +2,23 @@
 <html lang="en">
     
     <?php
-        $email = $_POST["email"];
+        $userAuthId = $_GET["user"];
+        $userEmail = $_GET["email"];
+        echo "<p>". $userAuthId ."</p>";
+        echo "<p>". $userEmail ."</p>";
     ?>
 
 
     <head>        
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>SignUp User</title>
     </head>
     
     <navigation>
         <?php
-            include "modularContent/nav/navEmpty.php";
+            include "modularContent/navEmpty.php";
         ?>
     </navigation>
     
@@ -35,9 +38,6 @@
             <label>Username:</label>
             <input type="text" name="userName">
 
-            <!-- <label>Email:</label> -->
-            <input type="hidden" name="email" value="<?php echo $email ?>">
-
             <label>Phone:</label>
             <input type="text" name="phone">
 
@@ -45,16 +45,18 @@
             <input type="text" name="gender">
 
             <label>Birthday:</label>
-            <input type="number" name="birthday">
+            <input type="date" name="birthday" prefill="20/03/1994" min="1925-01-01" max="2001-01-01">
 
             <label>Height:</label>
             <input type="number" name="height">
 
-            <label>Password:</label>
-            <input type="password" name="password">
 
+            <!-- hidden inputs -->
+            <!-- <label>AuthID:</label> -->
+            <input type="hidden" name="authId" value="<?php echo $userAuthId ?>">
+            <!-- <label>Email:</label> -->
+            <input type="hidden" name="email" value="<?php echo $userEmail ?>">
             
-
             <br>
 
             <label>Introduce Yourself:</label>
@@ -65,12 +67,7 @@
     
         
         
-        <!-- firestore added at end of body      -->
-        <?php
-            include "modularContent/firebaseInit.php";
-        ?>
         
-        <script src="scripts/javascript/signUpUserPg2.js"></script>
     </body>
     
     
@@ -78,9 +75,14 @@
     
     <footer class="foot">
         <?php
-            include "modularContent/footer/footer.php";
+            include "modularContent/footer.php";
         ?>
     </footer>
     
+
+    <?php
+        include "modularContent/firebaseInit.php";
+    ?>
+    <script src="js/pgJavascript/signUpUserPg2.js"></script>
 
 </html>

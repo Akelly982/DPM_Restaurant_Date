@@ -7,13 +7,13 @@
 // sign in new user / existing user
 //https://firebase.google.com/docs/auth/web/start
 
+
+
 //identify form
 let myForm = document.querySelector('#addUserForm');
 
 //get submit btn
 let submitBtn = document.querySelector('#submitBtn');
-
-
 
 
 
@@ -27,73 +27,65 @@ submitBtn.addEventListener('click', (e) =>{
     var email = myForm.email.value;
     var password = myForm.password.value;
     
-    var userName = myForm.userName.value;
+    var username = myForm.username.value;
     var firstName = myForm.firstName.value;
     var lastName = myForm.lastName.value;
+    var address = myForm.address.value;
+    var category1 = myForm.cat1.value;
+    var category2 = myForm.cat2.value;
+    var category3 = myForm.cat3.value; 
+
+    var resName = myForm.resName.value;
+    var location = myForm.location.value;
     var phone = myForm.phone.value;
-    var gender = myForm.gender.value;
-    var age = myForm.age.value;
     
     var summary = document.querySelector('#taSummary').value;
     
     //test by logging
-    console.log(password);
-    console.log(email);
-    console.log(userName);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(phone);
-    console.log(gender);
-    console.log(age);
-    console.log(summary);
+    // console.log(password);
+    // console.log(email);
+    // console.log(resName);
+    // console.log(phone);
+    // console.log(summary);
     
     
     
-    
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
         // Signed in 
         // dont try return values here like a method / function
         // this is run on response from the auth host firebase
         var user = userCredential.user;
         console.log("signed in: " + user.uid);
         
-        //user.uid is going to be used as their id for firestore aswell
 
+        //user.uid is going to be used as their id for firestore aswell
         //add to firestore
         //.add takes in an object as the value
-        db.collection('users').doc(user.uid).set({
-            username: userName,
+        db.collection('restraunts').doc(user.uid).set({
+            username: username,
             firstName: firstName,
             lastName: lastName,
+            address: address,
+            location: location,
+            resName: resName,
             email: email,
             phone: phone,
-            gender: gender,
             summary: summary,
-            //imgPath: user.uid,
-            imgPath: "tempUserImg",
+            category1: category1,
+            category2: category2,
+            category3: category3,
+            imgPath: "tempResImg",
             imgExt: ".png",
-            userType: "user"
+            userType: "restraunt"
+            
         })    
+        
         .then((docRef) => {
             console.log("Document successfully updated!");
-
-            if(false){
-                //reset values
-                // all done reset form values to zero
-                myForm.userName.value="";
-                myForm.firstName.value = "";
-                myForm.lastName.value = "";
-                myForm.email.value = "";
-                myForm.phone.value = "";
-                myForm.gender.value = "";
-                myForm.age.value = "";
-                myForm.password.value = "";
-                //summary access == different than others
-                summary.value = "";
-            }else{
-                //return home
-                window.location.href = 'index.php';
-            }
+            //return home
+            //window.location.href = 'index.php';
+            
             
 
 

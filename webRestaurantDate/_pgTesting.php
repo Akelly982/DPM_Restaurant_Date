@@ -3,7 +3,7 @@
     
     <head>
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>undefined</title>
     </head>
@@ -12,7 +12,7 @@
 
         <!-- base navigation -->
         <?php
-            include "modularContent/nav/nav.php"
+            include "modularContent/nav.php"
         ?>
     
         <div class="spacer"></div>
@@ -111,39 +111,23 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <?php
-             include"modularContent/firebaseInit.php";  
-        ?>
-        <!-- javascript for the page that we are on -->
-        <script src="myScript.js"></script>
+        
     </div>
     
     
     
     <footer class="foot">
         <?php
-            include "modularContent/footer/footer.php"
+            include "modularContent/footer.php"
         ?>
     </footer>
+
+
+
+    <?php
+             include"modularContent/firebaseInit.php";  
+    ?>
+    <!-- javascript for the page that we are on -->
+    <script src="myScript.js"></script>
 
 </html>

@@ -17,7 +17,7 @@
     
     
     
-    <body>
+    <div>
         <h1>Login</h1>
 
         <form id="loginForm">
@@ -32,12 +32,8 @@
     
         
         
-        <!-- firestore added at end of body      -->
-        <?php
-            include "modularContent/firebaseInit.php";
-        ?>
-        <script src="scripts/javascript/login.js"></script>
-    </body>
+        
+    </div>
     
     
     
@@ -46,6 +42,12 @@
             include "modularContent/footer.php";
         ?>
     </footer>
+
+    
+    <?php
+        include "modularContent/firebaseInit.php";
+    ?>
+    <script src="js/pgJavascript/login.js"></script>
     
 
 </html>

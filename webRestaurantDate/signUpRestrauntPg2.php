@@ -2,21 +2,24 @@
 <html lang="en">
     
     <?php
-        $email = $_POST["email"];
+        $userAuthId = $_GET["user"];
+        $userEmail = $_GET["email"];
+        echo "<p>". $userAuthId ."</p>";
+        echo "<p>". $userEmail ."</p>";
     ?>
 
 
 
     <head>        
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>SignUp Restraunt</title>
     </head>
     
     <navigation>
         <?php
-            include "modularContent/nav/navEmpty.php";
+            include "modularContent/navEmpty.php";
         ?>
     </navigation>
     
@@ -76,12 +79,8 @@
     
         
         
-        <!-- firestore added at end of body      -->
-        <?php
-            include "modularContent/firebaseInit.php";
-        ?>
 
-        <script src="scripts/javascript/signUpRestrauntPg2.js"></script>
+        
     </body>
     
     
@@ -89,9 +88,14 @@
     
     <footer class="foot">
         <?php
-            include "modularContent/footer/footer.php";
+            include "modularContent/footer.php";
         ?>
     </footer>
+
+    <?php
+        include "modularContent/firebaseInit.php";
+    ?>
+    <script src="js/pgJavascript/signUpRestrauntPg2.js"></script>
     
 
 </html>

@@ -6,37 +6,36 @@
     
     <head>        
         <?php
-            include "modularContent/head/header.php";
+            include "modularContent/header.php";
         ?>
         <title>Logout</title>
     </head>
     
     <navigation>
         <?php
-            include "modularContent/nav/navEmpty.php";
+            include "modularContent/navEmpty.php";
         ?>
     </navigation>
     
     
     
     
-    <body>
+    <div>
         <h1>logout</h1>
-    
-        <!-- firestore added at end of body      -->
-        <?php
-            include "modularContent/firebaseInit.php";
-        ?>
-        <script src="scripts/javascript/logout.js"></script>
-    </body>
+    </div>
     
     
     
     <footer class="foot">
         <?php
-            include "modularContent/footer/footer.php";
+            include "modularContent/footer.php";
         ?>
     </footer>
     
+    
+    <?php
+            include "modularContent/firebaseInit.php";
+        ?>
+        <script src="js/pgJavascript/logout.js"></script>
 
 </html>

@@ -17,40 +17,34 @@
     
     
     
-    <body>
+    <div>
         <h1> sign Up </h1>
 
-        <!-- Using POST to send data to the next page  -->
-        <form id="userForm" method="post" action="undefined">
+        
+        <form id="userForm">
 
             <!-- radio btn determins the action location of this form -->
             <!-- update within the pages javascript for on event -->
 
-            <input type="radio" id="signUpUser" name="nextPg" value="empty">
+            <input type="radio" id="signUpUser" name="userType" value="user">
             <label for="signUpUser">user</label>
 
-            <input type="radio" id="signUpRes" name="nextPg" value="empty">
+            <input type="radio" id="signUpRes" name="userType" value="restraunt">
             <label for="signUpRes">restraunt</label>
-
+            <br>
 
             <label>Email:</label>
             <input type="text" name="email">
-
+            <br>
             <label>Password:</label>
             <input type="password" name="password">
 
-            <button type="submit">submit</button>
+            <!-- <button type="submit">submit</button> -->
+            <button id="signUpPgSubmitBtn">Submit</button>
             
         </form>
-    
-        
-        
-        <!-- firestore added at end of body      -->
-        <?php
-            include "modularContent/firebaseInit.php";
-        ?>
-        <script src="scripts/javascript/signUpPg1.js"></script>
-    </body>
+
+    </div>
     
     
     
@@ -61,5 +55,12 @@
         ?>
     </footer>
     
+
+    
+    <?php
+        include "modularContent/firebaseInit.php";
+    ?>
+    <script src="js/pgJavascript/signUpPg1.js"></script>
+
 
 </html>

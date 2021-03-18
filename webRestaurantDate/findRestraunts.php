@@ -62,10 +62,10 @@
     <?php
         include "modularContent/firebaseInit.php";  
     ?>
-        <!-- javascript identify if user is logged in -->
-        <script src="scripts/javascript/firebaseUser.js"></script>
+    <!-- javascript identify if user is logged in -->
+    <script src="js/firebaseUser.js"></script>
 
-        <!-- javascript for the page that we are on -->
-        <script src="scripts/javascript/findRestraunts.js"></script>
+    <!-- javascript for the page that we are on -->
+    <script src="js/pgJavascript/findRestraunts.js"></script>
 
 </html>

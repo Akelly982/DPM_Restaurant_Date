@@ -33,9 +33,9 @@
     <?php
         include "modularContent/firebaseInit.php";  
     ?>
-        <!-- javascript for the page that we are on -->
-        <script src="scripts/javascript/firebaseUser.js"></script>
-        <script src="scripts/javascript/home.js"></script>
+    <!-- javascript for the page that we are on -->
+    <script src="js/firebaseUser.js"></script>
+    <script src="js/pgJavascript/home.js"></script>
 
 
 </html>

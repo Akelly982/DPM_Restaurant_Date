@@ -4,8 +4,8 @@
     <meta name="author" content="Aidan Kelly, Kosuke Inami, Igor Francisco Silvia Brandao">
 
     
-    <!--    style-->
-    <link rel="stylesheet" href="scripts/style.css">
+    <!-- style-->
+    <link rel="stylesheet" href="scss/rd.css">
     
     <!-- (for changes based on screen width) -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
