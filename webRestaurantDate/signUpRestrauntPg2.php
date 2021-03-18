@@ -43,20 +43,11 @@
             <label>Restraunt name:</label>
             <input type="text" name="resName">
             
-            <label>location:</label>
-            <input type="text" name="location">
-            
-            <label>address:</label>
-            <input type="text" name="address">
-
-            <!-- <label>Email:</label> -->
-            <input type="hidden" name="email" value="<?php echo $email ?>">
+            <label>Address:</label>
+            <input type="text" name="address" placeholder="44 albert st chattswood Sydney NSW">
 
             <label>Phone:</label>
             <input type="text" name="phone">
-
-            <label>Password:</label>
-            <input type="password" name="password">
 
             <label>Category 1:</label>
             <input type="text" name="cat1">
@@ -66,6 +57,14 @@
 
             <label>Category 3:</label>
             <input type="text" name="cat3">
+
+            
+
+            <!-- hidden inputs -->
+            <!-- <label>AuthID:</label> -->
+            <input type="hidden" name="authId" value="<?php echo $userAuthId ?>">
+            <!-- <label>Email:</label> -->
+            <input type="hidden" name="email" value="<?php echo $userEmail ?>">
 
 
             <br>

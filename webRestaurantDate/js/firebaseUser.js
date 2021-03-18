@@ -84,7 +84,7 @@ function displayUserDataNav(doc){
     
     //a link elements
     //set href
-    uLogout.setAttribute("href","logout.php");
+    uLogout.setAttribute("href","");  //gets it to behave like a normal a element
     uSettings.setAttribute("href","userSettings.php");
     
     //set txt content
@@ -111,6 +111,13 @@ function displayUserDataNav(doc){
     navUser.append(uSettings);
     navUser.append(uInputId);
     navUser.append(uInputType);
+
+
+    uLogout.addEventListener('click', (event) => {
+        event.preventDefault();
+        logout();
+    })
+
     
 }
 
@@ -127,7 +134,6 @@ function displayUserDataNav(doc){
 
 
 // using observer 
-
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -145,30 +151,23 @@ firebase.auth().onAuthStateChanged((user) => {
                 console.log("user id: " + user.uid);
                 //display data in nav
                 displayUserDataNav(doc);
-            }else{
+        }else{
                 
-                 //check if user
-                db.collection("restraunts").doc(user.uid).get().then((doc) =>{
-                    if(doc.exists){
-                        //found connect Restraunt User doc
-                        console.log("auth user exists and connected restraunt doc");
-                        console.log("user id: " + user.uid);
-                        //display data in nav
-                        displayUserDataNav(doc);
-                    }else{
-                        //cant find user doc connect to AUTH user
-                        console.log("no such document in Restraunts collection.");
+            //check if user
+            db.collection("restraunts").doc(user.uid).get().then((doc) =>{
+                if(doc.exists){
+                    //found connect Restraunt User doc
+                    console.log("auth user exists and connected restraunt doc");
+                    console.log("user id: " + user.uid);
+                    //display data in nav
+                    displayUserDataNav(doc);
+                }else{
+                    //cant find user doc connect to AUTH user
+                    console.log("no such document in Restraunts collection.");
                 }
+            });
+        }
     });
-            }
-    });
-
-
-   
-
-
-
-
   } else {
     // No user is logged in
     // ...

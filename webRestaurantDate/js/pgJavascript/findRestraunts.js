@@ -74,7 +74,7 @@ function createRestrauntItem(doc){
 
     divFrText.setAttribute("class","frText");
     resName.textContent = doc.data().resName;
-    resLoca.textContent = doc.data().location;
+    resLoca.textContent = doc.data().address;
     resSum.textContent = doc.data().summary;
 
     detailsPgBtn.textContent = "Enter";

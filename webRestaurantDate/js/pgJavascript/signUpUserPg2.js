@@ -58,7 +58,7 @@ submitBtn.addEventListener('click', (e) =>{
     .then((docRef) => {
         console.log("Document successfully updated!");
         //return home
-        //window.location.href = 'index.php';
+        window.location.href = 'index.php';
     })
     .catch((error) => {
         // The document probably was not created.
