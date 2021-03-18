@@ -138,34 +138,31 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    //var uid = user.uid;
-    // only using user.uid 
+    //var uid = user.uid; // only using user.uid 
     // all our other properties will be saved in the firestore
-    console.log("A userType is logged in.");
 
-    //check if user
+    //checking
+    //console.log("A userType is logged in.");
+
+    //check i user's collection
     db.collection("users").doc(user.uid).get().then((doc) =>{
         if(doc.exists){
-                //found connect user doc
-                console.log("auth user exists and connected user doc");
-                console.log("user id: " + user.uid);
                 //display data in nav
                 displayUserDataNav(doc);
         }else{
                 
-            //check if user
+            //check in restraunt's collection
             db.collection("restraunts").doc(user.uid).get().then((doc) =>{
                 if(doc.exists){
-                    //found connect Restraunt User doc
-                    console.log("auth user exists and connected restraunt doc");
-                    console.log("user id: " + user.uid);
                     //display data in nav
                     displayUserDataNav(doc);
                 }else{
-                    //cant find user doc connect to AUTH user
-                    console.log("no such document in Restraunts collection.");
+                    //cant find user doc connect to AUTH user in RESTRAUNT collection
+                    //console.log("no such document in Restraunts collection.");
                 }
             });
+            //cant find user doc connect to AUTH user in USERS collection
+            //console.log("no such document in Restraunts collection.");
         }
     });
   } else {

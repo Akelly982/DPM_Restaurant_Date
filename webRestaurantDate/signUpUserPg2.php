@@ -4,8 +4,8 @@
     <?php
         $userAuthId = $_GET["user"];
         $userEmail = $_GET["email"];
-        echo "<p>". $userAuthId ."</p>";
-        echo "<p>". $userEmail ."</p>";
+        //echo "<p>". $userAuthId ."</p>";
+        //echo "<p>". $userEmail ."</p>";
     ?>
 
 

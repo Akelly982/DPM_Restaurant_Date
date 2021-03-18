@@ -38,7 +38,7 @@
     
     
     
-    
+    <!-- findRestraunt pg -->
     <div>
 
 
@@ -47,7 +47,6 @@
         <div style="spacer" >
             <h4 style="text-align:center;"> findRestraunt Items </h4>
         </div>
-        
 
         <div class="spacer"></div>
         
@@ -114,6 +113,32 @@
         
     </div>
     
+
+
+
+    <div>
+
+        <div class="spacer"></div>
+
+        <div style="spacer" >
+            <h4 style="text-align:center;"> restraunt detail pg </h4>
+        </div>
+
+        <div class="spacer"></div>
+
+
+        <!-- comment setup -->
+
+        <div class="commentGrid" id="commentContent">
+            <div class="commentItem">
+                <p> i am a comment </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
     
     
     <footer class="foot">
