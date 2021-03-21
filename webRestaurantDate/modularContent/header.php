@@ -11,6 +11,10 @@
     
     <!-- style-->
     <link rel="stylesheet" href="css/rd.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -20,6 +24,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <!-- firebase firestore   -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <!-- Title Name -->
+    <title><?php echo $title; ?></title>
 
 </head>
 <body>

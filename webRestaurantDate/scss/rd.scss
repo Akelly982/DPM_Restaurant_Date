@@ -1,12 +1,189 @@
+//--------- RESET CSS ----------
+* {
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    letter-spacing: 1.25px;
+}
+body, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/*--- Fonts ---*/
+$designFont: 'PT Sans Narrow', sans-serif;
+
+/*--- Colours ---*/
+$red: #e24747;
+$green: #49d649;
+$pink: #fd8878;
+$blue: #4e8eb5;
+$black: #333;
+$gray: #999;
+
+/*--- Transition ---*/
+$t_05: all .5s ease;
+$t_1: all 1s ease;
+
+/*--- Common ---*/
+// Colour
+.red {color: $red};
+.gray {color: $gray};
+.blue {color: $blue};
+
+
+// =======================================
+//
+// Header Navigation
+//
+// =======================================
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.2));
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    .hInner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            margin: 1rem 0;
+            img {
+                width: 160px;
+            }
+        }
+        nav {
+            width: 50%;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    a {
+                        font-family: $designFont;
+                        font-size: 110%;
+                        color: unset;
+                    }      
+                    .btn_s, .btn_l {
+                        font-family: $designFont;
+                        padding: .5rem 1.5rem;
+                    }
+                    .btn_s {
+                        background: $pink;
+                        color: white;
+                        border: 2px solid $pink;
+                        margin: 0 1rem 0 0;
+                        &:hover {
+                            background: $blue;
+                            border: 2px solid $blue;
+                            transition: $t_05;
+                        }
+                    }
+                    .btn_l {
+                        color: $pink;
+                        border: 2px solid $pink;
+                        &:hover {
+                            background: $pink;
+                            color: white;
+                            transition: $t_05;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// =======================================
+//
+// Home
+//
+// =======================================
+
+/*--- Header ---*/
+.home_top {
+    background: url(../img/home_top_bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    h1 {
+        width: 50%;
+        color: $pink;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-40%);
+        background: rgba(255, 255, 255, 0.8);
+        padding: 2rem 4rem;
+        text-align: center;
+    }
+    .home_top_links {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .home_top_rest, .home_top_love, .home_top_join {
+            width: 33.5%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            a {
+                width: 100%;
+                height: 100%;
+                color: unset;
+                padding: 2rem 0;
+                display: block;
+            }
+        }
+        .home_top_rest {
+            background-color: $blue;
+            border: 2px solid $blue;
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+                color: $blue;
+                transition: $t_05;
+            }
+        }
+        .home_top_love {
+            background-color: $pink;
+            border: 2px solid $pink;
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+                color: $pink;
+                transition: $t_05;
+            }
+        }
+        .home_top_join {
+            background-color: $green;
+            border: 2px solid $green;
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+                color: $green;
+                transition: $t_05;
+            }
+        }
+    }
+}
 
 
 
 
-
-
-// ================================================
-// ================================================
-// ================================================
+/* ================================= */
+/* ================================= */
+/* ================================= */
 
 
 

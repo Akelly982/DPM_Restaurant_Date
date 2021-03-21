@@ -1,41 +1,42 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <?php
-            include "modularContent/header.php";
-        ?>
-        <title>Home</title>
-    </head>
-    
-    <navigation class="nav">
-        <?php
-            include "modularContent/nav.php"
-        ?>
-    </navigation>
-    
-    
-    <div class="content">
-        
-        <h2> Home page </h2>
-        <p> show content here...... I exist</p>
-    
+<!-- Begin: Get Header -->
+<?php
+    /* Name of page title */
+    $title = "Foodies";
+    /* Get header.php */
+    include "modularContent/header.php";
+?>
+<!-- Finish: Get Header -->
 
+<!-- Begin: Get Header -->
+<?php
+    include "modularContent/nav.php"
+?>
+<!-- Finish: Get Header -->
+
+<!-- START: Page Contents -->
+<div class="home_top">
+    <h1><span class="gray">Find Your</span> Favorite <span class="blue">Restaurant</span> +</h1>
+    <div class="home_top_links">
+        <div class="home_top_rest"><a href="findRestraunts.php">FIND RESTAURANTS</a></div>
+        <div class="home_top_love"><a href="signUpPg1.php">FIND YOUR LOVE</a></div>
+        <div class="home_top_join"><a href="signUpPg1.php">JOIN AS RESTAURANT</a></div>
     </div>
-    
-    <footer class="foot">
-        <?php
-            include "modularContent/footer.php"
-        ?>
-    </footer>
+</div>
+<!-- END: Page Contents -->
 
+<!-- Begin: Get Footer -->
+<?php
+    /* Get footer.php */
+    include "modularContent/footer.php"
+?>
+<!-- Finish: Get Footer -->
 
+<!-- Begin: Connect to the Firebase  -->
+<?php
+    include "modularContent/firebaseInit.php";  
+?>
 
-    <?php
-        include "modularContent/firebaseInit.php";  
-    ?>
     <!-- javascript for the page that we are on -->
     <script src="js/firebaseUser.js"></script>
     <script src="js/pgJavascript/home.js"></script>
-
-
-</html>
+<!-- Finish: Connect to the Firebase  -->

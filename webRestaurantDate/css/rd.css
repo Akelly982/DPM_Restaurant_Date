@@ -1,3 +1,208 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1.25px;
+}
+
+body, div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/*--- Fonts ---*/
+/*--- Colours ---*/
+/*--- Transition ---*/
+/*--- Common ---*/
+.red {
+  color: #e24747;
+}
+
+.gray {
+  color: #999;
+}
+
+.blue {
+  color: #4e8eb5;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0.2)));
+  background: linear-gradient(white, rgba(255, 255, 255, 0.2));
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .hInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .hInner h1 {
+  margin: 1rem 0;
+}
+
+header .hInner h1 img {
+  width: 160px;
+}
+
+header .hInner nav {
+  width: 50%;
+}
+
+header .hInner nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .hInner nav ul li a {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 110%;
+  color: unset;
+}
+
+header .hInner nav ul li .btn_s, header .hInner nav ul li .btn_l {
+  font-family: "PT Sans Narrow", sans-serif;
+  padding: .5rem 1.5rem;
+}
+
+header .hInner nav ul li .btn_s {
+  background: #fd8878;
+  color: white;
+  border: 2px solid #fd8878;
+  margin: 0 1rem 0 0;
+}
+
+header .hInner nav ul li .btn_s:hover {
+  background: #4e8eb5;
+  border: 2px solid #4e8eb5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header .hInner nav ul li .btn_l {
+  color: #fd8878;
+  border: 2px solid #fd8878;
+}
+
+header .hInner nav ul li .btn_l:hover {
+  background: #fd8878;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/*--- Header ---*/
+.home_top {
+  background: url(../img/home_top_bg.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+}
+
+.home_top h1 {
+  width: 50%;
+  color: #fd8878;
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.home_top .home_top_links {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.home_top .home_top_links .home_top_rest, .home_top .home_top_links .home_top_love, .home_top .home_top_links .home_top_join {
+  width: 33.5%;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+}
+
+.home_top .home_top_links .home_top_rest a, .home_top .home_top_links .home_top_love a, .home_top .home_top_links .home_top_join a {
+  width: 100%;
+  height: 100%;
+  color: unset;
+  padding: 2rem 0;
+  display: block;
+}
+
+.home_top .home_top_links .home_top_rest {
+  background-color: #4e8eb5;
+  border: 2px solid #4e8eb5;
+}
+
+.home_top .home_top_links .home_top_rest:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #4e8eb5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.home_top .home_top_links .home_top_love {
+  background-color: #fd8878;
+  border: 2px solid #fd8878;
+}
+
+.home_top .home_top_links .home_top_love:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #fd8878;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.home_top .home_top_links .home_top_join {
+  background-color: #49d649;
+  border: 2px solid #49d649;
+}
+
+.home_top .home_top_links .home_top_join:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #49d649;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
 body {
   padding: 0;
   margin: 0px;
