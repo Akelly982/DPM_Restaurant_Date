@@ -1,5 +1,5 @@
-<!doctype>
-<html lang="en">
+
+
     <div class="nav">
         <h1> Navigation</h1>
         <!-- available pages  -->
@@ -14,4 +14,3 @@
         </div>
     </div>
     
-</html>
