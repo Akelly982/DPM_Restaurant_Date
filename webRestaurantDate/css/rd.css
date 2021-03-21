@@ -33,6 +33,67 @@ body, div {
   color: #4e8eb5;
 }
 
+section {
+  margin: 6rem 0;
+}
+
+.btn_blue, .btn_pink, .btn_green {
+  display: inline-block;
+}
+
+.btn_blue a, .btn_pink a, .btn_green a {
+  padding: 1rem 2rem;
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn_blue {
+  background: #4e8eb5;
+  border: 2px solid #4e8eb5;
+}
+
+.btn_blue:hover {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.btn_blue:hover a {
+  color: #4e8eb5;
+}
+
+.btn_pink {
+  background: #fd8878;
+  border: 2px solid #fd8878;
+}
+
+.btn_pink:hover {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.btn_pink:hover a {
+  color: #fd8878;
+}
+
+.btn_green {
+  background: #49d649;
+  border: 2px solid #49d649;
+}
+
+.btn_green:hover {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.btn_green:hover a {
+  color: #49d649;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -198,6 +259,24 @@ header .hInner nav ul li .btn_l:hover {
   color: #49d649;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+/*--- Services List ---*/
+.home_sList {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.home_sList .home_sList_block {
+  width: 50%;
+  text-align: center;
+  margin: 3rem 0;
+  padding: 0 3rem;
 }
 
 /* ================================= */

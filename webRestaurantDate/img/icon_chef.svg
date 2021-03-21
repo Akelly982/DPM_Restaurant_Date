@@ -1,25 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-</style>
-<g>
-	<g>
-		<g>
-			
-				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="256" y1="107" x2="256" y2="409" gradientTransform="matrix(1 0 0 -1 0 514)">
-				<stop  offset="0" style="stop-color:#00C0FF"/>
-				<stop  offset="1" style="stop-color:#5558FF"/>
-			</linearGradient>
-			<path class="st0" d="M158.1,398.1c0,4.9,4,8.9,8.9,8.9h178c4.9,0,8.9-4,8.9-8.9v-44.4H158.1L158.1,398.1z M327.2,140.5
-				c-4.9,0-9.6,0.5-14.2,1.6c-9.7-22.2-32-37.1-57-37.1s-47.2,14.9-57,37.1c-4.6-1.1-9.4-1.6-14.2-1.6c-34.3,0-62.3,27.9-62.3,62.2
-				c0,24.2,14.1,46.1,35.6,56.2v77h195.8v-77c21.5-10.1,35.6-32,35.6-56.2C389.5,168.4,361.5,140.5,327.2,140.5L327.2,140.5z
-				 M229.3,309.3c0,4.9-4,8.9-8.9,8.9s-8.9-4-8.9-8.9v-35.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9V309.3z M264.9,309.3
-				c0,4.9-4,8.9-8.9,8.9s-8.9-4-8.9-8.9v-35.5c0-4.9,4-8.9,8.9-8.9c4.9,0,8.9,4,8.9,8.9V309.3z M300.5,309.3c0,4.9-4,8.9-8.9,8.9
-				s-8.9-4-8.9-8.9v-35.5c0-4.9,4-8.9,8.9-8.9s8.9,4,8.9,8.9V309.3z"/>
-		</g>
-	</g>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91.014" height="102.945" viewBox="0 0 91.014 102.945">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.007" x2="0.5" y2="1.007" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dafcb3"/>
+      <stop offset="1" stop-color="#49d649"/>
+    </linearGradient>
+  </defs>
+  <g id="icon_chef" transform="translate(-122.5 -105)">
+    <g id="Group_5" data-name="Group 5" transform="translate(122.5 105)">
+      <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
+        <path id="Path_18" data-name="Path 18" d="M134.635,204.911a3.041,3.041,0,0,0,3.034,3.034h60.676a3.041,3.041,0,0,0,3.034-3.034V189.776H134.635Zm57.642-87.81a20.664,20.664,0,0,0-4.84.545,21.249,21.249,0,0,0-38.86,0,20.872,20.872,0,0,0-4.84-.545,21.2,21.2,0,0,0-9.1,40.36v26.247h66.744V157.461a21.2,21.2,0,0,0-9.1-40.36Zm-33.372,57.54a3.034,3.034,0,1,1-6.068,0v-12.1a3.034,3.034,0,1,1,6.068,0Zm12.135,0a3.034,3.034,0,1,1-6.068,0v-12.1a3.034,3.034,0,0,1,6.068,0Zm12.135,0a3.034,3.034,0,1,1-6.068,0v-12.1a3.034,3.034,0,1,1,6.068,0Z" transform="translate(-122.5 -105)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
 </svg>
