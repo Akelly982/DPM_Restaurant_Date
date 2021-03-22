@@ -59,6 +59,66 @@
         </div>
     </section>
     <!-- END: Services List -->
+    <!-- START: JOIN NOW for users -->
+    <section>
+        <div class="home_joinNow">
+            <div class="home_joinNow_bg">
+                <div class="home_joinNow_bg_cover"></div>
+            </div>
+            <div class="home_joinNow_contents">
+                <div class="home_joinNow_img"></div>
+                <div class="home_joinNow_text">
+                    <h2>Food and Drink are important for the relationship</h2>
+                    <div class="home_joinNow_text_block">
+                        <p>Every one use the restaurants for the special occasion such as go to the date, start the relationship, and more…</p>
+                        <p>Do you have an experience that it is hard to decide where you go to the restaurant on the first date?</p>
+                        <p>Do not worry, you can find similar sense of restaurant person here.</p>
+                        <p>Food and drink are part of our life. That is why, in the relationship, if the couple has similar sense of food and drink, it will make a great relationship.</p>
+                    </div>
+                    <div class="btn_w_p">
+                        <a href="">JOIN NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: JOIN NOW for users -->
+    <!-- START: JOIN NOW for users -->
+    <section>
+        <div class="home_restJoin">
+            <div class="home_restJoin_text">
+                <h2>Promote your restaurant</h2>
+                    <div class="home_restJoin_text_block">
+                        <p>If you are restaurant owner, create your page for promoting your business. You can have a restaurant page for FREE!</p>
+                        <p>Additionally, users reviews could be great benefit for your business.</p>
+                    </div>
+                <div class="btn_black">
+                    <a href="">Create your page</a>
+                </div>
+            </div>        
+            <div class="home_restJoin_img"></div>
+        </div>
+    </section>
+    <!-- END: JOIN NOW for users -->
+    <!-- START: Search -->
+    <section>
+        <div class="home_search">
+            <h2>Search The Restaurants</h2>
+            <form method="get" action="">
+                <div class="home_search_box">
+                    <input type="search" placeholder="Start typing to find!" value="" class="home_search_text"><button type="submit" id="rest_search" value=""><img src="img/icon_search.svg" alt="search restaruant"></button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- END: Search -->
+    <!-- START: Separation -->
+    <div class="home_sepr"></div>
+    <!-- END: Separation -->
+
+
+
+
 <!-- END: Page Contents -->
 
 <!-- Begin: Get Footer -->

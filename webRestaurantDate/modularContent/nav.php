@@ -9,7 +9,7 @@
             <ul>
                 <li><a href="findRestraunts.php">Find Restaurants</a></li>
                 <li><a href="about.php">About</a></li>
-                <li>
+                <li class="btn_nev">
                     <a href="signUpPg1.php">
                         <span class="btn_s">SIGN UP</span>
                     </a>
