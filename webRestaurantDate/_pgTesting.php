@@ -128,10 +128,50 @@
 
 
         <!-- comment setup -->
+        <div class="rdCommentContentContainer">
+            <h2> Comments </h2>
+            <div class="rdCommentItemGrid">
+                <!-- items -->
+                <!-- multiples to ensure grid works the way i want it to  -->
+                <div class="rdCommentItem">
+                    <div class="rdCommentImg" style="background-image: url(userImage/tempUserImg.png);">
+                    </div>
+                    <h4 class="rdCommentTitle">Awsome Coffee</h4>
+                    <p class="rdCommentText">making it look like readable English. 
+                    Many desktop publishing packages and web page editors 
+                    now use Lorem Ipsum as their default model text
+                    </p>
+                </div>
 
-        <div class="commentGrid" id="commentContent">
-            <div class="commentItem">
-                <p> i am a comment </p>
+                <!-- Normal comment item with extended ammount of comment text to check item sizing -->
+                <div class="rdCommentItem">
+                    <div class="rdCommentImg" style="background-image: url(userImage/tempUserImg.png);">
+                    </div>
+                    <h4 class="rdCommentTitle">Awsome Coffee</h4>
+                    <p class="rdCommentText">making it look like readable English. 
+                    Many desktop publishing packages and web page editors 
+                    now use Lorem Ipsum as their default model text fadf
+                    making it look like readable English. 
+                    Many desktop publishing packages and web page editors 
+                    now use Lorem Ipsum as their default model text fadf
+                    making it look like readable English. 
+                    Many desktop publishing packages and web page editors 
+                    now use Lorem Ipsum as their default model text fadf
+                    </p>
+                </div>
+
+                <!--html base item while loading in comment items -->
+                <div class="rdCommentItem">
+                    <h2 class="rdCommentTitle">Loading in comments...</h2>
+                </div>
+
+                <!-- no comments founds  -->
+                <div class="rdCommentItem">
+                    <h4 class="rdCommentTitle">No comments found be the first to review this new restraunt. 
+                        Add a comment by clicking the button just above. 
+                    </h4>
+                </div>
+
             </div>
         </div>
 

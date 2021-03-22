@@ -684,4 +684,130 @@ body {
 .findResContainer .findResContentItem .frBtn {
   text-align: center;
 }
+
+.rdTitleContainer {
+  font-weight: bold;
+  background-color: lightgray;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.restrauntDetailHero {
+  width: 100%;
+  background-color: lightsteelblue;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restrauntDetailHero .restrauntDetailTextContainer {
+  background-color: white;
+  max-height: 400px;
+  max-width: 40%;
+}
+
+.rdAddCommentForm {
+  text-align: center;
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.rdAddCommentForm .rdRadioBtnCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rdAddCommentForm .rdRadioBtnCont .rdYesRadioBtn {
+  padding-right: 20px;
+}
+
+.rdAddCommentForm .rdRadioBtnCont .rdNoRadioBtn {
+  padding-left: 20px;
+}
+
+.rdCommentContentContainer {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: lightgray;
+}
+
+.rdCommentContentContainer .rdCommentItemGrid {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  padding: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 25px;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.rdCommentContentContainer .rdCommentItem {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: Column;
+          flex-direction: Column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.rdCommentContentContainer .rdCommentItem .rdCommentImg {
+  background-size: cover;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.rdCommentContentContainer .rdCommentItem .rdCommentTitle {
+  background-color: none;
+}
+
+.rdCommentContentContainer .rdCommentItem .rdCommentText {
+  background-color: none;
+}
 /*# sourceMappingURL=rd.css.map */

@@ -521,6 +521,10 @@ body{
 
 
 
+// ----------------------------------------
+// findRestraunt
+// -----------------------------------------
+
 .findResContainer{
     display: flex;
     flex-direction: row;
@@ -597,7 +601,156 @@ body{
             text-align: center; //dosent do anything but removes empty warning
         }
 
-
     }
 
 }
+
+
+
+
+
+// ----------------------------------------
+// restrauntDetail
+// -----------------------------------------
+
+
+
+
+//restraunt section
+.rdTitleContainer{
+    font-weight: bold;
+    background-color: lightgray;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.restrauntDetailHero{
+    width: 100%;
+    background-color: lightsteelblue;
+    //background-image: src="";  //setup background image
+    height: 600px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .restrauntDetailTextContainer{
+        background-color: white;
+        max-height: 400px;
+        max-width: 40%;
+    }
+
+}
+
+
+
+//add comment
+.rdAddCommentForm{
+    text-align: center;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    .rdRadioBtnCont{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .rdYesRadioBtn{
+            padding-right: 20px;
+        }
+        .rdNoRadioBtn{
+            padding-left: 20px;
+        }
+    }
+
+}
+
+
+
+// comment section
+
+.rdCommentContentContainer{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    text-align: center;
+    background-color:  lightgray;
+    
+    
+    .rdCommentItemGrid{
+
+        justify-self: center;
+        align-self: center;
+        width: 100%; //content column
+        height: auto;
+        min-height: 150px;
+        padding: 25px;
+        padding-left: 100px;
+        padding-right: 100px;
+        //background-color:peachpuff;
+        display:grid;
+        grid-gap: 25px;
+        grid-template-columns: 33% 33% 33%; //Note dont use commas
+        grid-template-rows: auto;
+        
+    }
+
+    .rdCommentItem{
+        padding: 10px;
+        //this allows item to follow parent grid
+        width:100%;
+        //height however is determined by item
+        height: auto;
+        min-height: 300px;
+        background-color: white;
+        display:flex;
+        flex-direction: Column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        .rdCommentImg{
+
+            //background-color: peachpuff;
+            //background image set in html by js (on doc item load)
+            background-size: cover;
+            min-width: 100px;
+            min-height:  100px;
+            max-width: 250px;
+            max-height: 250px;
+            //width: 250px; 
+            //height: 250px;
+        }
+
+        .rdCommentTitle{
+            background-color: none; // did this to remove unused class underline
+            //background-color: lightseagreen;
+        }
+
+        .rdCommentText{
+            background-color: none; // did this to remove unused class underline
+
+            // use bellow if you need to cut overflow from text 
+            // comment section will adjust based on largets item per row
+
+            // max-width: 500px;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 10; /* number of lines to show */
+            // -webkit-box-orient: vertical; 
+        }
+    }
+    
+    
+}
+
+
+
+
+
+
+
+

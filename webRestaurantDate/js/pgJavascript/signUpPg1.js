@@ -3,7 +3,7 @@ var signUpUserRadio = document.querySelector("#signUpUser");  //value="1"
 var signUpResRadio = document.querySelector("#signUpRes");    //value="2"
 
 var myform = document.querySelector("#userForm");
-var signUpBtn = document.querySelector("#signUpPgSubmitBtn")
+var signUpBtn = document.querySelector("#signUpPgSubmitBtn");
 
 
 // //init form to go to user

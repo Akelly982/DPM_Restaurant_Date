@@ -6,7 +6,7 @@
 // html we are trying to create
 
 //<div id="userNav">
-//    <p>myName</p>
+//    <span>myName</span>
 //    <a href="logout.php">Logout</a>
 //    <a href="userSettings">Settings</a>
 //    <input type="hidden" id="currentUserId" value="">
@@ -50,9 +50,9 @@ function displayUserDataNav(doc){
     // empty nav element for rebuild
     navUser.innerHTML = "";
     
-    
+
     // create elements
-    let uName = document.createElement("p");
+    let uName = document.createElement("span"); //changed to span to not affect nav layout
     let uLogout = document.createElement("a");
     let uSettings = document.createElement("a");
     let uInputId = document.createElement("input");
@@ -64,7 +64,7 @@ function displayUserDataNav(doc){
     //var isUser = doc.contains("username");  //didnt work  
     //var isUser = doc.getBoolean("username"); //didnt work
 
-    //both userTypes now have username;
+    //BOTH USERTYPES NOW HAVE USERNAME;
     
     var isUser = doc.data().username;   //either will or wont get a value one will result null
     var isRes = doc.data().resName;
@@ -158,11 +158,9 @@ firebase.auth().onAuthStateChanged((user) => {
                     displayUserDataNav(doc);
                 }else{
                     //cant find user doc connect to AUTH user in RESTRAUNT collection
-                    //console.log("no such document in Restraunts collection.");
+                    //console.log("no such document in Restraunts or Users collection.");
                 }
             });
-            //cant find user doc connect to AUTH user in USERS collection
-            //console.log("no such document in Restraunts collection.");
         }
     });
   } else {
