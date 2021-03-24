@@ -33,7 +33,7 @@
             <h2 id="rdName">Restraunt Name</h2>
         </div>
         
-        <div class="restrauntDetailHero">   
+        <div class="restrauntDetailHero" id="resHeroImg" style="background-image: url(userImage/tempResHeroImg.png);"">
             <div class="restrauntDetailTextContainer">
                 <p id="rdSummary">Lorem Ipsum is simply dummy text of the printing 
                 and typesetting industry. Lorem Ipsum has been the industry's 

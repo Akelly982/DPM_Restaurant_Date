@@ -2,9 +2,11 @@
 // name
 // summary 
 // address
+// resHeroImg
 var resNameElement = document.getElementById("rdName");
 var resSummaryElement = document.getElementById("rdSummary");
 var resAddressElement = document.getElementById("rdAddress");
+var resHeroImg = document.getElementById("resHeroImg");
 
 
 //get item grid for restraunt detail comments
@@ -60,6 +62,8 @@ function setRestrauntData(doc){
     resNameElement.innerHTML = doc.data().resName;
     resSummaryElement.innerHTML = doc.data().summary;
     resAddressElement.innerHTML = "Location: " + doc.data().address;
+    //resHeroImg.setAttribute("script", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
+    //console.log("background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");" );
 }
 
 
@@ -71,7 +75,7 @@ function setRestrauntDataError(){
 function createCommentItem(doc){
     
 
-    // item to create
+    // item to create-------------
     // <div class="rdCommentItem">
     //     <div class="rdCommentImg" style="background-image: url(userImage/tempUserImg.png);">
     //     </div>
@@ -103,7 +107,7 @@ function createCommentItem(doc){
 
 function createCommentNoItemFound(){
 
-    // item to create 
+    // item to create --------------------
     // <!-- no comments found  -->
     // <div class="rdCommentItem">
     //     <h4 class="rdCommentTitle">No comments found be the first to review this new restraunt. 
