@@ -32,6 +32,7 @@ submitBtn.addEventListener('click', (e) =>{
     var gender = myForm.gender.value;
     var birthday = myForm.birthday.value;
     var height = myForm.birthday.value;
+    var smoker = myForm.smoker.value;
     
     var summary = document.querySelector('#taSummary').value;
     
@@ -50,9 +51,15 @@ submitBtn.addEventListener('click', (e) =>{
         summary: summary,
         birthday: birthday,
         height: height,
+        smoker: smoker,
         //set up with temp image and ext
         imgPath: "tempUserImg",
         imgExt: ".png",
+        iconImgPath: "tempUserIconImg",
+        iconImgExt: ".png",
+        heroImgPath: "tempUserHeroImg",
+        heroImgExt: ".png",
+        galleryCSV: "tempUserGalleryImg1.png,tempUserGalleryImg2.png",
         userType: "user"
     })    
     .then((docRef) => {

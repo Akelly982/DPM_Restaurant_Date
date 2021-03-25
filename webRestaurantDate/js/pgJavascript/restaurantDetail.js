@@ -13,10 +13,16 @@ var resHeroImg = document.getElementById("resHeroImg");
 var commentGrid = document.querySelector("#rdCommentGrid");
 
 //get resId (hidden at top of page)
-var resId = document.getElementById("restrauntId").value;
+var resId = document.getElementById("restaurantId").value;
 //console.log(resId);
 
+var addCommentBtn = document.getElementById("rdAddCommentBtn");
+var yesRadio = document.getElementById("rdYesRadio");
+var noRadio = document.getElementById("rdNoRadio");
 
+
+
+//initialize user as false
 var isUser = false;
 var isRestraunt = false;
 
@@ -31,10 +37,10 @@ firebase.auth().onAuthStateChanged((user) => {
                   var userId = user.uid;
             }else{
                 //check in restraunt's collection
-                db.collection("restraunts").doc(user.uid).get().then((doc) =>{
+                db.collection("restaurant").doc(user.uid).get().then((doc) =>{
                     if(doc.exists){
-                      console.log("restraunt user found for jsResDetail");
-                      var isRestraunt = true;
+                      console.log("restaurant user found for jsResDetail");
+                      isRestraunt = true;
                     }else{
                       //cant find user doc connect to AUTH user in RESTRAUNT collection
                       console.log("no such document in Restraunts or User collection");
@@ -62,7 +68,7 @@ function setRestrauntData(doc){
     resNameElement.innerHTML = doc.data().resName;
     resSummaryElement.innerHTML = doc.data().summary;
     resAddressElement.innerHTML = "Location: " + doc.data().address;
-    //resHeroImg.setAttribute("script", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
+    //resHeroImg.setAttribute("style", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
     //console.log("background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");" );
 }
 
@@ -161,7 +167,8 @@ function checkSnapshotAndRenderDoc(snapshot){
 
 //--------on js load ---------------------------------
 
-db.collection('restraunts').doc(resId).get().then((doc) =>{
+//setup restraunt data
+db.collection('restaurants').doc(resId).get().then((doc) =>{
     if (doc.exists) {
         setRestrauntData(doc);
     } else {
@@ -174,7 +181,8 @@ db.collection('restraunts').doc(resId).get().then((doc) =>{
 });
 
 
-db.collection('restraunts').doc(resId).collection("comments").get().then((snapshot) => {
+// get comments on the restraunt
+db.collection('restaurants').doc(resId).collection("comments").get().then((snapshot) => {
     checkSnapshotAndRenderDoc(snapshot);
 });
 

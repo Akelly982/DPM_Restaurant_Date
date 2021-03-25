@@ -99,7 +99,7 @@ function createRestrauntItem(doc){
         // I did this so you can share your resDetail pg's with fellow fellas and shellas
 
     detailsPgBtn.addEventListener('click', (event) => {
-        window.location.href = 'restrauntDetail.php' + "?restrauntName=" + doc.data().resName +"&restrauntId=" + doc.id;
+        window.location.href = 'restaurantDetail.php' + "?restaurantName=" + doc.data().resName +"&restaurantId=" + doc.id;
     })
 
 
@@ -182,7 +182,7 @@ function emptyParentContent(){
 
 function searchCriteriaBtn(searchStr){
     
-    db.collection('restraunts').where('category1', '==', searchStr  ||  
+    db.collection('restaurants').where('category1', '==', searchStr  ||  
                                       'category2', '==', searchStr  || 
                                       'category3', '==', searchStr).get().then((snapshot) => {
         checkSnapRenderDoc(snapshot);
@@ -230,7 +230,7 @@ function checkSnapRenderDoc(snapshot){
 //------------------------------------------------------
 
 //on js load code
-db.collection('restraunts').get().then((snapshot) => {
+db.collection('restaurants').get().then((snapshot) => {
     checkSnapRenderDoc(snapshot);
 })
 
@@ -263,7 +263,7 @@ searchByNameBtn.addEventListener("click", (e) =>{
         alert("search text field is empty");
 
     }else{
-        db.collection('restraunts').where('resName', '==', userStr).get().then((snapshot) => {
+        db.collection('restaurants').where('resName', '==', userStr).get().then((snapshot) => {
             checkSnapRenderDoc(snapshot);
         }) 
         

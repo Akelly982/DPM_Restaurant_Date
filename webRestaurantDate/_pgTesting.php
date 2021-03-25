@@ -127,6 +127,23 @@
         <div class="spacer"></div>
 
 
+        <!-- add comment button plus radio -->
+        <div class="rdAddCommentForm">
+            <h3> Is this restaurant interesting to you </h3>
+            <div class="rdRadioBtnCont">
+                <div id="rdYesBtn" class="rdYesRadioBtn rdActiveRadioBtn">
+                    <p>YES!</p>
+                </div>
+                <div id="rdNoBtn" class="rdNoRadioBtn">
+                    <p>...Nope</p>
+                </div>
+            </div>
+            <h3>Do you have a vibe for this restraunt?</h3>
+            <button id="rdAddCommentBtn"> Leave a comment </button>
+        </div>
+
+
+
         <!-- comment setup -->
         <div class="rdCommentContentContainer">
             <h2> Comments </h2>

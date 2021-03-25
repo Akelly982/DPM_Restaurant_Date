@@ -152,7 +152,7 @@ firebase.auth().onAuthStateChanged((user) => {
         }else{
                 
             //check in restraunt's collection
-            db.collection("restraunts").doc(user.uid).get().then((doc) =>{
+            db.collection("restaurants").doc(user.uid).get().then((doc) =>{
                 if(doc.exists){
                     //display data in nav
                     displayUserDataNav(doc);

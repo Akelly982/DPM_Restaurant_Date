@@ -66,6 +66,6 @@
     <script src="js/firebaseUser.js"></script>
 
     <!-- javascript for the page that we are on -->
-    <script src="js/pgJavascript/findRestraunts.js"></script>
+    <script src="js/pgJavascript/findRestaurants.js"></script>
 
 </html>
