@@ -8,7 +8,6 @@ var resSummaryElement = document.getElementById("rdSummary");
 var resAddressElement = document.getElementById("rdAddress");
 var resHeroImg = document.getElementById("resHeroImg");
 
-
 //get item grid for restraunt detail comments
 var commentGrid = document.querySelector("#rdCommentGrid");
 
@@ -16,15 +15,15 @@ var commentGrid = document.querySelector("#rdCommentGrid");
 var resId = document.getElementById("restaurantId").value;
 //console.log(resId);
 
-var addCommentBtn = document.getElementById("rdAddCommentBtn");
-var yesRadio = document.getElementById("rdYesRadio");
-var noRadio = document.getElementById("rdNoRadio");
+var commentForm = document.getElementById("rdAddCommentF");
+var commentFormBtn = document.getElementById("rdAddCommentBtn");
 
 
 
 //initialize user as false
 var isUser = false;
 var isRestraunt = false;
+var userId = undefined;
 
 // check for user 
 firebase.auth().onAuthStateChanged((user) => {
@@ -32,14 +31,14 @@ firebase.auth().onAuthStateChanged((user) => {
         //check in user's collection
         db.collection("users").doc(user.uid).get().then((doc) =>{
             if(doc.exists){
-                  console.log("user found for jsResDetail");
+                  //console.log("user found for jsResDetail");
                   isUser = true;
-                  var userId = user.uid;
+                  userId = user.uid;     //NOTE must be declared within scope
             }else{
                 //check in restraunt's collection
                 db.collection("restaurant").doc(user.uid).get().then((doc) =>{
                     if(doc.exists){
-                      console.log("restaurant user found for jsResDetail");
+                      //console.log("restaurant user found for jsResDetail");
                       isRestraunt = true;
                     }else{
                       //cant find user doc connect to AUTH user in RESTRAUNT collection
@@ -59,6 +58,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 //----------functions---------------------------
 
+
+
 function emptyParentContent(){
     commentGrid.innerHTML = "";
 }
@@ -72,7 +73,7 @@ function setRestrauntData(doc){
     //console.log("background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");" );
 }
 
-
+// if you enter your own GET METHOD IN URL and it is incorrect
 function setRestrauntDataError(){
     resNameElement.innerHTML = "Error unknown restraunt";
 }
@@ -185,6 +186,48 @@ db.collection('restaurants').doc(resId).get().then((doc) =>{
 db.collection('restaurants').doc(resId).collection("comments").get().then((snapshot) => {
     checkSnapshotAndRenderDoc(snapshot);
 });
+
+
+
+//------- buttons ----------------------------------------
+
+commentFormBtn.addEventListener('click', (event) =>{
+    event.preventDefault();
+
+    //check user loggin status (must be standard user)
+    var myCheckerBool = false;
+
+    if(isUser){
+        myCheckerBool = true;
+    }else if(isRestraunt){
+        //res not allowed to comment on other restaurant
+        alert("Restaurants are not allowed to comment on other restaurants");   
+    }else{
+        alert("To make comments you must be logged in as a non restaurant");
+        window.location.href = 'signUpPg1.php';
+    }
+
+
+    // check to ensure radio btn has been hit
+    if(myCheckerBool){
+        //get radio value (isPositive)
+        isPosReview = commentForm.userReviewIsPos.value;
+        console.log("isPosValue = " + isPosReview);
+
+        //check for valid radio response (is not null really, I dont preset value so user has to choose)
+        if(isPosReview == "true" || isPosReview == "false"){ 
+            alert("success ready to go current user = " + userId);
+        }else{
+            alert("Please select if the restraunt was interesting to you?");
+        }
+    }
+
+
+})
+
+
+
+
 
 
 

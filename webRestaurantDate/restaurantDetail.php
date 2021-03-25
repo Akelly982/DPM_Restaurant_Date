@@ -44,31 +44,34 @@
             </div>
         </div>
 
-
+        <!-- gallery component -->
         <div class="rdGalleryContentContainer">
-            <h2> Comments </h2>
+            <h2> Gallery </h2>
             <div class="rdGalleryItemGrid" id="rdGalleryGrid">
-                <div class="rdCommentItem">
-                    <h2 class="rdCommentTitle">Loading in comments...</h2>
+                <div class="rdGaleryItem">
+                    <h2 class="rdGalleryTitle">Loading in images...</h2>
                 </div>
             </div>
         </div>
 
 
-        <div class="rdAddCommentForm">
+        <!--  add comment component -->
+        <form class="rdAddCommentForm" id="rdAddCommentF">
             <h3> Is this restaurant interesting to you </h3>
-            <div class="rdRadioBtnCont">
-                <div id="rdYesBtn" class="rdYesRadioBtn">
-                    <p>YES!</p>
-                </div>
-                <div id="rdNoBtn" class="rdNoRadioBtn">
-                    <p>...Nope</p>
-                </div>
-            </div>
+
+            <input type="radio" id="posReview" name="userReviewIsPos" value="true">
+            <label for="posReview">YES!!!</label>
+
+            <input type="radio" id="negReview" name="userReviewIsPos" value="false">
+            <label for="negReview">...Nope</label>
+
             <h3>Do you have a vibe for this restraunt?</h3>
             <button id="rdAddCommentBtn"> Leave a comment </button>
-        </div>
+        </form>
 
+
+
+        <!-- comment section grid -->
         <div class="rdCommentContentContainer">
             <h2> Comments </h2>
             <div class="rdCommentItemGrid" id="rdCommentGrid">
