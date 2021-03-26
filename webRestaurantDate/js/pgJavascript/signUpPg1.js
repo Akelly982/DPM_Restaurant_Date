@@ -1,7 +1,5 @@
 
-var signUpUserRadio = document.querySelector("#signUpUser");  //value="1"
-var signUpResRadio = document.querySelector("#signUpRes");    //value="2"
-
+   
 var myform = document.querySelector("#userForm");
 var signUpBtn = document.querySelector("#signUpPgSubmitBtn");
 
@@ -43,7 +41,7 @@ signUpPgSubmitBtn.addEventListener('click', (e) =>{
     console.log("userType: " + userType);
 
 
-    if(userType == "user" || userType == "restraunt"){  // 1 == user //2 == restraunt
+    if(userType == "user" || userType == "restaurant"){  
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -60,13 +58,13 @@ signUpPgSubmitBtn.addEventListener('click', (e) =>{
                     window.location.href = 'signUpUserPg2.php'  + "?user=" + user.uid + "&email=" + email; 
                     break;
     
-                case "restraunt": // restraunt
+                case "restaurant": // restraunt
                     //alert("case res hit");
-                    window.location.href = 'signUpRestrauntPg2.php'  + "?user=" + user.uid + "&email=" + email; 
+                    window.location.href = 'signUpRestaurantPg2.php'  + "?user=" + user.uid + "&email=" + email; 
                     break;
     
                 default:
-                    alert("user created but unkown userType");
+                    alert("user created but unkown userType for page selection");
                     break;
     
             }
@@ -81,6 +79,7 @@ signUpPgSubmitBtn.addEventListener('click', (e) =>{
             console.log("error Msg: " + error.message);
             alert("error Msg: " + error.message);
         });
+        
     }else{
         alert("Error: Are you a user or a restraunt?");
     }

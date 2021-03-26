@@ -26,7 +26,7 @@
     
     
     <body>
-        <h1> add user</h1>
+        <h1> Add user</h1>
 
         <form id="addUserForm">
             <label>First Name:</label>
@@ -49,6 +49,9 @@
 
             <label>Height:</label>
             <input type="number" name="height">
+
+            <label>Smoker:</label>
+            <input type="text" name="smoker" placeholder="yes / no">
 
 
             <!-- hidden inputs -->

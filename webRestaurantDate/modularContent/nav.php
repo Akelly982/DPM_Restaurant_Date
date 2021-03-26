@@ -7,7 +7,7 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="findRestraunts.php">Find Restaurants</a></li>
+                <li><a href="findRestaurants.php">Find Restaurants</a></li>
                 <li><a href="about.php">About</a></li>
                 <li class="btn_nev" id="userNav">
                     <a href="signUpPg1.php">

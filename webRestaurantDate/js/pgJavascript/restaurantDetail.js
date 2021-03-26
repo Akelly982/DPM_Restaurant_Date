@@ -2,21 +2,28 @@
 // name
 // summary 
 // address
+// resHeroImg
 var resNameElement = document.getElementById("rdName");
 var resSummaryElement = document.getElementById("rdSummary");
 var resAddressElement = document.getElementById("rdAddress");
-
+var resHeroImg = document.getElementById("resHeroImg");
 
 //get item grid for restraunt detail comments
 var commentGrid = document.querySelector("#rdCommentGrid");
 
 //get resId (hidden at top of page)
-var resId = document.getElementById("restrauntId").value;
+var resId = document.getElementById("restaurantId").value;
 //console.log(resId);
 
+var commentForm = document.getElementById("rdAddCommentF");
+var commentFormBtn = document.getElementById("rdAddCommentBtn");
 
+
+
+//initialize user as false
 var isUser = false;
 var isRestraunt = false;
+var userId = undefined;
 
 // check for user 
 firebase.auth().onAuthStateChanged((user) => {
@@ -24,15 +31,15 @@ firebase.auth().onAuthStateChanged((user) => {
         //check in user's collection
         db.collection("users").doc(user.uid).get().then((doc) =>{
             if(doc.exists){
-                  console.log("user found for jsResDetail");
+                  //console.log("user found for jsResDetail");
                   isUser = true;
-                  var userId = user.uid;
+                  userId = user.uid;     //NOTE must be declared within scope
             }else{
                 //check in restraunt's collection
-                db.collection("restraunts").doc(user.uid).get().then((doc) =>{
+                db.collection("restaurant").doc(user.uid).get().then((doc) =>{
                     if(doc.exists){
-                      console.log("restraunt user found for jsResDetail");
-                      var isRestraunt = true;
+                      //console.log("restaurant user found for jsResDetail");
+                      isRestraunt = true;
                     }else{
                       //cant find user doc connect to AUTH user in RESTRAUNT collection
                       console.log("no such document in Restraunts or User collection");
@@ -51,6 +58,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 //----------functions---------------------------
 
+
+
 function emptyParentContent(){
     commentGrid.innerHTML = "";
 }
@@ -60,9 +69,11 @@ function setRestrauntData(doc){
     resNameElement.innerHTML = doc.data().resName;
     resSummaryElement.innerHTML = doc.data().summary;
     resAddressElement.innerHTML = "Location: " + doc.data().address;
+    //resHeroImg.setAttribute("style", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
+    //console.log("background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");" );
 }
 
-
+// if you enter your own GET METHOD IN URL and it is incorrect
 function setRestrauntDataError(){
     resNameElement.innerHTML = "Error unknown restraunt";
 }
@@ -71,7 +82,7 @@ function setRestrauntDataError(){
 function createCommentItem(doc){
     
 
-    // item to create
+    // item to create-------------
     // <div class="rdCommentItem">
     //     <div class="rdCommentImg" style="background-image: url(userImage/tempUserImg.png);">
     //     </div>
@@ -103,7 +114,7 @@ function createCommentItem(doc){
 
 function createCommentNoItemFound(){
 
-    // item to create 
+    // item to create --------------------
     // <!-- no comments found  -->
     // <div class="rdCommentItem">
     //     <h4 class="rdCommentTitle">No comments found be the first to review this new restraunt. 
@@ -157,7 +168,8 @@ function checkSnapshotAndRenderDoc(snapshot){
 
 //--------on js load ---------------------------------
 
-db.collection('restraunts').doc(resId).get().then((doc) =>{
+//setup restraunt data
+db.collection('restaurants').doc(resId).get().then((doc) =>{
     if (doc.exists) {
         setRestrauntData(doc);
     } else {
@@ -170,9 +182,52 @@ db.collection('restraunts').doc(resId).get().then((doc) =>{
 });
 
 
-db.collection('restraunts').doc(resId).collection("comments").get().then((snapshot) => {
+// get comments on the restraunt
+db.collection('restaurants').doc(resId).collection("comments").get().then((snapshot) => {
     checkSnapshotAndRenderDoc(snapshot);
 });
+
+
+
+//------- buttons ----------------------------------------
+
+commentFormBtn.addEventListener('click', (event) =>{
+    event.preventDefault();
+
+    //check user loggin status (must be standard user)
+    var myCheckerBool = false;
+
+    if(isUser){
+        myCheckerBool = true;
+    }else if(isRestraunt){
+        //res not allowed to comment on other restaurant
+        alert("Restaurants are not allowed to comment on other restaurants");   
+    }else{
+        alert("To make comments you must be logged in as a non restaurant");
+        window.location.href = 'signUpPg1.php';
+    }
+
+
+    // check to ensure radio btn has been hit
+    if(myCheckerBool){
+        //get radio value (isPositive)
+        isPosReview = commentForm.userReviewIsPos.value;
+        console.log("isPosValue = " + isPosReview);
+
+        //check for valid radio response (is not null really, I dont preset value so user has to choose)
+        if(isPosReview == "true" || isPosReview == "false"){ 
+            alert("success ready to go current user = " + userId);
+        }else{
+            alert("Please select if the restraunt was interesting to you?");
+        }
+    }
+
+
+})
+
+
+
+
 
 
 

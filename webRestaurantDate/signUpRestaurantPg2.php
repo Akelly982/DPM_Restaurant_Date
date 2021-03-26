@@ -40,7 +40,7 @@
             <label>last name:</label>
             <input type="text" name="lastName">
 
-            <label>Restraunt name:</label>
+            <label>Restaurant name:</label>
             <input type="text" name="resName">
             
             <label>Address:</label>

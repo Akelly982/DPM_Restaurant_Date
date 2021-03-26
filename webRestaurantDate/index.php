@@ -135,5 +135,4 @@
 
     <!-- javascript for the page that we are on -->
     <script src="js/firebaseUser.js"></script>
-    <script src="js/pgJavascript/home.js"></script>
 <!-- Finish: Connect to the Firebase  -->

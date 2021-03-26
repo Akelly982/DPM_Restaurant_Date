@@ -1,7 +1,7 @@
 
     <?php 
-        $resId = $_GET["restrauntId"];
-        $resName = $_GET["restrauntName"];
+        $resId = $_GET["restaurantId"];
+        $resName = $_GET["restaurantName"];
         //echo "<p>".$resId."</p>";
         //echo "<p>".$resName."</p>";
     ?>
@@ -16,7 +16,7 @@
     <!-- Finish: Get Header -->
 
     <!-- hide resId at top for firestore search -->
-    <input type="hidden" id="restrauntId" value="<?php echo $resId ?>"> 
+    <input type="hidden" id="restaurantId" value="<?php echo $resId ?>"> 
 
     <?php
         include "modularContent/nav.php"
@@ -33,8 +33,8 @@
             <h2 id="rdName">Restraunt Name</h2>
         </div>
         
-        <div class="restrauntDetailHero">   
-            <div class="restrauntDetailTextContainer">
+        <div class="restaurantDetailHero" id="resHeroImg" style="background-image: url(userImage/tempResHeroImg.png);"">
+            <div class="restaurantDetailTextContainer">
                 <p id="rdSummary">Lorem Ipsum is simply dummy text of the printing 
                 and typesetting industry. Lorem Ipsum has been the industry's 
                 standard dummy text ever since the 1500s, when an unknown printer 
@@ -44,26 +44,34 @@
             </div>
         </div>
 
-
-        <!-- <div class="restrauntDetailGallery">
-            
-        </div> -->
-
-
-        <div class="rdAddCommentForm">
-            <h3> Is this restaurant interesting to you </h3>
-            <div class="rdRadioBtnCont">
-                <div id="rdYesBtn" class="rdYesRadioBtn">
-                    <p>YES!</p>
-                </div>
-                <div id="rdNoBtn" class="rdNoRadioBtn">
-                    <p>...nope</p>
+        <!-- gallery component -->
+        <div class="rdGalleryContentContainer">
+            <h2> Gallery </h2>
+            <div class="rdGalleryItemGrid" id="rdGalleryGrid">
+                <div class="rdGalleryItem">
+                    <h2 class="rdGalleryText">Loading in images...</h2>
                 </div>
             </div>
-            <h3>Do you have a vibe for this restraunt?</h3>
-            <button id="rdAddCommentBtn"> Leave a comment </button>
         </div>
 
+
+        <!--  add comment component -->
+        <form class="rdAddCommentForm" id="rdAddCommentF">
+            <h3> Is this restaurant interesting to you </h3>
+
+            <input type="radio" id="posReview" name="userReviewIsPos" value="true">
+            <label for="posReview">YES!!!</label>
+
+            <input type="radio" id="negReview" name="userReviewIsPos" value="false">
+            <label for="negReview">...Nope</label>
+
+            <h3>Do you have a vibe for this restraunt?</h3>
+            <button id="rdAddCommentBtn"> Leave a comment </button>
+        </form>
+
+
+
+        <!-- comment section grid -->
         <div class="rdCommentContentContainer">
             <h2> Comments </h2>
             <div class="rdCommentItemGrid" id="rdCommentGrid">
@@ -89,6 +97,6 @@
     <!-- javascript identify if user is logged in -->
     <script src="js/firebaseUser.js"></script>
     <!-- javascript for the page that we are on -->
-    <script src="js/pgJavascript/restrauntDetail.js"></script>
+    <script src="js/pgJavascript/restaurantDetail.js"></script>
 
 </html>

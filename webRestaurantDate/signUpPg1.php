@@ -29,8 +29,8 @@
             <input type="radio" id="signUpUser" name="userType" value="user">
             <label for="signUpUser">user</label>
 
-            <input type="radio" id="signUpRes" name="userType" value="restraunt">
-            <label for="signUpRes">restraunt</label>
+            <input type="radio" id="signUpRes" name="userType" value="restaurant">
+            <label for="signUpRes">restaurant</label>
             <br>
 
             <label>Email:</label>

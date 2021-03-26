@@ -41,16 +41,14 @@
     <!-- findRestraunt pg -->
     <div>
 
-
         <div class="spacer"></div>
-        
         <div style="spacer" >
             <h4 style="text-align:center;"> findRestraunt Items </h4>
         </div>
-
         <div class="spacer"></div>
         
         
+
         <div class="findResContainer">
             <div class="findResSearch">
                 <!-- Search field -->
@@ -68,8 +66,7 @@
             <div class="findResContentGrid"  id="resContent">
 
                     <!-- The item to be created in JS for every res returned -->
-                    <div class="findResContentItem">             
-                                                                     <!-- userImage/tempResImg.png -->
+                    <div class="findResContentItem">                                                       <!-- userImage/tempResImg.png -->
                         <div class="frImage" style="background-image: url(userImage/tempResImg.png);">
                         </div>
                         <div class="frText">
@@ -115,19 +112,77 @@
     
 
 
-
+    <!-- Restraunt Detail -->
     <div>
 
         <div class="spacer"></div>
-
         <div style="spacer" >
             <h4 style="text-align:center;"> restraunt detail pg </h4>
+        </div>
+        <div class="spacer"></div>
+
+
+
+        <div class="rdGalleryContentContainer">
+            <h2> Gallery </h2>
+            <div class="rdGalleryItemGrid" id="rdGalleryGrid">
+
+                <!-- generic on html load item -->
+                <div class="rdGalleryItem">
+                    <h2 class="rdGalleryText">Loading in images...</h2>
+                </div>
+
+                <!-- On found doc load item (gallery will be a CSV forEach loop)-->
+                <div class="rdGalleryItem" style="background-image: url(userImage/tempResImg.png);">
+                </div>
+
+                <!-- no gallery items found -->
+                <div class="rdGalleryItem">
+                    <h3 class="rdGalleryText">Gallery images for this restraunt have not been uploaded yet. Patience is a virtue..</h3>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- add comment button plus radio -->
+         <!--  V1   -->
+        <div class="rdAddCommentForm">
+            <h3> Is this restaurant interesting to you </h3>
+            <div class="rdRadioBtnCont">
+                <div id="rdYesBtn" class="rdYesRadioBtn rdActiveRadioBtn">
+                    <p>YES!</p>
+                </div>
+                <div id="rdNoBtn" class="rdNoRadioBtn">
+                    <p>...Nope</p>
+                </div>
+            </div>
+            <h3>Do you have a vibe for this restraunt?</h3>
+            <button id="rdAddCommentBtn"> Leave a comment </button>
         </div>
 
         <div class="spacer"></div>
 
+        <!-- add comment button plus radio -->
+         <!--  V2   -->
+        <form class="rdAddCommentForm">
+            <h3> Is this restaurant interesting to you </h3>
 
-        <!-- comment setup -->
+            <input type="radio" id="posReview" name="userReviewIsPos" value="true">
+            <label for="posReview">YES!!!</label>
+
+            <input type="radio" id="negReview" name="userReviewIsPos" value="false">
+            <label for="negReview">...Nope</label>
+
+            <h3>Do you have a vibe for this restraunt?</h3>
+            <button id="rdAddCommentBtn"> Leave a comment </button>
+        </form>
+
+
+
+        <!-- comment grid -->
         <div class="rdCommentContentContainer">
             <h2> Comments </h2>
             <div class="rdCommentItemGrid">

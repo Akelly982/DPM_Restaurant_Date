@@ -48,7 +48,7 @@ submitBtn.addEventListener('click', (e) =>{
     
 
     // add data to firestore using their authID
-    db.collection('restraunts').doc(authId).set({
+    db.collection('restaurants').doc(authId).set({
         username: username,
         firstName: firstName,
         lastName: lastName,
@@ -62,7 +62,12 @@ submitBtn.addEventListener('click', (e) =>{
         category3: category3,
         imgPath: "tempResImg",
         imgExt: ".png",
-        userType: "restraunt"
+        iconImgPath: "tempResIconImg",
+        iconImgExt: ".png",
+        heroImgPath: "tempResHeroImg",
+        heroImgExt: ".png",
+        galleryCSV: "tempResGalleryImg1.png,tempResGalleryImg2.png",
+        userType: "restaurants"
         
     })    
     .then((docRef) => {

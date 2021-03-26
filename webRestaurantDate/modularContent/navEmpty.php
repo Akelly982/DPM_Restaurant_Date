@@ -1,11 +1,25 @@
-<!doctype>
-<html lang="en">
-    <div class="nav">
-        <!-- available pages  -->
-        <div id="pgContent">
-            <a href="index.php">Home</a>
-            <a href="findRestraunts.php">Find Restraunts</a>
-        </div>
+
+
+<!-- dont show login / sign up here. this is 
+shown during that state -->
+<header>
+    <div class="hInner">
+        <h1>
+            <a href="index.php">
+                <img src="img/logo.svg" alt="foodies home page">
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="findRestaurants.php">Find Restaurants</a></li>
+                <li><a href="about.php">About</a></li>
+            </ul>
+        </nav>
     </div>
-    
-</html>
+</header>
+
+
+
+
+
+

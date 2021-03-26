@@ -618,8 +618,6 @@ body{
             //background image set in html by js (on doc item load)
             background-size: cover;
             width: 250px; 
-            // min-width: 50px; 
-            height: 250px;
         }
 
         .frText{
@@ -665,17 +663,19 @@ body{
 }
 
 
-.restrauntDetailHero{
+.restaurantDetailHero{
     width: 100%;
-    background-color: lightsteelblue;
-    //background-image: src="";  //setup background image
+    //background-color: lightsteelblue;
+    background-size: cover;
     height: 600px;
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 
-    .restrauntDetailTextContainer{
+    .restaurantDetailTextContainer{
+        padding-right: 20px;
+        padding-left: 20px;
         background-color: white;
         max-height: 400px;
         max-width: 40%;
@@ -684,8 +684,57 @@ body{
 }
 
 
+//restraunt gallery section
+.rdGalleryContentContainer{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    text-align: center;
+    background-color:  lightgray;
+    
+    
+    .rdGalleryItemGrid{
+        //background-color:peachpuff;
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+        height: auto;
+        min-height: 150px; //for row overall
+        padding: 25px;
+        padding-left: 100px;
+        padding-right: 100px;
+        display:grid;
+        grid-gap: 25px;
+        grid-template-columns: 25% 25% 25% 25%; 
+        grid-template-rows: auto;
+        
+    }
 
-//add comment
+    .rdGalleryItem{
+        width:100%; //this allows item to follow parent grid
+        height: 300px; //height however is determined by item (HERE)
+        border-radius: 10px;
+        background-position: center;
+        background-size: cover;
+        background-color: white;
+        background-repeat: no-repeat;
+        // flex needed to center text if text is shown 
+        // (loading in / no images found)
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .rdGalleryText{
+            margin: 40px;
+        }
+
+    }
+    
+}
+
+
+
+//add comment section
 .rdAddCommentForm{
     text-align: center;
     background-color: white;
@@ -697,11 +746,19 @@ body{
         flex-direction: row;
         justify-content: center;
 
+        .rdActiveRadioBtn{
+            border-radius: 10px;
+            border-color: red;
+            border: solid 2px;
+        }
+
         .rdYesRadioBtn{
-            padding-right: 20px;
+            margin-right: 20px;
+            padding: 5px;
         }
         .rdNoRadioBtn{
-            padding-left: 20px;
+            margin-left: 20px;
+            padding: 5px;
         }
     }
 
@@ -709,8 +766,7 @@ body{
 
 
 
-// comment section
-
+// existing user comments section
 .rdCommentContentContainer{
     padding-top: 50px;
     padding-bottom: 100px;
@@ -719,7 +775,7 @@ body{
     
     
     .rdCommentItemGrid{
-
+        //background-color:peachpuff;
         justify-self: center;
         align-self: center;
         width: 100%; //content column
@@ -728,7 +784,6 @@ body{
         padding: 25px;
         padding-left: 100px;
         padding-right: 100px;
-        //background-color:peachpuff;
         display:grid;
         grid-gap: 25px;
         grid-template-columns: 33% 33% 33%; //Note dont use commas
@@ -764,22 +819,20 @@ body{
         }
 
         .rdCommentTitle{
-            background-color: none; // did this to remove unused class underline
-            //background-color: lightseagreen;
+            margin-left: 40px;
+            margin-right: 40px;
         }
 
         .rdCommentText{
-            background-color: none; // did this to remove unused class underline
-
             // use bellow if you need to cut overflow from text 
             // comment section will adjust based on largets item per row
 
-            // max-width: 500px;
-            // overflow: hidden;
-            // text-overflow: ellipsis;
-            // display: -webkit-box;
-            // -webkit-line-clamp: 10; /* number of lines to show */
-            // -webkit-box-orient: vertical; 
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical; 
         }
     }
     
