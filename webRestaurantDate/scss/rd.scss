@@ -467,8 +467,47 @@ footer {
     }
 }
 
+// =======================================
+//
+// About Page
+//
+// =======================================
 
+.about_top {
+    background: url(../img/about_top.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    
+    .about_box {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        padding: 2rem;
+        h2 {
+            &::after {
+                content: " ";
+                background-color: #333;
+                height: 0.25rem;
+                width: 10rem;
+                display: block;
+                margin-left: -4rem;
+                margin-top: 1rem;
+            }
+                   
+        }
+    }
 
+          
+
+             
 
 
 /* ================================= */
@@ -746,11 +785,4 @@ body{
     
     
 }
-
-
-
-
-
-
-
-
+}

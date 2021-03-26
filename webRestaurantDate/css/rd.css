@@ -545,15 +545,52 @@ footer .footer_inner ul li a:hover {
   transition: all 0.5s ease;
 }
 
-/* ================================= */
-/* ================================= */
-/* ================================= */
-body {
+.about_top {
+  background: url(../img/about_top.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 100%;
+  /* ================================= */
+  /* ================================= */
+  /* ================================= */
+}
+
+.about_top .about_box {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: inline-block;
+  padding: 2rem;
+}
+
+.about_top .about_box h2::after {
+  content: " ";
+  background-color: #333;
+  height: 0.25rem;
+  width: 10rem;
+  display: block;
+  margin-left: -4rem;
+  margin-top: 1rem;
+}
+
+.about_top body {
   padding: 0;
   margin: 0px;
 }
 
-.nav {
+.about_top .nav {
   background-color: lightGrey;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -570,18 +607,18 @@ body {
           align-items: center;
 }
 
-.spacer {
+.about_top .spacer {
   background-color: lightsteelblue;
   height: 50px;
   width: 100%;
 }
 
-.frContentSpacer {
+.about_top .frContentSpacer {
   width: 100%;
   height: 100px;
 }
 
-.findResContainer {
+.about_top .findResContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -591,7 +628,7 @@ body {
           flex-direction: row;
 }
 
-.findResContainer .findResSearch {
+.about_top .findResContainer .findResSearch {
   background-color: lightblue;
   width: 20%;
   display: -webkit-box;
@@ -612,7 +649,7 @@ body {
   padding-right: 25px;
 }
 
-.findResContainer .findResSearch .frSearchField {
+.about_top .findResContainer .findResSearch .frSearchField {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,7 +659,7 @@ body {
           flex-direction: row;
 }
 
-.findResContainer .findResContentGrid {
+.about_top .findResContainer .findResContentGrid {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
@@ -643,7 +680,7 @@ body {
       grid-template-rows: auto;
 }
 
-.findResContainer .findResContentItem {
+.about_top .findResContainer .findResContentItem {
   width: 100%;
   height: auto;
   background-color: lightgrey;
@@ -659,19 +696,19 @@ body {
           justify-content: center;
 }
 
-.findResContainer .findResContentItem .frImage {
+.about_top .findResContainer .findResContentItem .frImage {
   background-color: peachpuff;
   background-size: cover;
   width: 250px;
   height: 250px;
 }
 
-.findResContainer .findResContentItem .frText {
+.about_top .findResContainer .findResContentItem .frText {
   background-color: lightseagreen;
   padding: 25px;
 }
 
-.findResContainer .findResContentItem .frSummary {
+.about_top .findResContainer .findResContentItem .frSummary {
   max-width: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -681,11 +718,11 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.findResContainer .findResContentItem .frBtn {
+.about_top .findResContainer .findResContentItem .frBtn {
   text-align: center;
 }
 
-.rdTitleContainer {
+.about_top .rdTitleContainer {
   font-weight: bold;
   background-color: lightgray;
   padding-top: 120px;
@@ -693,7 +730,7 @@ body {
   text-align: center;
 }
 
-.restrauntDetailHero {
+.about_top .restrauntDetailHero {
   width: 100%;
   background-color: lightsteelblue;
   height: 600px;
@@ -712,20 +749,20 @@ body {
           align-items: center;
 }
 
-.restrauntDetailHero .restrauntDetailTextContainer {
+.about_top .restrauntDetailHero .restrauntDetailTextContainer {
   background-color: white;
   max-height: 400px;
   max-width: 40%;
 }
 
-.rdAddCommentForm {
+.about_top .rdAddCommentForm {
   text-align: center;
   background-color: white;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.rdAddCommentForm .rdRadioBtnCont {
+.about_top .rdAddCommentForm .rdRadioBtnCont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -738,22 +775,22 @@ body {
           justify-content: center;
 }
 
-.rdAddCommentForm .rdRadioBtnCont .rdYesRadioBtn {
+.about_top .rdAddCommentForm .rdRadioBtnCont .rdYesRadioBtn {
   padding-right: 20px;
 }
 
-.rdAddCommentForm .rdRadioBtnCont .rdNoRadioBtn {
+.about_top .rdAddCommentForm .rdRadioBtnCont .rdNoRadioBtn {
   padding-left: 20px;
 }
 
-.rdCommentContentContainer {
+.about_top .rdCommentContentContainer {
   padding-top: 50px;
   padding-bottom: 100px;
   text-align: center;
   background-color: lightgray;
 }
 
-.rdCommentContentContainer .rdCommentItemGrid {
+.about_top .rdCommentContentContainer .rdCommentItemGrid {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
@@ -773,7 +810,7 @@ body {
       grid-template-rows: auto;
 }
 
-.rdCommentContentContainer .rdCommentItem {
+.about_top .rdCommentContentContainer .rdCommentItem {
   padding: 10px;
   width: 100%;
   height: auto;
@@ -795,7 +832,7 @@ body {
   border-radius: 10px;
 }
 
-.rdCommentContentContainer .rdCommentItem .rdCommentImg {
+.about_top .rdCommentContentContainer .rdCommentItem .rdCommentImg {
   background-size: cover;
   min-width: 100px;
   min-height: 100px;
@@ -803,11 +840,11 @@ body {
   max-height: 250px;
 }
 
-.rdCommentContentContainer .rdCommentItem .rdCommentTitle {
+.about_top .rdCommentContentContainer .rdCommentItem .rdCommentTitle {
   background-color: none;
 }
 
-.rdCommentContentContainer .rdCommentItem .rdCommentText {
+.about_top .rdCommentContentContainer .rdCommentItem .rdCommentText {
   background-color: none;
 }
 /*# sourceMappingURL=rd.css.map */
