@@ -48,8 +48,8 @@
         <div class="rdGalleryContentContainer">
             <h2> Gallery </h2>
             <div class="rdGalleryItemGrid" id="rdGalleryGrid">
-                <div class="rdGaleryItem">
-                    <h2 class="rdGalleryTitle">Loading in images...</h2>
+                <div class="rdGalleryItem">
+                    <h2 class="rdGalleryText">Loading in images...</h2>
                 </div>
             </div>
         </div>
