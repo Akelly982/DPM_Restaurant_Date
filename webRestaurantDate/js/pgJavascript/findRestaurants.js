@@ -18,6 +18,11 @@ var resSearchFastFood = document.querySelector("#searchFastFood");
 
 
 
+
+
+// --------------------------------------------------------
+//----------- functions  creating elements -----------------
+
 //testRes item
 function testResItem(doc){
     console.log("resImgExt: " + doc.data().imgExt);
@@ -28,14 +33,11 @@ function testResItem(doc){
 }
 
 
-// --------------------------------------------------------
-//----------- functions  creating elements -----------------
-
 //create rerstraunt item
 function createRestrauntItem(doc){
 
 
-    testResItem(doc);
+    //testResItem(doc);
 
     //what it should end up looking like
     // <div class="findResContentItem">   
@@ -109,6 +111,66 @@ function createRestrauntItem(doc){
 
 }
 
+function createRestrauntItemByInnerHtml(doc){
+    // <!-- The item to be created in JS for every res returned -->
+
+    //                                           //## parent is resCont
+    // <div class="findResContentItem">          //##this is resContItem div                                             <!-- userImage/tempResImg.png -->
+    //     <div class="frImage" style="background-image: url(userImage/tempResImg.png);">
+    //     </div>
+    //     <div class="frText">                  //##this is resContItemText
+    //         <h2>my Restraunt name</h2>
+    //         <h4>Cafe: location of my cafe </h4>
+    //         <p class="frSummary">Summary of my cafe. lorum ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum 
+    //         ipsum elipsum da ipsum ya lorum ipsum is a ispum of a lorum
+    //         </p>
+    //         <button class="frBtn"> Enter </button>
+    //     </div>
+    // </div>
+
+
+    //create item Divs
+    let resContItem = document.createElement("div");
+    let resContItemText = document.createElement("div");
+
+    //setup elements
+    resContItem.setAttribute("class","findResContentItem");
+    resContItemText.setAttribute("class","frText");
+
+    //setup btn
+    let detailsPgBtn = document.createElement('button');
+    detailsPgBtn.textContent = "Enter";
+
+    //append to parent       //must already be connect to parent within the document to add innerHTML
+    resCont.append(resContItem); 
+    
+    //set inner content for    <div class="findResContentItem"> 
+    resContItem.innerHTML = '<div class="frImage" style="background-image: url(userImage/'+ doc.data().imgPath + doc.data().imgExt + ');">' +
+                            '</div>';
+
+    resContItem.append(resContItemText);
+
+    // set inner content for    <div class="frText">  
+    resContItemText.innerHTML = '<h2>'+  doc.data().resName +'</h2>' +
+              '<h4> Location: '+  doc.data().address +'</h4>' +
+              '<p class="frSummary">'+  doc.data().summary +'</p>';
+
+    // append btn
+    resContItemText.append(detailsPgBtn);
+
+
+
+    //DETAIL PAGE btn----------------------
+    //move to detail page
+    //uses a sneaky PHP GET 
+    // I did this so you can share your resDetail pg's with fellow fellas and shellas
+    detailsPgBtn.addEventListener('click', (event) => {
+        window.location.href = 'restaurantDetail.php' + "?restaurantName=" + doc.data().resName +"&restaurantId=" + doc.id;
+    })
+
+
+}
+
 
 function emptySnapshot(){
 
@@ -147,14 +209,17 @@ function emptySnapshotByInnerHtml(){
 
     //create elements
     let resContItem2 = document.createElement("div");
+
     //setup elements
     resContItem2.setAttribute("class","findResContentItem");
 
     //append to parent
     resCont.append(resContItem2); //must already be connect to parent within the document 
 
-    //using outerHtml
-    resContItem2.innerHTML = '<div class="frText"><h3>No restraunts by that type found. <br> Try again.</h3> </div>';
+    //using innerHtml
+    resContItem2.innerHTML = '<div class="frText">' + 
+                                '<h3>No restraunts by that type found. <br> Try again.</h3>' + 
+                            '</div>';
     
 }
 
@@ -199,7 +264,7 @@ function checkSnapRenderDoc(snapshot){
     if(size > 1){
         emptyParentContent();
         snapshot.docs.forEach(doc => {
-            createRestrauntItem(doc);
+            createRestrauntItemByInnerHtml(doc);
         })
         
 
@@ -209,7 +274,7 @@ function checkSnapRenderDoc(snapshot){
         // footer of the bottom of the screen
         addSpacer();
         snapshot.docs.forEach(doc => {
-            createRestrauntItem(doc);
+            createRestrauntItemByInnerHtml(doc);
         })
         addSpacer();
 
@@ -229,14 +294,13 @@ function checkSnapRenderDoc(snapshot){
 // --------------------------------------------------------
 //------------------------------------------------------
 
-//on js load code
+// on js load code -------------------------------------
 db.collection('restaurants').get().then((snapshot) => {
     checkSnapRenderDoc(snapshot);
 })
 
 
 // on buttons event--------------------------------------------
-
 
 resSearchFastFood.addEventListener("click", (e) =>{
     e.preventDefault();

@@ -66,8 +66,7 @@
             <div class="findResContentGrid"  id="resContent">
 
                     <!-- The item to be created in JS for every res returned -->
-                    <div class="findResContentItem">             
-                                                                     <!-- userImage/tempResImg.png -->
+                    <div class="findResContentItem">                                                       <!-- userImage/tempResImg.png -->
                         <div class="frImage" style="background-image: url(userImage/tempResImg.png);">
                         </div>
                         <div class="frText">
