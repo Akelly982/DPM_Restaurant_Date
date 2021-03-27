@@ -16,7 +16,11 @@
 <!-- START: Page Contents -->
     <!-- START: Page Top Image -->
     <div class="home_top">
-        <h1><span class="gray">Find Your</span> Favorite <span class="blue">Restaurant</span> +</h1>
+        <h1>
+            <div class="h1text">
+                <span class="gray">Find Your</span> Favorite <span class="blue">Restaurant</span> <span class="plus">+</span>
+            </div>
+        </h1>
         <div class="home_top_links">
             <div class="home_top_rest"><a href="findRestraunts.php">FIND RESTAURANTS</a></div>
             <div class="home_top_love"><a href="signUpPg1.php">FIND YOUR LOVE</a></div>

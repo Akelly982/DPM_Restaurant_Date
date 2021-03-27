@@ -17,7 +17,7 @@
     
     
     
-    <div>
+    <section>
         <h1>Login</h1>
 
         <form id="loginForm">
@@ -33,7 +33,7 @@
         
         
         
-    </div>
+    </section>
     
     
     

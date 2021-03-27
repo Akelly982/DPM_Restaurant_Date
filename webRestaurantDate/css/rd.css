@@ -33,6 +33,10 @@ body, div, ul, li {
   color: #4e8eb5;
 }
 
+.bgColor {
+  background-color: #eee;
+}
+
 section {
   margin: 6rem 0;
 }
@@ -241,6 +245,79 @@ header .hInner nav ul .btn_nev a:hover::after {
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem 4rem;
   text-align: center;
+  display: inline-block;
+  -webkit-animation: h1Ani 1s linear;
+          animation: h1Ani 1s linear;
+}
+
+.home_top h1 .plus {
+  display: inline-block;
+  -webkit-animation: plusRotate 5s linear infinite;
+          animation: plusRotate 5s linear infinite;
+}
+
+@-webkit-keyframes plusRotate {
+  80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg) scale(6);
+            transform: rotate(540deg) scale(6);
+  }
+}
+
+@keyframes plusRotate {
+  80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg) scale(6);
+            transform: rotate(540deg) scale(6);
+  }
+}
+
+.home_top h1 .h1text {
+  display: inline-block;
+  -webkit-animation: h1text 2s;
+          animation: h1text 2s;
+}
+
+@-webkit-keyframes h1text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+
+@keyframes h1text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+}
+
+@-webkit-keyframes h1Ani {
+  0% {
+    -webkit-transform: translate(-200%, -40%);
+            transform: translate(-200%, -40%);
+  }
+}
+
+@keyframes h1Ani {
+  0% {
+    -webkit-transform: translate(-200%, -40%);
+            transform: translate(-200%, -40%);
+  }
 }
 
 .home_top .home_top_links {
@@ -618,8 +695,7 @@ body {
 }
 
 .frContentSpacer {
-  width: 100%;
-  height: 100px;
+  margin-bottom: 3rem;
 }
 
 .findResContainer {
@@ -630,89 +706,98 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
 }
 
 .findResContainer .findResSearch {
-  background-color: lightblue;
-  width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: top;
-      -ms-flex-pack: top;
-          justify-content: top;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 50px;
-  padding-left: 25px;
-  padding-right: 25px;
+  width: 25%;
+}
+
+.findResContainer .findResSearch .leftNav {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding: 0 1rem;
+}
+
+.findResContainer .findResSearch .leftNav h2 {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.findResContainer .findResSearch .leftNav input {
+  border: none;
+  font-size: unset;
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.findResContainer .findResSearch .leftNav button {
+  background: url(../img/icon_search.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  position: absolute;
+  margin-left: -1.75rem;
+  margin-top: .5rem;
 }
 
 .findResContainer .findResSearch .frSearchField {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  margin-bottom: 3rem;
+}
+
+.findResContainer .findResSearch .frCategories {
+  margin-bottom: 3rem;
 }
 
 .findResContainer .findResContentGrid {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  width: 80%;
+  margin: 4.75rem 0 3rem 0;
+  width: 75%;
   height: auto;
-  min-height: 150px;
-  padding: 25px;
-  padding-left: 100px;
-  padding-right: 100px;
-  background-color: lightgreen;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 25px;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
 }
 
 .findResContainer .findResContentItem {
   width: 100%;
   height: auto;
-  background-color: lightgrey;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: Row;
-          flex-direction: Row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  border-radius: .25rem;
+  background-color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.findResContainer .findResContentItem:hover {
+  color: white;
+  background: #4e8eb5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .findResContainer .findResContentItem .frImage {
-  background-color: peachpuff;
   background-size: cover;
-  width: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30%;
+  border-radius: .25rem 0 0 .25rem;
 }
 
 .findResContainer .findResContentItem .frText {
-  background-color: lightseagreen;
-  padding: 25px;
+  padding: 2rem;
+  width: 70%;
+  border-radius: 0 .25rem .25rem 0;
+}
+
+.findResContainer .findResContentItem .frText h2 {
+  margin: 0;
 }
 
 .findResContainer .findResContentItem .frSummary {
-  max-width: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
