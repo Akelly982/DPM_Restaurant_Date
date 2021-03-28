@@ -107,6 +107,8 @@ header {
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  -webkit-animation: headAni 3s;
+          animation: headAni 3s;
 }
 
 header .hInner {
@@ -127,7 +129,7 @@ header .hInner h1 {
   margin: 1rem 0;
 }
 
-header .hInner h1 img {
+header .hInner h1 img, header .hInner h1 svg {
   width: 160px;
 }
 
@@ -223,6 +225,32 @@ header .hInner nav ul li .btn_l:hover {
 header .hInner nav ul .btn_nev a:hover::after {
   display: none;
   width: 0;
+}
+
+@-webkit-keyframes headAni {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes headAni {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
 }
 
 /*--- Header ---*/
@@ -585,7 +613,7 @@ header .hInner nav ul .btn_nev a:hover::after {
   background: url(../img/home_bottom.jpg) no-repeat;
   background-position: center;
   background-size: cover;
-  height: 30vh;
+  height: 50vh;
   margin-top: -6rem;
 }
 
