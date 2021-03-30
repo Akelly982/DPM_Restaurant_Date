@@ -28,6 +28,16 @@
     </div>
 </footer>
 <!-- END: Footer -->
-    
+
+<!-- 
+****************************************
+    JS links 
+****************************************
+-->
+
+<!-- js for humburger menu -->
+<script src="js/burger.js"></script>
+
+
 </body>
 </html>

@@ -116,6 +116,7 @@ header {
             margin: 1rem 0;
             img, svg {
                 width: 160px;
+                display: block;
             }
         }
         nav {
@@ -187,6 +188,9 @@ header {
                 }  
             }
         }
+        .nav_mb {
+            display: none;
+        }
     }
 }
 @keyframes headAni {
@@ -197,6 +201,98 @@ header {
     50% {
         transform: translateY(-100%);
         opacity: 0;
+    }
+}
+
+
+.header_nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.2));
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    z-index: 999;
+    .hInner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            margin: 1rem 0;
+            img, svg {
+                width: 160px;
+            }
+        }
+        nav {
+            width: 50%;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    padding: 1rem 0;
+                    a {
+                        font-family: $designFont;
+                        font-size: 110%;
+                        color: unset;
+                        &:hover {
+                            color: $pink;
+                            transition: $t_05;
+                            &::after {
+                                content: " ";
+                                display: block;
+                                width: 100%;
+                                height: 0.1rem;
+                                background-color: $pink;
+                                margin: -0.05rem 0 0 0;
+                                position: relative;
+                                animation-name: nav_b;
+                                animation-duration: 1s;
+                                transition: $t_1;
+                                display: block;
+                            }
+                            @keyframes nav_b {
+                                0% {width: 0%;}
+                            }
+                        }
+                    } 
+                    .btn_s, .btn_l {
+                        font-family: $designFont;
+                        padding: .5rem 1.5rem;
+                    }
+                    .btn_s {
+                        background: $pink;
+                        color: white;
+                        border: 2px solid $pink;
+                        margin: 0 1rem 0 0;
+                        &:hover {
+                            background: $blue;
+                            border: 2px solid $blue;
+                            transition: $t_05;
+                        }
+                    }
+                    .btn_l {
+                        color: $pink;
+                        border: 2px solid $pink;
+                        &:hover {
+                            background: $pink;
+                            color: white;
+                            transition: $t_05;
+                        }
+                    }
+                }
+                .btn_nev {
+                    a {
+                        &:hover{
+                            &::after {
+                                display: none;
+                                width: 0;
+                            }
+                        }
+                    }
+                }  
+            }
+        }
     }
 }
 
@@ -1038,4 +1134,119 @@ body{
     }
     
     
+}
+
+// ***************************************
+// =======================================
+//
+// BREAKING POINT 1024
+//
+// =======================================
+// ***************************************
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 0 15px;
+        .hInner {
+            h1 {
+                margin: .5rem 0;
+                svg {
+                    width: 120px;
+                }
+            } 
+            nav {
+                display: none;
+                position: absolute;
+                ul {
+                    display: block;
+                    text-align: center;
+                    li {
+                        opacity: 0;
+                        transition: $t_05;
+                        .btn_s {
+                            margin: 0;
+                        }
+                    }
+                    .btn_nev {
+                        display: flex;
+                        flex-direction: column;
+                        a {
+                            margin: 2rem 0;
+                        }
+                    }
+                }
+            }
+            // For mobile burger menu
+            .nav_mb {
+                display: block;
+                cursor: pointer;
+                z-index: 999;
+                .burger {
+                    display: block;
+                    .line1, .line2, .line3 {
+                        display: block;
+                        background-color: $black;
+                        height: 2px;
+                        width: 2.25rem;
+                        margin: .5rem 0;
+                        transition: $t_05;
+                    }
+                }
+            }
+            .burger_act {
+                .line1 {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+                .line2 {
+                    transform: translateX(-10rem);
+                    opacity: 0;
+                }
+                .line3 {
+                    transform:rotate(-45deg) translate(10px, -9px);
+                }
+            }
+            .nav_act {
+                display: block;
+                top: 10rem;
+                left: 50%;
+                transform: translateX(-50%);
+                ul {
+                    li {
+                        opacity: 1;
+                        transition: $t_1;
+                    }
+                }
+            }
+        }
+    }
+    .header_act {
+        height: 100vh;
+        transition: $t_05;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+
+// ***************************************
+// =======================================
+//
+// BREAKING POINT 768
+//
+// =======================================
+// ***************************************
+
+@media screen and (max-width: 768px) {
+
+}
+
+// ***************************************
+// =======================================
+//
+// BREAKING POINT 480
+//
+// =======================================
+// ***************************************
+
+@media screen and (max-width: 480px) {
+
 }

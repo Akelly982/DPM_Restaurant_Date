@@ -9,7 +9,7 @@
 
 <!-- Begin: Get Header -->
 <?php
-    include "modularContent/nav.php"
+    include "modularContent/nav_home.php"
 ?>
 <!-- Finish: Get Header -->
 

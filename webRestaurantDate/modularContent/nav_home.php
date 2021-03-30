@@ -1,4 +1,4 @@
-<div class="header_nav">
+<header>
     <div class="hInner">
         <h1>
             <a href="index.php">
@@ -79,6 +79,7 @@
 
             </a>
         </h1>
+        <!-- START: Navigation -->
         <nav>
             <ul>
                 <li><a href="findRestaurants.php">Find Restaurants</a></li>
@@ -93,8 +94,18 @@
                 </li>
             </ul>
         </nav>
+        <!-- END: Navigation -->
+        <!-- START: Mobile Navigation -->
+        <div class="nav_mb" onclick="onClickMenu()">
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <!-- END: Mobile Navigation -->
     </div>
-</div>
+</header>
 
 
 
