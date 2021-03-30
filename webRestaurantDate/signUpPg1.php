@@ -17,7 +17,7 @@
     
     
     
-    <div>
+    <section>
         <h1> sign Up </h1>
 
         
@@ -44,7 +44,7 @@
             
         </form>
 
-    </div>
+    </section>
     
     
     

@@ -151,12 +151,10 @@ function createRestrauntItemByInnerHtml(doc){
     resContItem.append(resContItemText);
 
     // set inner content for    <div class="frText">  
-    resContItemText.innerHTML = '<h2>'+  doc.data().resName +'</h2>' +
-              '<h4> Location: '+  doc.data().address +'</h4>' +
-              '<p class="frSummary">'+  doc.data().summary +'</p>';
+    resContItemText.innerHTML = '<h2>' +  doc.data().resName + '</h2>' + '<h4> Location: ' +  doc.data().address + '</h4>' + '<p class="frSummary">' +  doc.data().summary +'</p>';
 
     // append btn
-    resContItemText.append(detailsPgBtn);
+    // resContItemText.append(detailsPgBtn);
 
 
 
@@ -164,7 +162,13 @@ function createRestrauntItemByInnerHtml(doc){
     //move to detail page
     //uses a sneaky PHP GET 
     // I did this so you can share your resDetail pg's with fellow fellas and shellas
-    detailsPgBtn.addEventListener('click', (event) => {
+    //----------------------------------------------------
+    // detailsPgBtn.addEventListener('click', (event) => {
+    //     window.location.href = 'restaurantDetail.php' + "?restaurantName=" + doc.data().resName +"&restaurantId=" + doc.id;
+    // })
+    //------------------------------------------------------
+    // When click the content items go to the detail pages
+    resContItem.addEventListener('click', (event) => {
         window.location.href = 'restaurantDetail.php' + "?restaurantName=" + doc.data().resName +"&restaurantId=" + doc.id;
     })
 
@@ -272,7 +276,7 @@ function checkSnapRenderDoc(snapshot){
         emptyParentContent();
         // add one frContentSpacer to help clear 
         // footer of the bottom of the screen
-        addSpacer();
+        // addSpacer();
         snapshot.docs.forEach(doc => {
             createRestrauntItemByInnerHtml(doc);
         })
@@ -281,7 +285,7 @@ function checkSnapRenderDoc(snapshot){
     }else{
         //size is less than 1 so nothing or error
         emptyParentContent();
-        addSpacer();
+        // addSpacer();
         emptySnapshotByInnerHtml();
         addSpacer();
     }

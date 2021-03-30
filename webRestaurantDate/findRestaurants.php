@@ -1,71 +1,73 @@
-<!doctype html>
-<html lang="en">
-    
-    <head>
-        <?php
-            include "modularContent/header.php";
-        ?>
-        <title>undefined</title>
-    </head>
-    
-    <navigation>
-        <?php
-            include "modularContent/nav.php"
-        ?>
-    </navigation>
-    
-    
-    
-    <!-- page content -->
-    <div>
+<!-- Begin: Get Header -->
+<?php
+    /* Name of page title */
+    $title = "Find Restaurants | Foodies";
+    /* Get header.php */
+    include "modularContent/header.php";
+?>
+<!-- Finish: Get Header -->
 
-        <div class="spacer"></div>
-        
-        <div class="findResContainer">
-            <div class="findResSearch">
+<!-- Begin: Get Header -->
+<?php
+    include "modularContent/nav.php"
+?>
+<!-- Finish: Get Header -->
+    
+<!-- START: page content -->
+<section class="bgColor">
+    <!-- <div class="spacer"></div> -->
+    
+    <div class="findResContainer">
+        <div class="findResSearch">
+            <div class="leftNav">
                 <!-- Search field -->
-                <p> Search: </p>
+                <h2> Search... </h2>
                 <div class="frSearchField">
-                    <input type="text" id="searchByNameTextField">
-                    <button id="searchByNameBtn">X</button>
+                    <input type="text" id="searchByNameTextField" placeholder="I'm looking for...">
+                    <button id="searchByNameBtn"></button>
                 </div>
                 <!-- Search catagories -->
-                <p> search by type: </p>
-                <a id="searchMexican" href="">Mexican</a>
-                <a id="searchThai" href="">Thai</a>
-                <a id="searchFastFood" href="">FastFood</a>
-            </div>
-            <!-- THis is where we put our firebase firestore restraunt items/docs -->
-            <div class="findResContentGrid"  id="resContent">
-
-                <div class="frContentSpacer"></div>
-                    <div class="findResContentItem">
-                        <div class="frText">
-                            <h4>Loading in Restraunt Content...</h4>
-                        </div>
-                    </div>
-                <div class="frContentSpacer"></div>
-
+                <div class="frCategories">
+                    <h2> Categories </h2>
+                    <ul>
+                        <li><a id="searchMexican" href="">Mexican</a></li>
+                        <li><a id="searchThai" href="">Thai</a></li>
+                        <li><a id="searchFastFood" href="">FastFood</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
+        <!-- THis is where we put our firebase firestore restraunt items/docs -->
+        <div class="findResContentGrid"  id="resContent">
+
+            <!-- <div class="frContentSpacer"></div> -->
+                <div class="findResContentItem">
+                    <div class="frText">
+                        <h4>Loading in Restraunt Content...</h4>
+                    </div>
+                </div>
+            <!-- <div class="frContentSpacer"></div> -->
+
+        </div>
     </div>
     
-    
-    
-    <footer>
-        <?php
-            include "modularContent/footer.php"
-        ?>
-    </footer>
+</section>
+<!-- END: page contents -->
 
+<!-- Begin: Get Footer -->
+<?php
+    include "modularContent/footer.php"
+?>
+<!-- Finish: Get Footer -->
+
+<!-- Begin: Connect to the Firebase  -->
     <?php
         include "modularContent/firebaseInit.php";  
     ?>
     <!-- javascript identify if user is logged in -->
     <script src="js/firebaseUser.js"></script>
+<!-- Finish: Connect to the Firebase  -->
 
-    <!-- javascript for the page that we are on -->
-    <script src="js/pgJavascript/findRestaurants.js"></script>
+<!-- javascript for the page that we are on -->
+<script src="js/pgJavascript/findRestaurants.js"></script>
 
-</html>
