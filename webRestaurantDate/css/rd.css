@@ -33,6 +33,10 @@ body, div, ul, li {
   color: #4e8eb5;
 }
 
+.bacColour {
+  background-color: #eee;
+}
+
 section {
   margin: 6rem 0;
 }
@@ -580,6 +584,124 @@ footer .footer_inner ul li a:hover {
   display: block;
   margin-left: -4rem;
   margin-top: 1rem;
+}
+
+.about_goal {
+  padding: 6rem 0;
+}
+
+.about_goal .about_title {
+  margin: 0 0 3rem 0;
+}
+
+.about_goal .about_title h2 {
+  text-align: center;
+}
+
+.about_goal .about_title h2::after {
+  content: " ";
+  background-color: #333;
+  height: 0.25rem;
+  width: 10rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.about_restJoin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about_restJoin .about_restJoin_text {
+  padding: 3rem 6rem;
+  width: 50%;
+}
+
+.about_restJoin .about_restJoin_text h2::after {
+  content: " ";
+  display: block;
+  width: 6rem;
+  height: 0.3rem;
+  background-color: #49d649;
+  margin-top: 1rem;
+}
+
+.about_restJoin .about_restJoin_text .about_restJoin_text_block {
+  margin: 3rem 0;
+}
+
+.about_restJoin .about_restJoin_img {
+  background: url(../img/about_goal.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+
+.connectEachOther {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.connectEachOther .about_title {
+  margin: 0 0 3rem 0;
+}
+
+.connectEachOther .about_title h2 {
+  text-align: center;
+}
+
+.connectEachOther .about_title h2::after {
+  content: " ";
+  background-color: #333;
+  height: 0.25rem;
+  width: 10rem;
+  display: block;
+  margin: 1rem auto 3rem auto;
+}
+
+.about_promotion {
+  padding: 6rem 0;
+}
+
+.about_promotion .about_title {
+  margin: 0 0 3rem 0;
+}
+
+.about_promotion .about_title h2 {
+  text-align: center;
+}
+
+.about_promotion .about_title h2::after {
+  content: " ";
+  background-color: #333;
+  height: 0.25rem;
+  width: 10rem;
+  display: block;
+  margin: 1rem auto;
+}
+
+.about_promotion .about_restJoin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about_promotion .about_restJoin .about_restJoin_text {
+  padding: 3rem 6rem;
+  width: 50%;
+}
+
+.about_promotion .about_restJoin .about_restJoin_text .about_restJoin_text_block {
+  margin: 3rem 0;
+}
+
+.about_promotion .about_restJoin .about_promotion_img {
+  background: url(../img/home_restaurants.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 50vh;
 }
 
 /* ================================= */

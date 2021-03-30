@@ -21,22 +21,45 @@
     </div>
 </div>
 
-<!-- We need to rename the class (Igor)-->
-<section>
-        <div class="home_restJoin">
-            <div class="home_restJoin_text">
-                <h2>Promoting your restaurant</h2>
-                    <div class="home_restJoin_text_block">
-                        <p>If you are restaurant owner, create your page for promoting your business. You can have a restaurant page for FREE!</p>
+<!-- Our Goal section -->
+<div class="bacColour about_goal">
+      <div class="about_title"> <h2>Our Goal</h2> </div>
+        <div class="about_restJoin">
+             <div class="about_restJoin_text">
+                    <div class="about_restJoin_text_block">
+                        <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
                         <p>Additionally, users reviews could be great benefit for your business.</p>
                     </div>
-                <div class="btn_black">
-                    <a href="">Create your page</a>
-                </div>
-            </div>        
-            <div class="home_restJoin_img"></div>
+                </div>        
+            <div class="about_restJoin_img"></div>
         </div>
-    </section>
+    </div>
+
+
+  <!-- Connect each other section -->  
+  <section> 
+      <div class="connectEachOther">
+        <div class="about_title"> <h2>Connecting you to each other </h2> </div>
+         <img src="img/connectEachOther.svg">
+            <p>distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web</p>
+       </div>
+  </section>
+
+
+
+<!-- Last section for about page -->
+<div class="bacColour about_promotion">
+       <div class="about_title"> <h2>Promoting your restaurant</h2> </div>
+        <div class="about_restJoin">            
+           <div class="about_promotion_img"></div>
+                <div class="about_restJoin_text">
+                    <div class="about_restJoin_text_block">
+                        <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        <p>Additionally, users reviews could be great benefit for your business.</p>
+                    </div>
+             </div>              
+        </div>
+    </div>
 
 
 

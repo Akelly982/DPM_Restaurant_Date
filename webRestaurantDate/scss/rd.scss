@@ -26,6 +26,7 @@ $pink: #fd8878;
 $blue: #4e8eb5;
 $black: #333;
 $gray: #999;
+$whitegray: #eee;
 
 /*--- Transition ---*/
 $t_05: all .5s ease;
@@ -36,6 +37,7 @@ $t_1: all 1s ease;
 .red {color: $red};
 .gray {color: $gray};
 .blue {color: $blue};
+.bacColour {background-color: $whitegray;};
 
 // Position
 section {
@@ -507,7 +509,123 @@ footer {
 
 }
 
-          
+.about_goal {
+   padding: 6rem 0;
+
+   .about_title { 
+    margin: 0 0 3rem 0; 
+    h2 {
+        text-align: center;
+        &::after {
+            content: " ";
+            background-color: #333;
+            height: 0.25rem;
+            width: 10rem;
+            display: block;
+            margin: 0 auto;
+                      
+        }
+    }
+  
+}
+
+}
+
+
+
+
+.about_restJoin {
+    display: flex;
+    .about_restJoin_text {
+        padding: 3rem 6rem;
+        width: 50%;
+        h2 {
+            &::after {
+                content: " ";
+                display: block;
+                width: 6rem;
+                height: 0.3rem;
+                background-color: $green;
+                margin-top: 1rem;
+            }
+        }
+        .about_restJoin_text_block {
+            margin: 3rem 0;
+        }
+        
+    }
+    .about_restJoin_img {
+        background: url(../img/about_goal.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+    }
+}
+
+.connectEachOther {
+       max-width: 1200px;
+       margin: 0 auto;
+       .about_title { 
+        margin: 0 0 3rem 0; 
+        h2 {
+            text-align: center;
+            &::after {
+                content: " ";
+                background-color: #333;
+                height: 0.25rem;
+                width: 10rem;
+                display: block;
+                margin: 1rem auto 3rem auto;
+                
+                          
+            }
+        }
+      
+    }
+
+}
+
+
+.about_promotion {
+    padding: 6rem 0;
+ 
+    .about_title { 
+     margin: 0 0 3rem 0; 
+     h2 {
+         text-align: center;
+         &::after {
+             content: " ";
+             background-color: #333;
+             height: 0.25rem;
+             width: 10rem;
+             display: block;
+             margin: 1rem auto;
+                       
+         }
+     }
+   
+ }
+
+ .about_restJoin {
+    display: flex;
+    .about_restJoin_text {
+        padding: 3rem 6rem;
+        width: 50%;       
+        .about_restJoin_text_block {
+            margin: 3rem 0;
+        }
+        
+    }
+    .about_promotion_img {
+        background: url(../img/home_restaurants.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+        height: 50vh;
+    }
+}
+ 
+ }        
              
 
 
