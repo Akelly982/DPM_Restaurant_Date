@@ -26,7 +26,7 @@ $pink: #fd8878;
 $blue: #4e8eb5;
 $black: #333;
 $gray: #999;
-$whitegray: #eee;
+$whiteGray: #eee;
 
 /*--- Transition ---*/
 $t_05: all .5s ease;
@@ -37,7 +37,8 @@ $t_1: all 1s ease;
 .red {color: $red};
 .gray {color: $gray};
 .blue {color: $blue};
-.bacColour {background-color: $whitegray;};
+.bgColor {background-color: $whiteGray;}
+.bacColour {background-color: $whiteGray;};
 
 // Position
 section {

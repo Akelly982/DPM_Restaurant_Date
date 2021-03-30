@@ -33,11 +33,11 @@ body, div, ul, li {
   color: #4e8eb5;
 }
 
-<<<<<<< HEAD
-.bacColour {
-=======
 .bgColor {
->>>>>>> 801ea9ecc89837957ac662ae6a3d93fac00d7303
+  background-color: #eee;
+}
+
+.bacColour {
   background-color: #eee;
 }
 
