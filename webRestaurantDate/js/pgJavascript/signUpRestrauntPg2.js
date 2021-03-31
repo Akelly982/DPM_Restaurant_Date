@@ -8,13 +8,32 @@
 //https://firebase.google.com/docs/auth/web/start
 
 
-
 //identify form
 let myForm = document.querySelector('#addUserForm');
 
 //get submit btn
 let submitBtn = document.querySelector('#submitBtn');
 
+//get parent categories
+let cat1 = document.getElementById("catDrop1");
+let cat2 = document.getElementById("catDrop2");
+let cat3 = document.getElementById("catDrop3");
+
+
+//functions 
+function getCategories(doc,parentElement){
+    
+    //item to create 
+    //<option value="saab">Saab</option>  
+
+    //create and append per doc
+    var opt = document.createElement("option");
+    opt.setAttribute("value",doc.data().cat);
+    //append before innerHTML to parent
+    parentElement.append(opt);
+    opt.innerHTML = doc.data().cat;
+
+}
 
 
 
@@ -28,7 +47,9 @@ submitBtn.addEventListener('click', (e) =>{
     var username = myForm.username.value;
     var firstName = myForm.firstName.value;
     var lastName = myForm.lastName.value;
-    var address = myForm.address.value;
+    var street = myForm.street.value;
+    var city = myForm.city.value;
+    var state = myForm.state.value;
     var category1 = myForm.cat1.value;
     var category2 = myForm.cat2.value;
     var category3 = myForm.cat3.value; 
@@ -52,7 +73,9 @@ submitBtn.addEventListener('click', (e) =>{
         username: username,
         firstName: firstName,
         lastName: lastName,
-        address: address,
+        street: street,
+        city: city,
+        state: state,
         resName: resName,
         email: email,
         phone: phone,
@@ -73,7 +96,7 @@ submitBtn.addEventListener('click', (e) =>{
     .then((docRef) => {
         console.log("Document successfully updated!");
         //return home
-        //window.location.href = 'index.php';
+        window.location.href = 'index.php';
     })
     .catch((error) => {
         // The document probably was not created.
@@ -81,10 +104,22 @@ submitBtn.addEventListener('click', (e) =>{
     });
         
 
-        
+
 
 })
 
+
+
+
+// on load -------
+db.collection('categories').get().then((snapshot) => {
+    //size = snapshot.size; //testing
+    snapshot.docs.forEach(doc => {
+        getCategories(doc, cat1);
+        getCategories(doc, cat2);
+        getCategories(doc, cat3);
+    })
+})
 
 
 

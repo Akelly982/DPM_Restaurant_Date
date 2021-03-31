@@ -76,7 +76,7 @@ function createRestrauntItem(doc){
 
     divFrText.setAttribute("class","frText");
     resName.textContent = doc.data().resName;
-    resLoca.textContent = doc.data().address;
+    resLoca.textContent = doc.data().street + " " + doc.data().city + " " + doc.data().state;
     resSum.textContent = doc.data().summary;
 
     detailsPgBtn.textContent = "Enter";
@@ -151,7 +151,9 @@ function createRestrauntItemByInnerHtml(doc){
     resContItem.append(resContItemText);
 
     // set inner content for    <div class="frText">  
-    resContItemText.innerHTML = '<h2>' +  doc.data().resName + '</h2>' + '<h4> Location: ' +  doc.data().address + '</h4>' + '<p class="frSummary">' +  doc.data().summary +'</p>';
+    resContItemText.innerHTML = '<h2>' +  doc.data().resName + '</h2>' + 
+                                    '<h4> Location: ' +  doc.data().street + " " + doc.data().city + " " + doc.data().state + '</h4>' + 
+                                    '<p class="frSummary">' +  doc.data().summary +'</p>';
 
     // append btn
     // resContItemText.append(detailsPgBtn);

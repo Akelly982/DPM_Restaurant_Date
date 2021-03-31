@@ -19,7 +19,7 @@
     
     <navigation>
         <?php
-            include "modularContent/navEmpty.php";
+            include "modularContent/nav.php";
         ?>
     </navigation>
     
@@ -43,27 +43,39 @@
             <label>Restaurant name:</label>
             <input type="text" name="resName">
             
-            <label>Address:</label>
-            <input type="text" name="address" placeholder="44 albert st chattswood Sydney NSW">
+            <label>Street:</label>
+            <input type="text" name="street" placeholder="44 albert st">
+
+            <label>City:</label>
+            <input type="text" name="city" placeholder="Sydney">
+
+            <label>State:</label>
+            <input type="text" name="state" placeholder="NSW">
 
             <label>Phone:</label>
             <input type="text" name="phone">
 
             <label>Category 1:</label>
-            <input type="text" name="cat1">
+            <select name="cat1" id="catDrop1">
+                <!-- <option value="volvo">Volvo</option> -->
+            </select>
 
             <label>Category 2:</label>
-            <input type="text" name="cat2">
+            <select name="cat2" id="catDrop2">
+                <!-- <option value="volvo">Volvo</option> -->
+            </select>
 
             <label>Category 3:</label>
-            <input type="text" name="cat3">
+            <select name="cat3" id="catDrop3">
+                <!-- <option value="volvo">Volvo</option> -->
+            </select>
 
             
 
             <!-- hidden inputs -->
-            <!-- <label>AuthID:</label> -->
+            <!-- <label>AuthID:</label>    //firestore doc name -->
             <input type="hidden" name="authId" value="<?php echo $userAuthId ?>">
-            <!-- <label>Email:</label> -->
+            <!-- <label>Email:</label>     //firestore email field -->
             <input type="hidden" name="email" value="<?php echo $userEmail ?>">
 
 

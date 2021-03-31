@@ -55,9 +55,9 @@
 
 
             <!-- hidden inputs -->
-            <!-- <label>AuthID:</label> -->
+            <!-- <label>AuthID:</label>    //firestore doc name -->
             <input type="hidden" name="authId" value="<?php echo $userAuthId ?>">
-            <!-- <label>Email:</label> -->
+            <!-- <label>Email:</label>     //firestore email field-->
             <input type="hidden" name="email" value="<?php echo $userEmail ?>">
             
             <br>
