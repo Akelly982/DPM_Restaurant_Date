@@ -1,4 +1,4 @@
-<div class="header_nav">
+<header>
     <div class="hInner">
         <h1>
             <a href="index.php">
@@ -23,7 +23,7 @@
                         <path class="st1" d="M261.9,58.1c-0.1,0.2-0.1,0.2-0.1,0.3l-9,19c-0.1,0.3-0.2,0.6-0.3,0.9c-0.6,2.7,0.9,5.5,3.8,6.2
                             c2.6,0.6,5.2-1.4,5.9-3.9l6.5-19.8l-6.8-2.5L261.9,58.1L261.9,58.1z"/>
                     </g>
-                    <g>
+                    <g class="logoLeft">
                         <path class="st0" d="M27.4,10.4c-0.7,0.3-0.9,1.2-0.7,1.7l4.9,13.4c0.3,0.7-0.1,1.5-0.8,1.8c-0.7,0.3-1.5-0.1-1.8-0.8L24,13.1
                             c-0.3-0.7-0.9-1.2-1.7-0.9c-0.8,0.1-1.2,1.1-1,1.8l4.9,13.4c0.3,0.7-0.1,1.5-0.8,1.8l0,0c-0.7,0.3-1.5-0.1-1.8-0.8L18.7,15
                             c-0.3-0.7-0.9-1.2-1.7-0.9c-0.8,0.1-1.2,1.1-1,1.8L21,29.4c0.3,0.7-0.1,1.5-0.8,1.8l0,0c-0.7,0.3-1.5-0.1-1.8-0.8L13.4,17
@@ -79,6 +79,7 @@
 
             </a>
         </h1>
+        <!-- START: Navigation -->
         <nav>
             <ul>
                 <li><a href="findRestaurants.php">Find Restaurants</a></li>
@@ -93,8 +94,18 @@
                 </li>
             </ul>
         </nav>
+        <!-- END: Navigation -->
+        <!-- START: Mobile Navigation -->
+        <div class="nav_mb" onclick="onClickMenu()">
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <!-- END: Mobile Navigation -->
     </div>
-</div>
+</header>
 
 
 

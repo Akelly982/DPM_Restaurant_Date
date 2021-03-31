@@ -14,7 +14,7 @@
 <!-- Finish: Get Header -->
     
 <!-- START: page content -->
-<section class="bgColor">
+<section class="findRest bgColor">
     <!-- <div class="spacer"></div> -->
     
     <div class="findResContainer">
