@@ -33,10 +33,13 @@ body, div, ul, li {
   color: #4e8eb5;
 }
 
+<<<<<<< Updated upstream
 .bgColor {
   background-color: #eee;
 }
 
+=======
+>>>>>>> Stashed changes
 .bacColour {
   background-color: #eee;
 }
@@ -802,6 +805,10 @@ footer .footer_inner ul li a:hover {
   width: 10rem;
   display: block;
   margin: 1rem auto 3rem auto;
+}
+
+.connectEachOther p {
+  text-align: center;
 }
 
 .about_promotion {

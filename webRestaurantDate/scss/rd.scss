@@ -573,6 +573,8 @@ footer {
 
 }
 
+
+// Our goal section on about page
 .about_goal {
    padding: 6rem 0;
 
@@ -594,9 +596,6 @@ footer {
 }
 
 }
-
-
-
 
 .about_restJoin {
     display: flex;
@@ -626,6 +625,7 @@ footer {
     }
 }
 
+// Connect each other section on about page
 .connectEachOther {
        max-width: 1200px;
        margin: 0 auto;
@@ -640,15 +640,17 @@ footer {
                 width: 10rem;
                 display: block;
                 margin: 1rem auto 3rem auto;
-                
-                          
+                             
             }
         }
       
     }
+    p {
+        text-align: center; 
+
+    }
 
 }
-
 
 .about_promotion {
     padding: 6rem 0;
@@ -689,8 +691,7 @@ footer {
     }
 }
  
- }        
-             
+}               
 
 
 /* ================================= */
