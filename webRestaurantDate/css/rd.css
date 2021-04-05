@@ -874,7 +874,7 @@ body {
 }
 
 .spacer {
-  background-color: lightsteelblue;
+  background-color: lightgray;
   height: 50px;
   width: 100%;
 }
@@ -1191,6 +1191,53 @@ body {
   -webkit-line-clamp: 3;
   /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.rdacAddCommentCont {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: lightGrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rdacAddCommentCont .rdacAddCommentForm {
+  border-radius: 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+.rdacAddCommentCont .rdacAddCommentForm .rdacAddCommentTitleField {
+  width: 300px;
+}
+
+.rdacAddCommentCont .rdacAddCommentForm .rdacAddCommentLabel {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.rdacAddCommentCont .rdacAddCommentForm .rdacAddCommentFormBtn {
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 1024px) {

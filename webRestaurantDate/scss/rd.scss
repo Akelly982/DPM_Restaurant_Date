@@ -727,7 +727,7 @@ body{
 // }
 
 .spacer{
-    background-color: lightsteelblue;
+    background-color: lightgray;
     height:50px;
     width:100%;
 }
@@ -1076,6 +1076,47 @@ body{
     
     
 }
+
+
+
+.rdacAddCommentCont{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color:lightGrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .rdacAddCommentForm{
+        border-radius: 20px;
+        padding: 20px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+
+        .rdacAddCommentTitleField{
+            width: 300px;
+        }
+
+        .rdacAddCommentLabel{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .rdacAddCommentFormBtn{
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+
+
+
+
 
 // ***************************************
 // =======================================

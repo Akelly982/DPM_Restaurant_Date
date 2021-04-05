@@ -19,11 +19,11 @@ var commentForm = document.getElementById("rdAddCommentF");
 var commentFormBtn = document.getElementById("rdAddCommentBtn");
 
 
-
+// on page load save some data for use with moving to addUserComment
 //initialize user as false
 var isUser = false;
 var isRestraunt = false;
-var userId = undefined;
+var userId = "undefined";
 
 // check for user 
 firebase.auth().onAuthStateChanged((user) => {
@@ -216,13 +216,13 @@ commentFormBtn.addEventListener('click', (event) =>{
 
         //check for valid radio response (is not null really, I dont preset value so user has to choose)
         if(isPosReview == "true" || isPosReview == "false"){ 
-            alert("success ready to go current user = " + userId);
+            //alert("success review ready to go current user = " + userId + " isPos = " + isPosReview);
+             window.location.href = 'restaurantDetailAddUserComment.php' + "?restaurantId=" + resId +"&userId=" + userId +"&isPos=" + isPosReview;
+
         }else{
             alert("Please select if the restraunt was interesting to you?");
         }
     }
-
-
 })
 
 
