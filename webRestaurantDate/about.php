@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<!-- Our Goal section -->
+<!-- Start: Our Goal section -->
 <div class="bacColour about_goal">
       <div class="about_title"> <h2>Our Goal</h2> </div>
         <div class="about_restJoin">
@@ -35,9 +35,10 @@
             <div class="about_restJoin_img"></div>
         </div>
     </div>
+  <!-- End: Our Goal section --> 
 
 
-  <!-- Connect each other section -->  
+  <!--Start: Connect each other section -->  
   <section> 
       <div class="connectEachOther">
         <div class="about_title"> <h2>Connecting you to each other </h2> </div>
@@ -45,10 +46,10 @@
             <p> We are passionate about people and connecting them to make their life better is one amazing achievement for us.<br> We love what we do.</p>
        </div>
   </section>
+  <!--End: Connect each other section -->  
 
 
-
-<!-- Last section for about page -->
+<!--Start: Last section for about page -->
 <div class="bacColour about_promotion">
        <div class="about_title"> <h2>Promoting your restaurant</h2> </div>
         <div class="about_restJoin">            
@@ -61,10 +62,7 @@
              </div>              
         </div>
     </div>
-
-
-
-<!-- END: Page Contents -->
+<!--End: Last section on about page -->
 
 
 <!-- Begin: Get Footer -->
