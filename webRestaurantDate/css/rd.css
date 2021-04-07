@@ -8,7 +8,10 @@
   letter-spacing: 1.25px;
 }
 
-body, div, ul, li {
+body,
+div,
+ul,
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -45,11 +48,15 @@ section {
   margin: 6rem 0;
 }
 
-.btn_blue, .btn_pink, .btn_green {
+.btn_blue,
+.btn_pink,
+.btn_green {
   display: inline-block;
 }
 
-.btn_blue a, .btn_pink a, .btn_green a {
+.btn_blue a,
+.btn_pink a,
+.btn_green a {
   padding: 1rem 2rem;
   color: white;
   display: block;
@@ -150,19 +157,22 @@ header .hInner h1 {
   margin: 1rem 0;
 }
 
-header .hInner h1 img, header .hInner h1 svg {
+header .hInner h1 img,
+header .hInner h1 svg {
   width: 160px;
   display: block;
 }
 
-header .hInner h1 img:hover .st3, header .hInner h1 svg:hover .st3 {
+header .hInner h1 img:hover .st3,
+header .hInner h1 svg:hover .st3 {
   -webkit-transform: scale(1.75) translate(-3rem, -2rem);
           transform: scale(1.75) translate(-3rem, -2rem);
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-header .hInner h1 img:hover .logoLeft, header .hInner h1 svg:hover .logoLeft {
+header .hInner h1 img:hover .logoLeft,
+header .hInner h1 svg:hover .logoLeft {
   -webkit-transform: translate(75%, 10%) rotate(-10deg);
           transform: translate(75%, 10%) rotate(-10deg);
   -webkit-transition: all 1s ease;
@@ -227,9 +237,10 @@ header .hInner nav ul li a:hover::after {
   }
 }
 
-header .hInner nav ul li .btn_s, header .hInner nav ul li .btn_l {
+header .hInner nav ul li .btn_s,
+header .hInner nav ul li .btn_l {
   font-family: "PT Sans Narrow", sans-serif;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 header .hInner nav ul li .btn_s {
@@ -400,14 +411,18 @@ header .hInner .nav_mb {
   width: 100%;
 }
 
-.home_top .home_top_links .home_top_rest, .home_top .home_top_links .home_top_love, .home_top .home_top_links .home_top_join {
+.home_top .home_top_links .home_top_rest,
+.home_top .home_top_links .home_top_love,
+.home_top .home_top_links .home_top_join {
   width: 33.5%;
   text-align: center;
   color: white;
   font-weight: 700;
 }
 
-.home_top .home_top_links .home_top_rest a, .home_top .home_top_links .home_top_love a, .home_top .home_top_links .home_top_join a {
+.home_top .home_top_links .home_top_rest a,
+.home_top .home_top_links .home_top_love a,
+.home_top .home_top_links .home_top_join a {
   width: 100%;
   height: 100%;
   color: unset;
@@ -627,16 +642,16 @@ header .hInner .nav_mb {
   max-width: 640px;
   height: 64px;
   margin: 3rem auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .home_search .home_search_box input {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .home_search .home_search_box .home_search_text {
@@ -738,11 +753,11 @@ footer .footer_inner ul li a:hover {
   margin: 0 0 3rem 0;
 }
 
-.about_goal .about_title h2 {
+.about_goal h2 {
   text-align: center;
 }
 
-.about_goal .about_title h2::after {
+.about_goal h2::after {
   content: " ";
   background-color: #333;
   height: 0.25rem;
@@ -785,6 +800,10 @@ footer .footer_inner ul li a:hover {
 .connectEachOther {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.connectEachOther p {
+  text-align: center;
 }
 
 .connectEachOther .about_title {
@@ -919,8 +938,8 @@ body {
 .findRest .findResContainer .findResSearch .leftNav input {
   border: none;
   font-size: unset;
-  padding: .5rem;
-  border-radius: .25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 }
 
 .findRest .findResContainer .findResSearch .leftNav button {
@@ -932,7 +951,7 @@ body {
   border: none;
   position: absolute;
   margin-left: -1.75rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .findRest .findResContainer .findResSearch .frSearchField {
@@ -955,7 +974,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background-color: white;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -975,13 +994,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 30%;
-  border-radius: .25rem 0 0 .25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .findRest .findResContainer .findResContentItem .frText {
   padding: 2rem;
   width: 70%;
-  border-radius: 0 .25rem .25rem 0;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .findRest .findResContainer .findResContentItem .frText h2 {
@@ -1160,7 +1179,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .rdCommentContentContainer .rdCommentItem .rdCommentImg {
@@ -1345,7 +1364,7 @@ body {
     transition: all 0.5s ease;
   }
   header .hInner h1 {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
   header .hInner h1 svg {
     width: 120px;
@@ -1386,12 +1405,14 @@ body {
   header .hInner .nav_mb .burger {
     display: block;
   }
-  header .hInner .nav_mb .burger .line1, header .hInner .nav_mb .burger .line2, header .hInner .nav_mb .burger .line3 {
+  header .hInner .nav_mb .burger .line1,
+  header .hInner .nav_mb .burger .line2,
+  header .hInner .nav_mb .burger .line3 {
     display: block;
     background-color: #333;
     height: 2px;
     width: 2.25rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
@@ -1469,13 +1490,17 @@ body {
   .home_top_links_mb {
     margin-top: -6px;
   }
-  .home_top_links_mb .home_top_rest, .home_top_links_mb .home_top_love, .home_top_links_mb .home_top_join {
+  .home_top_links_mb .home_top_rest,
+  .home_top_links_mb .home_top_love,
+  .home_top_links_mb .home_top_join {
     width: 100%;
     text-align: center;
     color: white;
     font-weight: 700;
   }
-  .home_top_links_mb .home_top_rest a, .home_top_links_mb .home_top_love a, .home_top_links_mb .home_top_join a {
+  .home_top_links_mb .home_top_rest a,
+  .home_top_links_mb .home_top_love a,
+  .home_top_links_mb .home_top_join a {
     width: 100%;
     height: 100%;
     color: unset;
