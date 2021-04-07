@@ -8,14 +8,10 @@
 //<div id="userNav">
 //    <span>myName</span>
 //    <a href="logout.php">Logout</a>
-//    <a href="userSettings">Settings</a>
+//    <a href="userSettings.php">Settings</a>                   or            <a href="restaurantSettings.php">Settings</a>     
 //    <input type="hidden" id="currentUserId" value="">
 //    <input type="hidden" id="currentUserType" value="">
 //</div>
-
-
-
-
 
 
 
@@ -42,7 +38,7 @@ function logout(){
 
 
 
-function displayUserDataNav(doc){
+function displayUserDataNav(doc,isRestaurant){
     
     //get target navElement
     let navUser = document.querySelector("#userNav");
@@ -85,6 +81,8 @@ function displayUserDataNav(doc){
     //a link elements
     //set href
     uLogout.setAttribute("href","");  //gets it to behave like a normal a element
+
+    if(isRestaurant)
     uSettings.setAttribute("href","userSettings.php");
     
     //set txt content
@@ -144,18 +142,21 @@ firebase.auth().onAuthStateChanged((user) => {
     //checking
     //console.log("A userType is logged in.");
 
+    var isRestraunt = false;
+
     //check i user's collection
     db.collection("users").doc(user.uid).get().then((doc) =>{
         if(doc.exists){
                 //display data in nav
-                displayUserDataNav(doc);
+                displayUserDataNav(doc, isRestraunt);  //is restaurant is init to false
         }else{
                 
             //check in restraunt's collection
             db.collection("restaurants").doc(user.uid).get().then((doc) =>{
                 if(doc.exists){
                     //display data in nav
-                    displayUserDataNav(doc);
+
+                    displayUserDataNav(doc, isRestraunt);
                 }else{
                     //cant find user doc connect to AUTH user in RESTRAUNT collection
                     //console.log("no such document in Restraunts or Users collection.");
