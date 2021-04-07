@@ -16,8 +16,8 @@ var resSearchThai = document.querySelector("#searchThai");
 var resSearchFastFood = document.querySelector("#searchFastFood");
 
 
-// // List the category
-// var resCat = document.querySelector("resCategories");
+// List the category
+var resCat = document.querySelector("#resCategories");
 
 // //retrieve one document and save it to userDetails
 // function testResItem(doc){
@@ -294,6 +294,26 @@ function checkSnapRenderDoc(snapshot){
 }
 
 
+//---------------------------------------------------
+// Display category related on database
+
+function appendCategory(doc) {
+
+    var myCategory = document.createElement("li");
+
+    resCat.append(myCategory);
+
+    myCategory.innerHTML = '<a id="###" href="###">'+ doc.data().cat +'</a>';
+
+    myCategory.addEventListener('click', (event) => {
+        searchCriteriaBtn(doc.data().cat);
+    })
+
+}
+
+
+
+//---------------------------------------------------
 
 
 
@@ -303,6 +323,13 @@ function checkSnapRenderDoc(snapshot){
 // on js load code -------------------------------------
 db.collection('restaurants').get().then((snapshot) => {
     checkSnapRenderDoc(snapshot);
+})
+
+db.collection('categories').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        // console.log(snapshot.size);
+        appendCategory(doc);
+    })
 })
 
 

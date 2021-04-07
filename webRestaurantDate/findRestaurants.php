@@ -29,11 +29,7 @@
                 <!-- Search catagories -->
                 <div class="frCategories">
                     <h2>Categories</h2>
-                    <ul id="resCategories">
-                        <li><a id="searchMexican" href="">Mexican</a></li>
-                        <li><a id="searchThai" href="">Thai</a></li>
-                        <li><a id="searchFastFood" href="">FastFood</a></li>
-                    </ul>
+                    <ul id="resCategories"></ul>
                 </div>
             </div>
         </div>
