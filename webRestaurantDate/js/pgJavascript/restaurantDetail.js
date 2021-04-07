@@ -102,7 +102,7 @@ function createCommentItem(doc){
     // doing this method ensure your quotation marks line up correctly
     commentItem.innerHTML = "<div class='rdCommentItem'>" +
         "<div class='rdCommentImg' style='background-image: url(userImage/"+    doc.data().userImgPath + doc.data().userImgExt   + ");'></div>" +
-        "<h4 class='rdCommentTitle'>"+ doc.data().commentTitle +"</h4>" +
+        "<h3 class='rdCommentTitle'>"+ doc.data().commentTitle +"</h3>" +
         "<p class='rdCommentText'>"+  doc.data().commentText     +"</p>" +
     "</div>";
 
@@ -131,9 +131,9 @@ function createCommentNoItemFound(){
     //fill created element
     // doing this method ensure your quotation marks line up correctly
     emptyCommentItem.innerHTML = "<div class='rdCommentItem'>" +
-         "<h4 class='rdCommentTitle'>No comments found be the first to review this new restraunt."+
+         "<h3 class='rdCommentTitle'>No comments found be the first to review this new restraunt."+
             "Add a comment by clicking the button just above."+
-         "</h4>"+
+         "</h3>"+
     "</div>";
 
 

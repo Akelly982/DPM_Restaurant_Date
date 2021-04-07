@@ -959,6 +959,7 @@ body {
   background-color: white;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  margin: 0 0 3rem 0;
   cursor: pointer;
 }
 
@@ -1001,45 +1002,40 @@ body {
 }
 
 .rdTitleContainer {
-  font-weight: bold;
-  background-color: lightgray;
-  padding-top: 120px;
-  padding-bottom: 20px;
+  display: inline-block;
+  margin-top: 12rem;
+  width: 100%;
+}
+
+.rdTitleContainer h1 {
   text-align: center;
+  margin-bottom: 6rem;
 }
 
 .restaurantDetailHero {
   width: 100%;
   background-size: cover;
-  height: 600px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background-position: center;
+  height: 90vh;
 }
 
 .restaurantDetailHero .restaurantDetailTextContainer {
-  padding-right: 20px;
-  padding-left: 20px;
-  background-color: white;
-  max-height: 400px;
-  max-width: 40%;
+  position: relative;
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 50%;
+  left: 100%;
+  width: 50%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
 }
 
 .rdGalleryContentContainer {
-  padding-top: 50px;
-  padding-bottom: 100px;
   text-align: center;
-  background-color: lightgray;
+}
+
+.rdGalleryContentContainer h2 {
+  font-size: 2em;
 }
 
 .rdGalleryContentContainer .rdGalleryItemGrid {
@@ -1065,7 +1061,6 @@ body {
 .rdGalleryContentContainer .rdGalleryItem {
   width: 100%;
   height: 300px;
-  border-radius: 10px;
   background-position: center;
   background-size: cover;
   background-color: white;
@@ -1088,8 +1083,7 @@ body {
 .rdAddCommentForm {
   text-align: center;
   background-color: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 6rem 0;
 }
 
 .rdAddCommentForm .rdRadioBtnCont {
@@ -1122,10 +1116,11 @@ body {
 }
 
 .rdCommentContentContainer {
-  padding-top: 50px;
-  padding-bottom: 100px;
   text-align: center;
-  background-color: lightgray;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+  max-width: 1200px;
 }
 
 .rdCommentContentContainer .rdCommentItemGrid {
@@ -1137,8 +1132,6 @@ body {
   height: auto;
   min-height: 150px;
   padding: 25px;
-  padding-left: 100px;
-  padding-right: 100px;
   display: -ms-grid;
   display: grid;
   grid-gap: 25px;
@@ -1167,23 +1160,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 10px;
+  border-radius: .5rem;
 }
 
 .rdCommentContentContainer .rdCommentItem .rdCommentImg {
   background-size: cover;
-  min-width: 100px;
-  min-height: 100px;
-  max-width: 250px;
-  max-height: 250px;
+  background-position: center;
+  width: 10vmax;
+  height: 10vmax;
+  border-radius: 100px;
+  margin: 1.5rem 0 1rem 0;
 }
 
 .rdCommentContentContainer .rdCommentItem .rdCommentTitle {
-  margin-left: 40px;
-  margin-right: 40px;
+  padding: 0 1rem;
 }
 
 .rdCommentContentContainer .rdCommentItem .rdCommentText {
+  text-align: left;
+  margin: 1rem;
   max-width: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
