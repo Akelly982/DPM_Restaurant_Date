@@ -16,8 +16,13 @@ var resSearchThai = document.querySelector("#searchThai");
 var resSearchFastFood = document.querySelector("#searchFastFood");
 
 
+// // List the category
+// var resCat = document.querySelector("resCategories");
 
-
+// //retrieve one document and save it to userDetails
+// function testResItem(doc){
+//     console.log("resCatefory: " + doc.data().category1);
+// }
 
 
 // --------------------------------------------------------
@@ -37,7 +42,7 @@ function testResItem(doc){
 function createRestrauntItem(doc){
 
 
-    //testResItem(doc);
+    // testResItem(doc);
 
     //what it should end up looking like
     // <div class="findResContentItem">   
@@ -245,17 +250,12 @@ function emptyParentContent(){
 
 
 
-
-
-
 // --------------------------------------------------------
 //----------- functions  working with Firestore -----------------
 
 function searchCriteriaBtn(searchStr){
     
-    db.collection('restaurants').where('category1', '==', searchStr  ||  
-                                      'category2', '==', searchStr  || 
-                                      'category3', '==', searchStr).get().then((snapshot) => {
+    db.collection('restaurants').where('category1', '==', searchStr  ||  'category2', '==', searchStr  || 'category3', '==', searchStr).get().then((snapshot) => {
         checkSnapRenderDoc(snapshot);
     }) 
 

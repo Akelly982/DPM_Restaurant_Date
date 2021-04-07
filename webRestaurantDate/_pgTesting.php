@@ -234,6 +234,29 @@
     </div>
 
 
+
+    <!-- restraunt detail add comment pg -->
+    <div>
+        <!-- standard item -->
+        <div class="rdacAddCommentCont" id="parentRdacAddCommentCont">
+            <div class="rdacAddCommentForm">
+                <h3>Write a review:</h3>
+                <label class="rdacAddCommentLabel" style>Title:</label>
+                <input type="text" id="tfUserCommentTitle" class="rdacAddCommentTitleField" placeholder="A great experience with friends" value="">
+                <label class="rdacAddCommentLabel">comment:</label>
+                <textarea style="resize:none" rows="20" cols="60" id="taUserComment" name="userComment"></textarea>
+                <button class="rdacAddCommentFormBtn" id="formBtn"> submit </button>
+            </div>
+        </div>
+        <!-- if user id does not match GET userId -->
+        <div class="rdacAddCommentCont" id="parentRdacAddCommentCont">
+            <div class="rdacAddCommentForm">
+                <h4> User does not match signed in user. </h4>
+            </div>
+        </div>
+    </div>
+
+
     
     
     <footer class="foot">

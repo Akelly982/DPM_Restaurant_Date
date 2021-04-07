@@ -21,15 +21,15 @@
         <div class="findResSearch">
             <div class="leftNav">
                 <!-- Search field -->
-                <h2> Search... </h2>
+                <h2> Search...</h2>
                 <div class="frSearchField">
                     <input type="text" id="searchByNameTextField" placeholder="I'm looking for...">
                     <button id="searchByNameBtn"></button>
                 </div>
                 <!-- Search catagories -->
                 <div class="frCategories">
-                    <h2> Categories </h2>
-                    <ul>
+                    <h2>Categories</h2>
+                    <ul id="resCategories">
                         <li><a id="searchMexican" href="">Mexican</a></li>
                         <li><a id="searchThai" href="">Thai</a></li>
                         <li><a id="searchFastFood" href="">FastFood</a></li>

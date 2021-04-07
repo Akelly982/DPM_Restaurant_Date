@@ -19,11 +19,11 @@ var commentForm = document.getElementById("rdAddCommentF");
 var commentFormBtn = document.getElementById("rdAddCommentBtn");
 
 
-
+// on page load save some data for use with moving to addUserComment
 //initialize user as false
 var isUser = false;
 var isRestraunt = false;
-var userId = undefined;
+var userId = "undefined";
 
 // check for user 
 firebase.auth().onAuthStateChanged((user) => {
@@ -102,7 +102,7 @@ function createCommentItem(doc){
     // doing this method ensure your quotation marks line up correctly
     commentItem.innerHTML = "<div class='rdCommentItem'>" +
         "<div class='rdCommentImg' style='background-image: url(userImage/"+    doc.data().userImgPath + doc.data().userImgExt   + ");'></div>" +
-        "<h4 class='rdCommentTitle'>"+ doc.data().commentTitle +"</h4>" +
+        "<h3 class='rdCommentTitle'>"+ doc.data().commentTitle +"</h3>" +
         "<p class='rdCommentText'>"+  doc.data().commentText     +"</p>" +
     "</div>";
 
@@ -131,9 +131,9 @@ function createCommentNoItemFound(){
     //fill created element
     // doing this method ensure your quotation marks line up correctly
     emptyCommentItem.innerHTML = "<div class='rdCommentItem'>" +
-         "<h4 class='rdCommentTitle'>No comments found be the first to review this new restraunt."+
+         "<h3 class='rdCommentTitle'>No comments found be the first to review this new restraunt."+
             "Add a comment by clicking the button just above."+
-         "</h4>"+
+         "</h3>"+
     "</div>";
 
 
@@ -216,13 +216,13 @@ commentFormBtn.addEventListener('click', (event) =>{
 
         //check for valid radio response (is not null really, I dont preset value so user has to choose)
         if(isPosReview == "true" || isPosReview == "false"){ 
-            alert("success ready to go current user = " + userId);
+            //alert("success review ready to go current user = " + userId + " isPos = " + isPosReview);
+             window.location.href = 'restaurantDetailAddUserComment.php' + "?restaurantId=" + resId +"&userId=" + userId +"&isPos=" + isPosReview;
+
         }else{
             alert("Please select if the restraunt was interesting to you?");
         }
     }
-
-
 })
 
 
