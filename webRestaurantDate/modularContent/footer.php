@@ -9,9 +9,9 @@
         <div>
             <ul>
                 <li><a href="###">Find restaurants</a></li>
-                <li><a href="###">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="###">Blog</a></li>
-                <li><a href="###">Contact us</a></li>
+                <li><a href="contact.php">Contact us</a></li>
                 <li><a href="###">Privacy policy</a></li>
             </ul>
         </div>
