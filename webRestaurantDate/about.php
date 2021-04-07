@@ -30,7 +30,6 @@
                     <div class="about_restJoin_text_block">
                         <p>At Restaurant Date, our goal is to connect people through restaurants ‘reviews, but more important than that is to make life easier. We want our members to express themselves and share their experiences in some restaurants, and based on those experiences we can connect them with new people who have a similar sense of restaurants while keeping the experience simple and fun.</p>
                         <p>Love and food are a perfect combination to have fun and a good time with new people.</p>
-                        <p>hello</p>
                     </div>
                 </div>        
             <div class="about_restJoin_img"></div>
