@@ -24,45 +24,51 @@
 
 <!-- Start: Our Goal section -->
 <div class="bacColour about_goal">
-      <div class="about_title"> <h2>Our Goal</h2> </div>
-        <div class="about_restJoin">
-             <div class="about_restJoin_text">
-                    <div class="about_restJoin_text_block">
-                        <p>At Restaurant Date, our goal is to connect people through restaurants ‘reviews, but more important than that is to make life easier. We want our members to express themselves and share their experiences in some restaurants, and based on those experiences we can connect them with new people who have a similar sense of restaurants while keeping the experience simple and fun.</p>
-                        <p>Love and food are a perfect combination to have fun and a good time with new people.</p>
-                        <p>hello</p>
-                    </div>
-                </div>        
-            <div class="about_restJoin_img"></div>
-        </div>
+    <div class="about_title"> 
+        <h2>Our Goal</h2>
     </div>
-  <!-- End: Our Goal section --> 
+    <div class="about_restJoin">
+        <div class="about_restJoin_text">
+            <div class="about_restJoin_text_block">
+                <p>At Restaurant Date, our goal is to connect people through restaurants ‘reviews, but more important than that is to make life easier. We want our members to express themselves and share their experiences in some restaurants, and based on those experiences we can connect them with new people who have a similar sense of restaurants while keeping the experience simple and fun.</p>
+                <p>Love and food are a perfect combination to have fun and a good time with new people.</p>
+                <p>hello</p>
+            </div>
+        </div>        
+        <div class="about_restJoin_img"></div>
+    </div>
+</div>
+<!-- End: Our Goal section --> 
 
 
-  <!--Start: Connect each other section -->  
-  <section> 
-      <div class="connectEachOther">
-        <div class="about_title"> <h2>Connecting you to each other </h2> </div>
-         <img src="img/connectEachOther.svg">
-            <p> We are passionate about people and connecting them to make their life better is one amazing achievement for us.<br> We love what we do.</p>
-       </div>
-  </section>
-  <!--End: Connect each other section -->  
+<!--Start: Connect each other section -->  
+<section> 
+    <div class="connectEachOther">
+        <div class="about_title"> 
+            <h2>Connecting you to each other</h2> 
+        </div>
+        <img src="img/connectEachOther.svg">
+        <p> We are passionate about people and connecting them to make their life better is one amazing achievement for us.<br> We love what we do.</p>
+    </div>
+</section>
+<!--End: Connect each other section -->  
 
 
 <!--Start: Last section for about page -->
 <div class="bacColour about_promotion">
-       <div class="about_title"> <h2>Promoting your restaurant</h2> </div>
-        <div class="about_restJoin">            
-           <div class="about_promotion_img"></div>
-                <div class="about_restJoin_text">
-                    <div class="about_restJoin_text_block">
-                        <p>If you are restaurant owner, create your page for promoting your business. You can have a restaurant page for FREE!
-                           Additionally, users reviews could be great benefit for your business.</p>
-                  </div>
-             </div>              
-        </div>
+    <div class="about_title"> 
+        <h2>Promoting your restaurant</h2> 
     </div>
+    <div class="about_restJoin">            
+        <div class="about_promotion_img"></div>
+        <div class="about_restJoin_text">
+            <div class="about_restJoin_text_block">
+                <p>If you are restaurant owner, create your page for promoting your business. You can have a restaurant page for FREE!
+                    Additionally, users reviews could be great benefit for your business.</p>
+            </div>
+        </div>              
+    </div>
+</div>
 <!--End: Last section on about page -->
 
 

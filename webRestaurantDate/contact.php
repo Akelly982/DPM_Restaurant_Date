@@ -18,7 +18,7 @@
     <div class="contact_box">
         <h2>CONTACT US</h2>
             <p>You’re not going to hit a ridiculously long phone menu when you call us. Your email isn’t going to be the inbox abyss, never to be seen or heard from again. At Restaurant Date, we provide the exceptional service we’d want to experience ourselves!</p>
-     </div>
+    </div>
 </div>
 <!-- End: Contact Us top page -->
 

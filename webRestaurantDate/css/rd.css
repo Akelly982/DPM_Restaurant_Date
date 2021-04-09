@@ -771,10 +771,6 @@ footer .footer_inner ul li a:hover {
   margin-top: 1rem;
 }
 
-.about_restJoin .about_restJoin_text .about_restJoin_text_block {
-  margin: 3rem 0;
-}
-
 .about_restJoin .about_restJoin_img {
   background: url(../img/about_goal.jpg) no-repeat;
   background-position: center;
@@ -783,8 +779,9 @@ footer .footer_inner ul li a:hover {
 }
 
 .connectEachOther {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .connectEachOther .about_title {
@@ -802,6 +799,11 @@ footer .footer_inner ul li a:hover {
   width: 10rem;
   display: block;
   margin: 1rem auto 3rem auto;
+}
+
+.connectEachOther img {
+  width: 100%;
+  margin: 3rem 0;
 }
 
 .about_promotion {
@@ -836,10 +838,6 @@ footer .footer_inner ul li a:hover {
   width: 50%;
 }
 
-.about_promotion .about_restJoin .about_restJoin_text .about_restJoin_text_block {
-  margin: 3rem 0;
-}
-
 .about_promotion .about_restJoin .about_promotion_img {
   background: url(../img/home_restaurants.jpg) no-repeat;
   background-position: center;
@@ -851,11 +849,6 @@ footer .footer_inner ul li a:hover {
 /* ================================= */
 /* ================================= */
 /* ================================= */
-body {
-  padding: 0;
-  margin: 0px;
-}
-
 .nav {
   background-color: lightGrey;
   display: -webkit-box;
@@ -1255,9 +1248,9 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   width: 50%;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 40%;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
   display: inline-block;
   padding: 2rem;
 }
@@ -1274,12 +1267,13 @@ body {
 
 .contact_body {
   background-color: #eee;
-  padding: 10%;
+  padding: 6rem;
+  margin-bottom: 6rem;
 }
 
 .contact_body .contact_form_container {
   background-color: white;
-  padding: 10%;
+  padding: 6rem;
 }
 
 .contact_body .contact_form_container #contact_form {
@@ -1456,6 +1450,68 @@ body {
   }
   footer .footer_inner div {
     margin-bottom: 3rem;
+  }
+  .about_top .about_box {
+    width: 96%;
+  }
+  .about_goal {
+    padding-bottom: 0;
+  }
+  .about_restJoin {
+    display: block;
+  }
+  .about_restJoin .about_restJoin_text {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .about_restJoin .about_restJoin_img {
+    width: 100%;
+    height: 50vh;
+  }
+  .about_promotion {
+    padding-bottom: 0;
+  }
+  .about_promotion .about_restJoin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .about_promotion .about_restJoin .about_promotion_img {
+    width: 100%;
+  }
+  .about_promotion .about_restJoin .about_restJoin_text {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contact_top .contact_box {
+    width: 94%;
+  }
+  .contact_body {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contact_body .contact_form_container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contact_body .contact_form_container #contact_form .contact_form_element {
+    display: block;
+  }
+  .contact_body .contact_form_container #contact_form .contact_form_element label, .contact_body .contact_form_container #contact_form .contact_form_element input, .contact_body .contact_form_container #contact_form .contact_form_element textarea {
+    width: 100%;
+    display: block;
+    padding: 0 0 1rem 0;
+  }
+  .contact_body .contact_form_container #contact_form .contact_form_element #submit_button {
+    margin-left: 0;
   }
 }
 
