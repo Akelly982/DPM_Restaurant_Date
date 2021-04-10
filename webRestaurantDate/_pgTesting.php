@@ -257,6 +257,156 @@
     </div>
 
 
+
+
+    <!-- Content to be shown on the page -->
+    <!-- userPROFILE SETTINGS v1  -->
+    <div class="bgColor profilePageCont">
+            <div class="profileLeftNav">  
+                <?php
+                    include "modularContent/profileNav.php";
+                ?>
+            </div>
+            <div class="profileContentCont">
+                <div class="userGaller">
+
+                </div>
+
+                <form method="POST">
+                </form>
+
+                <h2 id="userFirstNameTitle">About you: </h2>
+                <hr>
+
+                <!-- form version 1 -->
+                <form class="userProfileForm">
+
+                    <!-- firstName -->
+                    <label>First name:</label>
+                    <div class="profileInLine">
+                        <p class="profileSettingsText" id="userFirstName"> undefined </p>
+                        <input type="text" id="userFirstNameField"value="">
+                        <button id="updateFirstName"> Update </button>
+                    </div>
+
+                    <!-- lastName -->
+                    <label>Last name:</label>
+                    <div class="profileInLine">
+                        <input type="text" id="userLastNameField" value="">
+                        <button id="updateLastName"> Update </button>
+                    </div>
+
+                    <!-- username -->
+                    <label>Username: </label>
+                    <div class="profileInLine">
+                        <input type="text" id="userUsernameField" value="">
+                        <button id="updateUsername"> Update </button>
+                    </div>
+
+                    <!-- phone -->
+                    <label>Phone:</label>
+                    <div class="profileInLine">
+                        <input type="text" id="userPhoneField" value="">
+                        <button id="updatePhone"> Update </button>
+                    </div>
+
+                    <!-- gender -->
+                    <label>Gender</label>
+                    <div class="profileInLine">
+                        <input type="text" id="userGenderField" value="">
+                        <button id="updateGender"> Update </button>
+                    </div>
+
+                    <!-- birthday -->
+                    <label > Birthday</label>
+                    <div class="profileInLine">
+                        <input type="text" id="userBirthdayField" value="">
+                        <button id="updateBirthday"> Update </button>
+                    </div>
+
+                    <!-- height -->
+                    <label>Height</label>
+                    <div class="profileInLine">
+                        <input type="text" id="userHeightField" value="">
+                        <button id="updateHeight"> Update </button>
+                    </div>
+
+                    <!-- Summary -->
+                    <label>Summary:</label>
+                    <div class="profileInLine">
+                        <textarea style="resize:none" rows="5" cols="25" id="userSummaryField"></textarea>
+                        <button id="updateSummary"> Update </button>
+                    </div>
+
+                </form>
+
+            </div>
+    </div>
+
+
+
+
+
+    <!-- Content to be shown on the page -->
+    <!-- userPROFILE SETTINGS v2  -->
+    <div class="bgColor profilePageCont">
+            <div class="profileLeftNav">  
+                <?php
+                    include "modularContent/profileNav.php";
+                ?>
+            </div>
+            <div class="profileContentCont">
+                <div class="userGaller">
+
+                </div>
+
+                <form method="POST">
+                </form>
+
+                <h2 id="userFirstNameTitle">About you: </h2>
+                <hr>
+
+                <!-- version 2 -->
+                <form class="userProfileForm">
+
+                    <!-- firstName -->
+                    <label>First name:</label>
+                    <input type="text" id="userFirstNameField"value="">
+
+                    <!-- lastName -->
+                    <label>Last name:</label>
+                    <input type="text" id="userLastNameField" value="">
+
+                    <!-- username -->
+                    <label>Username: </label>
+                    <input type="text" id="userUsernameField" value="">
+
+                    <!-- phone -->
+                    <label>Phone:</label>
+                    <input type="text" id="userPhoneField" value="">
+
+                    <!-- gender -->
+                    <label>Gender</label>
+                    <input type="text" id="userGenderField" value="">
+
+                    <!-- birthday -->
+                    <label > Birthday</label>
+                    <input type="text" id="userBirthdayField" value="">
+
+                    <!-- height -->
+                    <label>Height</label>
+                    <input type="text" id="userHeightField" value="">
+
+                    <!-- Summary -->
+                    <label>Summary:</label>
+                    <textarea style="resize:none" rows="5" cols="25" id="userSummaryField"></textarea>
+
+                    <button id="updateAll"> Update </button>
+                </form>
+
+            </div>
+    </div>
+
     
     
     <footer class="foot">

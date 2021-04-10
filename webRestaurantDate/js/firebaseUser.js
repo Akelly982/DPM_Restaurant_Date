@@ -8,17 +8,16 @@
 //<div id="userNav">
 //    <span>myName</span>
 //    <a href="logout.php">Logout</a>
-//    <a href="userSettings.php">Settings</a>                   or            <a href="restaurantSettings.php">Settings</a>     
+//    <a href="userSettings.php">Settings</a>             or             <a href="restaurantSettings.php">Settings</a>     
 //    <input type="hidden" id="currentUserId" value="">
 //    <input type="hidden" id="currentUserType" value="">
 //</div>
 
 
 
+
+
 //functions--------
-
-
-
 
 function logout(){
     
@@ -61,20 +60,22 @@ function displayUserDataNav(doc,isRestaurant){
     //var isUser = doc.getBoolean("username"); //didnt work
 
     //BOTH USERTYPES NOW HAVE USERNAME;
+
+    uName.textContent = doc.data().username;
     
-    var isUser = doc.data().username;   //either will or wont get a value one will result null
-    var isRes = doc.data().resName;
+    // var isUser = doc.data().username;   //either will or wont get a value one will result null
+    // var isRes = doc.data().resName;
     
-    //depending on type of user set p element 
-    if(isUser != null){
-        uName.textContent=doc.data().username;
-    }else{
-        if(isRes != null){
-            uName.textContent=doc.data().resName;
-        }else{
-            uName.textContent="undefined";
-        }
-    }
+    // //depending on type of user set p element 
+    // if(isUser != null){
+    //     uName.textContent=doc.data().username;
+    // }else{
+    //     if(isRes != null){
+    //         uName.textContent=doc.data().resName;
+    //     }else{
+    //         uName.textContent="undefined";
+    //     }
+    // }
     
     
     
@@ -82,8 +83,12 @@ function displayUserDataNav(doc,isRestaurant){
     //set href
     uLogout.setAttribute("href","");  //gets it to behave like a normal a element
 
-    if(isRestaurant)
-    uSettings.setAttribute("href","userSettings.php");
+    if(!isRestaurant){
+        uSettings.setAttribute("href","userProfileSettings.php");
+    }else{
+        uSettings.setAttribute("href","restaurantProfileSettings.php");
+    }
+    
     
     //set txt content
     uLogout.textContent = "Logout";

@@ -31,7 +31,7 @@ submitBtn.addEventListener('click', (e) =>{
     var phone = myForm.phone.value;
     var gender = myForm.gender.value;
     var birthday = myForm.birthday.value;
-    var height = myForm.birthday.value;
+    var height = myForm.height.value;
     var smoker = myForm.smoker.value;
     
     var summary = document.querySelector('#taSummary').value;

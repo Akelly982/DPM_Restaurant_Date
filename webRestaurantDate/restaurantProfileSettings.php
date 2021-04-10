@@ -15,12 +15,14 @@
 
 
     <!-- Content to be shown on the page -->
-    <div class="bgColor restaurantSettingPageCont">
-        <div class="restaurantSettingsLeftNav">  
+    <div class="bgColor profilePageCont">
+        <div class="ppLeftNav">
+            <?php
+                include "modularContent/profileNav.php";
+            ?>
+            <div class="profileContentCont">
 
-        </div>
-        <div class="rsContentCont">
-            
+            </div>
         </div>
     </div>
     

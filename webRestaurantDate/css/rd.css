@@ -1228,6 +1228,175 @@ footer .footer_inner ul li a:hover {
   margin-top: 10px;
 }
 
+.profilePageCont {
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+  padding-right: 40px;
+  padding-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.profilePageCont .profileLeftNav {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.profilePageCont .profileLeftNav .leftNavText {
+  text-align: left;
+  color: #3b3b3b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profilePageCont .profileLeftNav .leftNavText:hover {
+  color: green;
+}
+
+.profilePageCont .profileLeftNav hr {
+  border-width: 1px;
+  text-align: left;
+  margin-left: 0;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 50%;
+  border-color: white;
+}
+
+.profilePageCont .profileLeftNav .hr2 {
+  border-color: green;
+}
+
+.profilePageCont .profileContentCont {
+  background-color: white;
+  border-radius: 25px;
+  min-height: 400px;
+  width: 100%;
+  padding: 25px;
+}
+
+.profilePageCont .profileContentCont hr {
+  border-width: 1px;
+  margin-left: 0;
+  width: 100%;
+  border-color: white;
+}
+
+.profilePageCont .profileContentCont .userProfileForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profilePageCont .profileContentCont .userProfileForm .profileInLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.profilePageCont .profileContentCont .userProfileForm .profileSettingsText {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.profilePageCont .profileContentCont .profileMainImgCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.profilePageCont .profileContentCont .profileMainImgCont .profileMainImg {
+  height: 250px;
+  width: 250px;
+}
+
+.profilePageCont .profileContentCont .profileMainImgCont .profileMainImgRound {
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer {
+  text-align: center;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer h2 {
+  font-size: 2em;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer .profileGalleryItemGrid {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  padding: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 25px;
+  -ms-grid-columns: 25% 25% 25%;
+      grid-template-columns: 25% 25% 25%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer .profileGalleryItem {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer .profileGalleryItem .profileGalleryText {
+  margin: 40px;
+}
+
 .contact_top {
   background: url(../img/contact_top.jpg);
   background-repeat: no-repeat;
