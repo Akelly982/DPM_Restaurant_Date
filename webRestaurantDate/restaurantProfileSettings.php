@@ -33,10 +33,18 @@
                         </div>
                     </div>
                 </section>
-
                 <!-- update gallery -->
                 <form method="POST">
                     <button type="submit"> Update Gallery</button>
+                </form>
+
+                <!-- show Hero -->
+                <div class="profileHeroImgCont">
+                <div class="profileHeroImg" style="background-image: url(userImage/tempUserImg.png);"></div>
+                </div>
+                <!-- update hero -->
+                <form method="POST">
+                    <button type="submit"> Update Hero</button>
                 </form>
 
 
@@ -45,7 +53,6 @@
                     <div class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
                     <div class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div>
                 </div>
-
                 <!-- update Img -->
                 <form class="profileMainImgForm" method="POST" result="">
                     <button type="submit"> Update Display Image</button>
