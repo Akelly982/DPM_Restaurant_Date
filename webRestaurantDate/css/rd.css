@@ -1305,6 +1305,14 @@ footer .footer_inner ul li a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .profilePageCont .profileContentCont .userProfileForm .profileInLine {
@@ -1322,6 +1330,15 @@ footer .footer_inner ul li a:hover {
   margin-right: 20px;
 }
 
+.profilePageCont .profileContentCont .userProfileForm .profileUpdateField {
+  margin: 10px;
+  width: 400px;
+}
+
+.profilePageCont .profileContentCont .userProfileForm .updateProfileBtn {
+  width: 200px;
+}
+
 .profilePageCont .profileContentCont .profileMainImgCont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1334,6 +1351,7 @@ footer .footer_inner ul li a:hover {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .profilePageCont .profileContentCont .profileMainImgCont .profileMainImg {

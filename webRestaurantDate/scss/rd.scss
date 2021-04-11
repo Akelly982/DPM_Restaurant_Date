@@ -1105,149 +1105,168 @@ $basicBkgColor: lightGrey;
 // =======================================
 
 .profilePageCont {
-  padding-top: 12rem;
-  padding-bottom: 6rem;
-  padding-right: 40px;
-  padding-left: 40px;
-  display: flex;
-  flex-direction: row;
-
-  .profileLeftNav{
-    //background-color: peachpuff;
-    width: 25%;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    padding-right: 40px;
+    padding-left: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-    .leftNavText{
-      text-align: left;
-      color: #3b3b3b;
-      font-size: 16px;
-      font-weight: bold;
-    }
+    flex-direction: row;
 
-    .leftNavText:hover{
-      color: green;
-    }
-
-    hr{
-      border-width: 1px;
-      text-align: left;
-      margin-left: 0;
-      align-items: left;
-      width: 50%;
-      border-color: white;
-    }
-    .hr2{
-      border-color: green;
-    }
-
-  }
-
-  .profileContentCont{
-    background-color: white;
-    border-radius: 25px;
-    min-height: 400px;
-    width: 100%;
-    padding: 25px;
-
-    hr{
-      border-width: 1px;
-      margin-left: 0;
-      width: 100%;
-      border-color: white;
-    }
-
-    .userProfileForm{
-      display:flex;
-      flex-direction: column;
-     
-      .profileInLine{
+    .profileLeftNav{
+        //background-color: peachpuff;
+        width: 25%;
         display: flex;
-        flex-direction: row;
-      }
-
-      .profileSettingsText{
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .leftNavText{
+        text-align: left;
+        color: #3b3b3b;
         font-size: 16px;
-        margin-right: 20px;
-      }
+        font-weight: bold;
+        }
 
+        .leftNavText:hover{
+        color: green;
+        }
 
-    }
-
-
-    .profileMainImgCont{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-top: 50px;
-
-      .profileMainImg{
-        height: 250px;
-        width: 250px;
-      }
-
-      .profileMainImgRound{
-        height: 250px;
-        width: 250px; 
-        border-radius: 100%;
-      }
+        hr{
+        border-width: 1px;
+        text-align: left;
+        margin-left: 0;
+        align-items: left;
+        width: 50%;
+        border-color: white;
+        }
+        .hr2{
+        border-color: green;
+        }
 
     }
+
+    .profileContentCont{
+        background-color: white;
+        border-radius: 25px;
+        min-height: 400px;
+        width: 100%;
+        padding: 25px;
+
+        hr{
+            border-width: 1px;
+            margin-left: 0;
+            width: 100%;
+            border-color: white;
+        }
+
+        .userProfileForm{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            .profileInLine{
+                display: flex;
+                flex-direction: row;
+            }
+
+            .profileSettingsText{
+                font-size: 16px;
+                margin-right: 20px;
+            }
+
+            .profileUpdateField{
+                margin: 10px;
+                width: 400px;
+            }
+
+            .updateProfileBtn{
+                width: 200px;
+            }
+
+        }
+        
+
     
 
 
+        .profileMainImgCont{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            margin-bottom: 50px;
 
-    //restaurant profile HeroImg
-    //-----
-    //---
+            .profileMainImg{
+                height: 250px;
+                width: 250px;
+            }
 
-    //profile gallery section
-    .profileGalleryContentContainer {
-    text-align: center;
-    h2 {
-      font-size: 2em;
-    }
+            .profileMainImgRound{
+                height: 250px;
+                width: 250px; 
+                border-radius: 100%;
+            }
 
-    .profileGalleryItemGrid {
-      //background-color:peachpuff;
-      justify-self: center;
-      align-self: center;
-      width: 100%;
-      height: auto;
-      min-height: 150px; //for row overall
-      padding: 25px;
-      padding-left: 100px;
-      padding-right: 100px;
-      display: grid;
-      grid-gap: 25px;
-      grid-template-columns: 25% 25% 25%;
-      grid-template-rows: auto;
-    }
+        }
+        
 
-    .profileGalleryItem {
-      width: 100%; //this allows item to follow parent grid
-      height: 300px; //height however is determined by item (HERE)
-      // border-radius: 10px;
-      background-position: center;
-      background-size: cover;
-      background-color: white;
-      background-repeat: no-repeat;
-      // flex needed to center text if text is shown
-      // (loading in / no images found)
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .profileGalleryText {
-        margin: 40px;
-      }
-  }
+        //restaurant profile HeroImg
+        //-----
+        //---
 
 
+        //profile gallery section
+        .profileGalleryContentContainer {
+            text-align: center;
+            h2 {
+            font-size: 2em;
+            }
+
+            .profileGalleryItemGrid {
+                //background-color:peachpuff;
+                justify-self: center;
+                align-self: center;
+                width: 100%;
+                height: auto;
+                min-height: 150px; //for row overall
+                padding: 25px;
+                padding-left: 100px;
+                padding-right: 100px;
+                display: grid;
+                grid-gap: 25px;
+                grid-template-columns: 25% 25% 25%;
+                grid-template-rows: auto;
+            }
+
+            .profileGalleryItem {
+                width: 100%; //this allows item to follow parent grid
+                height: 300px; //height however is determined by item (HERE)
+                // border-radius: 10px;
+                background-position: center;
+                background-size: cover;
+                background-color: white;
+                background-repeat: no-repeat;
+                // flex needed to center text if text is shown
+                // (loading in / no images found)
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .profileGalleryText {
+                    margin: 40px;
+                }
+
+            }
 
 
-}
+
+
+        }   
+
+
+    } //end profileContentCont
 
 
 
@@ -1256,7 +1275,7 @@ $basicBkgColor: lightGrey;
 
 
 
-  }
+  
 
 
 }

@@ -174,7 +174,7 @@ db.collection('restaurants').doc(resId).get().then((doc) =>{
         setRestrauntData(doc);
     } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!");
+        console.log("No such user document found!");
         setRestrauntDataError();
     }
 }).catch((error) =>{

@@ -160,7 +160,7 @@ firebase.auth().onAuthStateChanged((user) => {
             db.collection("restaurants").doc(user.uid).get().then((doc) =>{
                 if(doc.exists){
                     //display data in nav
-
+                    isRestraunt = true;
                     displayUserDataNav(doc, isRestraunt);
                 }else{
                     //cant find user doc connect to AUTH user in RESTRAUNT collection
