@@ -1,53 +1,47 @@
-<!doctype>
-<html lang="en">
-    
-    <head>        
-        <?php
-            include "modularContent/header.php";
-        ?>
-        <title>Login</title>
-    </head>
-    
-    <navigation>
-        <?php
-            include "modularContent/navEmpty.php";
-        ?>
-    </navigation>
-    
-    
-    
-    
-    <section>
-        <h1>Login</h1>
+<!-- Begin: Get Header -->
+<?php
+    /* Name of page title */
+    $title = "Login | Foodies";
+    /* Get header.php */
+    include "modularContent/header.php";
+?>
+<!-- Finish: Get Header -->
 
-        <form id="loginForm">
-            <label>Email:</label>
-            <input type="text" name="email">
-
-            <label>Password:</label>
-            <input type="password" name="password">
-
-            <button id="submitBtn">submit</button>
-        </form>
-    
-        
-        
-        
-    </section>
-    
-    
-    
-    <footer class="foot">
-        <?php
-            include "modularContent/footer.php";
-        ?>
-    </footer>
-
-    
+<navigation>
     <?php
-        include "modularContent/firebaseInit.php";
+        include "modularContent/navEmpty.php";
     ?>
-    <script src="js/pgJavascript/login.js"></script>
-    
+</navigation>
 
-</html>
+
+<div class="allGrayBg logSignForm">
+    <h1>Login to your account</h1>
+    <section>
+        <form id="loginForm">
+            <div class="fillin">
+                <label>Email</label>
+                <input type="text" name="email">
+            </div>
+            <div class="fillin">    
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <!-- <button type="submit">submit</button> -->
+            <button id="signUpPgSubmitBtn">LOGIN</button>
+        </form>
+        <p>
+            <a href="signUpPg1.php">Don't have an account? Create one here.</a>
+        </p>
+    </section>
+</div>
+
+
+<?php
+    include "modularContent/footer.php";
+?>
+
+<?php
+    include "modularContent/firebaseInit.php";
+?>
+<script src="js/pgJavascript/login.js"></script>
+

@@ -17,9 +17,9 @@
         </div>
         <div>
             <ul>
-                <li><a href="###">Join Now</a></li>
-                <li><a href="###">Member log-in</a></li>
-                <li><a href="###">Restaurant log-in</a></li>
+                <li><a href="signUpPg1.php">Join Now</a></li>
+                <li><a href="login.php">Member log-in</a></li>
+                <li><a href="login.php">Restaurant log-in</a></li>
             </ul>
         </div>
         <div>

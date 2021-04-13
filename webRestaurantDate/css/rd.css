@@ -48,6 +48,11 @@ section {
   margin: 6rem 0;
 }
 
+.allGrayBg {
+  padding: 6rem 0;
+  background-color: #eee;
+}
+
 .btn_blue,
 .btn_pink,
 .btn_green {
@@ -276,6 +281,10 @@ header .hInner nav ul .btn_nev a:hover::after {
 
 header .hInner .nav_mb {
   display: none;
+}
+
+header .hInner .nav_emp {
+  width: 20%;
 }
 
 @-webkit-keyframes headAni {
@@ -1557,6 +1566,63 @@ footer .footer_inner ul li a:hover {
   background-size: cover;
   height: 50vh;
   margin-top: -6rem;
+}
+
+.logSignForm h1 {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.logSignForm section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 6rem;
+  background-color: white;
+}
+
+.logSignForm section h3 {
+  color: #fd8878;
+}
+
+.logSignForm section .fillin {
+  margin: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logSignForm section input, .logSignForm section textarea, .logSignForm section select {
+  font-size: unset;
+  padding: .5rem;
+  border: none;
+  background-color: #eee;
+}
+
+.logSignForm section button {
+  color: white;
+  background-color: #fd8878;
+  padding: 1rem 3rem;
+  border: 2px solid #fd8878;
+  font-weight: bold;
+}
+
+.logSignForm section button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #fd8878;
+}
+
+.logSignForm section p {
+  margin: 3rem 0;
+  font-size: 14px;
+}
+
+.logSignForm section p a {
+  color: #4e8eb5;
 }
 
 @media screen and (max-width: 1024px) {
