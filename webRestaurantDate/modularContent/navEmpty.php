@@ -9,7 +9,7 @@ shown during that state -->
                 <img src="img/logo.svg" alt="foodies home page">
             </a>
         </h1>
-        <nav>
+        <nav class="nav_emp">
             <ul>
                 <li><a href="findRestaurants.php">Find Restaurants</a></li>
                 <li><a href="about.php">About</a></li>

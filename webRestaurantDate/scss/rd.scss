@@ -58,6 +58,11 @@ section {
   margin: 6rem 0;
 }
 
+.allGrayBg  {
+  padding: 6rem 0;
+  background-color: $whiteGray;
+}
+
 // Button
 .btn_blue,
 .btn_pink,
@@ -234,6 +239,9 @@ header {
     }
     .nav_mb {
       display: none;
+    }
+    .nav_emp{
+      width: 20%;
     }
   }
 }
@@ -1345,6 +1353,67 @@ $basicBkgColor: lightGrey;
   height: 50vh;
   margin-top: -6rem;
 }
+
+//========================================
+//
+// Login / Signin Page
+//
+// =======================================
+
+.logSignForm {
+  h1 {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 6rem;
+    background-color: white;
+    h3 {
+      color: $pink;
+    }
+    .fillin {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea, select {
+      font-size: unset;
+      padding: .5rem;
+      border: none;
+      background-color: #eee;
+    }
+    button {
+      color: white;
+      background-color: $pink;
+      padding: 1rem 3rem;
+      border: 2px solid $pink;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: $pink;
+      }
+    }
+    p {
+      margin: 3rem 0;
+      font-size: 14px;
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
+
+//========================================
+//
+// User Page
+//
+// =======================================
+
+
+
 
 // ***************************************
 // =======================================
