@@ -12,7 +12,7 @@
                 <li><a href="about.php">About</a></li>
                 <!-- <li><a href="###">Blog</a></li> -->
                 <li><a href="contact.php">Contact us</a></li>
-                <li><a href="###">Privacy policy</a></li>
+                <li><a href="privacy.php">Privacy policy</a></li>
             </ul>
         </div>
         <div>
