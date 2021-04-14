@@ -2,11 +2,10 @@
 
 
 var submitBtn = document.getElementById("submitBtn");
-var submitBtn2 = document.getElementById("submitBtn2");
 
-submitBtn.addEventListener('click', (e) =>{
+submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    
+
         //get user data 
 
         let form = document.getElementById("loginForm");

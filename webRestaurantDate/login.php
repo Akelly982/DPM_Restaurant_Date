@@ -27,7 +27,7 @@
                 <input type="password" name="password">
             </div>
             <!-- <button type="submit">submit</button> -->
-            <button id="signUpPgSubmitBtn">LOGIN</button>
+            <button id="submitBtn">LOGIN</button>
         </form>
         <p>
             <a href="signUpPg1.php">Don't have an account? Create one here.</a>
