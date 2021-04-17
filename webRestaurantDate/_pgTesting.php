@@ -562,6 +562,32 @@
     </div>
 
 
+
+
+    <!-- user matches gallery -->
+    <div class="matchesGalleryContentContainer">
+            <h2> Matches </h2>
+            <div class="matchesGalleryItemGrid" id="matchesGalleryGrid">
+
+                <!-- generic on html load item -->
+                <div class="matchesGalleryItem">
+                    <h2 class="matchesGalleryText">Loading in matches...</h2>
+                </div>
+
+                <!-- On found doc load item-->
+                <div class="matchesGalleryItem" style="background-image: url(userImage/tempResImg.png);">
+                    <p class="matchesItemText">2</p>
+                </div>
+
+                <!-- no user items found -->
+                <div class="matchesGalleryItem">
+                    <h3 class="matchesGalleryText"> We have found no matches for you try adding some comments / reviews to restaurants. </h3>
+                </div>
+
+            </div>
+    </div>
+
+
     
     
     <footer class="foot">

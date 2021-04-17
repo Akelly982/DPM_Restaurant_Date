@@ -19,7 +19,7 @@
 
             <div class="profileLeftNav">  
                 <?php
-                    include "modularContent/profileNav.php";
+                    include "modularContent/profileNavRes.php";
                 ?>
             </div>
 

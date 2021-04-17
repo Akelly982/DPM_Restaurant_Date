@@ -250,6 +250,10 @@ function emptyParentContent(){
 
 
 
+
+
+
+
 // --------------------------------------------------------
 //----------- functions  working with Firestore -----------------
 
