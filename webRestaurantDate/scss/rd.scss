@@ -1478,7 +1478,24 @@ $basicBkgColor: lightGrey;
 //
 // =======================================
 
-
+//========================================
+//
+// Privacy Policy Page
+//
+// =======================================
+.pp {
+  padding: 0 15px;
+  .pp_inner{
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 3vmax 3rem;
+    background-color: $whiteGray;
+    h2 {
+      margin-top: 3rem;
+    }
+  }
+}
 
 
 // ***************************************
