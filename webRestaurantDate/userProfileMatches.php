@@ -23,6 +23,24 @@
                 <?php
                     include "modularContent/profileNav.php";
                 ?>
+                <div>
+                    <input type="radio" id="isPosTrue" name="isPosRadio" value="true" checked>
+                    <label for="isPosTrue">positive reviews</label>
+                    <input type="radio" id="isPosFalse" name="isPosRadio" value="false">
+                    <label for="isPosFalse">negitive reviews</label>
+                    <button id="searchByReviewTypeBtn"> Search by Review Type </button>
+
+                    <div class="">
+                        <input type="text" id="byGenderTextField">
+                        <button id="byGenderBtn"> Gender </button>
+                    </div>
+
+                    <div class="">
+                        <input type="number" id="byAgeRangeNumber">
+                        <button id="byAgeRangeHighBtn"> Age range high  </button>
+                        <button id="byAgeRangeLowBtn"> Age range low  </button>
+                    </div>
+                </div>
             </div>
 
             <!-- page content parent -->

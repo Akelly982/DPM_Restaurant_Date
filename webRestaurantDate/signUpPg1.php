@@ -24,7 +24,7 @@
             <!-- radio btn determins the action location of this form -->
             <!-- update within the pages javascript for on event -->
             <div>
-                <input type="radio" id="signUpUser" name="userType" value="user">
+                <input type="radio" id="signUpUser" name="userType" value="user" checked>
                 <label for="signUpUser">I’m looking for the partner</label>
                 <input type="radio" id="signUpRes" name="userType" value="restaurant">
                 <label for="signUpRes">I want to create an account for my restaurant.</label>

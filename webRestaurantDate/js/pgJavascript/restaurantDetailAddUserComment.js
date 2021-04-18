@@ -42,6 +42,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 //-----functions------------
 
+
 function userMismatch(){
 
 
@@ -52,7 +53,7 @@ function userMismatch(){
 
     //empty parent
     parentCont.innerHtml ="<div class='rdacAddCommentForm'>" +
-                              "<h4> User does not match signed in user. </h4>" +
+                              "<h4> page User does not match signed in user. </h4>" +
                            "</div>";
 
 }
@@ -61,111 +62,7 @@ function userMismatch(){
 
 
 
-//redundant                          // REF    userCommentTitle,userCommentStr,resId,doc                        
-function updateRestrauntDbComments(userCommentTitle, userComment, rId, userDoc){
 
-    //testing
-    // console.log("--------------------------------------");
-    // console.log("entered RES update function -----")
-    // console.log("cmt title: " + userCommentTitle);
-    // console.log("cmt: " + userComment);
-    // console.log("rId: " + rId);
-    // console.log("isPos: " + isPosReview);
-    // console.log("userDoc: " + userDoc.id);
-    // console.log("firstName: " + userDoc.data().firstName);
-    // console.log("--------------------------------------");
-
-
-    db.collection('restaurants').doc(rId).collection("comments").add({
-        isPosReview: isPosReview,
-        commentText: userComment,
-        commentTitle: userCommentTitle,
-        userId: userId,
-        userFirstName: userDoc.data().firstName,
-        userLastName: userDoc.data().lastName,
-        userImgExt: userDoc.data().imgExt,
-        userImgPath: userDoc.data().imgPath,
-        username: userDoc.data().username
-    })    
-    .then((docRef) => {
-
-        console.log("Document successfully updated for RESTAURANT COMMENTS");
-        console.log("docRef for resCommentId = " + docRef.id);
-
-        restaurantCommentId = docRef.id;
-        
-        //testing
-        console.log("comment added to:" + rId);
-        console.log("docRef id = " + restaurantCommentId);
-
-        //update user with restaurant data
-        db.collection("restaurants").doc(rId).get().then((doc) =>{
-            if(doc.exists){
-
-                var userDocRef = updateUserDbComments(userCommentTitle,userCommentStr, userId, doc, restaurantCommentId);
-                if(userDocRef == -1){
-                    alert("ERROR adding restaurant comment to user comments db.")
-                }
-                var resName = doc.data().resName; //get this to return to resDetailPage
-                alert("successfull update of both user and res comments");
-                //window.location.href = 'restaurantDetail.php' + "?restaurantName=" + resName +"&restaurantId=" + resId;
-
-            }else{
-                alert("could not identify restaurant for user try again");
-            }
-
-        }).catch((error) =>{
-            console.log("ERROR restaurant DB for user catch with: " + error)
-        });
-
-    })
-    .catch((error) => {
-        // The document probably was not created.
-        console.log("Error creating firestore document: ", error);
-        return -1;
-    });
-
-
-}
-
-
-
-
-// redundant
-function updateUserDbComments(userCommentTitle,userComment, uId, resDoc, restaurantCommentId){
-
-    //testing
-    // console.log("--------------------------------------");
-    // console.log("entered USER update function -----");
-    // console.log("cmt title: " + userCommentTitle);
-    // console.log("cmt: " + userComment);
-    // console.log("resId: " + resId);
-    // console.log("resCommentId: " + restrauntCommentId);
-    // console.log("isPos: " + isPosReview);
-    // console.log("resDoc: " + userDoc.id);
-    // console.log("--------------------------------------");
-
-    db.collection('users').doc(uId).collection('restaurantComments').add({
-        isPosReview: isPosReview,
-        commentText: userComment,
-        commentTitle: userCommentTitle,
-        restaurantId: resId,
-        restaurantName: resDoc.data().resName,
-        restaurantCommentId: restaurantCommentId
-    })    
-    .then((docRef) => {
-        console.log("Document successfully updated!");
-        console
-        return docRef.id;
-    })
-    .catch((error) => {
-        // The document probably was not created.
-        console.log("Error creating firestore document: ", error);
-        return -1;
-    });
-
-
-}
 
 
 
@@ -216,7 +113,12 @@ formBtn.addEventListener('click', (event) =>{
                 userLastName: doc.data().lastName,
                 userImgExt: doc.data().imgExt,
                 userImgPath: doc.data().imgPath,
-                username: doc.data().username
+                username: doc.data().username,
+                smoker: doc.data().smoker,
+                birthday: doc.data().birthday,
+                gender: doc.data().gender,
+                height: doc.data().height,
+                summary: doc.data().summary
             })    
             .then((docRef) => {  //it is undetermined when this will run due to data transfer times
                 
@@ -288,11 +190,130 @@ formBtn.addEventListener('click', (event) =>{
     
 
 
-    
-
-    
-    
-    
-    
-
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Previous code was ineffective did not work with regards to promise || then || asycn response. 
+
+
+//redundant                          // REF    userCommentTitle,userCommentStr,resId,doc                        
+// function updateRestrauntDbComments(userCommentTitle, userComment, rId, userDoc){
+
+//     //testing
+//     // console.log("--------------------------------------");
+//     // console.log("entered RES update function -----")
+//     // console.log("cmt title: " + userCommentTitle);
+//     // console.log("cmt: " + userComment);
+//     // console.log("rId: " + rId);
+//     // console.log("isPos: " + isPosReview);
+//     // console.log("userDoc: " + userDoc.id);
+//     // console.log("firstName: " + userDoc.data().firstName);
+//     // console.log("--------------------------------------");
+
+
+//     db.collection('restaurants').doc(rId).collection("comments").add({
+//         isPosReview: isPosReview,
+//         commentText: userComment,
+//         commentTitle: userCommentTitle,
+//         userId: userId,
+//         userFirstName: userDoc.data().firstName,
+//         userLastName: userDoc.data().lastName,
+//         userImgExt: userDoc.data().imgExt,
+//         userImgPath: userDoc.data().imgPath,
+//         username: userDoc.data().username,
+//         smoker: userDoc.data().smoker,
+//         birthday: userDoc.data().birthday,
+//         gender: userDoc.data().gender,
+//         height: userDoc.data().height,
+//         summary: userDoc.data
+//     })    
+//     .then((docRef) => {
+
+//         console.log("Document successfully updated for RESTAURANT COMMENTS");
+//         console.log("docRef for resCommentId = " + docRef.id);
+
+//         restaurantCommentId = docRef.id;
+        
+//         //testing
+//         console.log("comment added to:" + rId);
+//         console.log("docRef id = " + restaurantCommentId);
+
+//         //update user with restaurant data
+//         db.collection("restaurants").doc(rId).get().then((doc) =>{
+//             if(doc.exists){
+
+//                 var userDocRef = updateUserDbComments(userCommentTitle,userCommentStr, userId, doc, restaurantCommentId);
+//                 if(userDocRef == -1){
+//                     alert("ERROR adding restaurant comment to user comments db.")
+//                 }
+//                 var resName = doc.data().resName; //get this to return to resDetailPage
+//                 alert("successfull update of both user and res comments");
+//                 //window.location.href = 'restaurantDetail.php' + "?restaurantName=" + resName +"&restaurantId=" + resId;
+
+//             }else{
+//                 alert("could not identify restaurant for user try again");
+//             }
+
+//         }).catch((error) =>{
+//             console.log("ERROR restaurant DB for user catch with: " + error)
+//         });
+
+//     })
+//     .catch((error) => {
+//         // The document probably was not created.
+//         console.log("Error creating firestore document: ", error);
+//         return -1;
+//     });
+
+
+// }
+
+
+
+
+// redundant
+// function updateUserDbComments(userCommentTitle,userComment, uId, resDoc, restaurantCommentId){
+
+//     //testing
+//     // console.log("--------------------------------------");
+//     // console.log("entered USER update function -----");
+//     // console.log("cmt title: " + userCommentTitle);
+//     // console.log("cmt: " + userComment);
+//     // console.log("resId: " + resId);
+//     // console.log("resCommentId: " + restrauntCommentId);
+//     // console.log("isPos: " + isPosReview);
+//     // console.log("resDoc: " + userDoc.id);
+//     // console.log("--------------------------------------");
+
+//     db.collection('users').doc(uId).collection('restaurantComments').add({
+//         isPosReview: isPosReview,
+//         commentText: userComment,
+//         commentTitle: userCommentTitle,
+//         restaurantId: resId,
+//         restaurantName: resDoc.data().resName,
+//         restaurantCommentId: restaurantCommentId
+//     })    
+//     .then((docRef) => {
+//         console.log("Document successfully updated!");
+//         console
+//         return docRef.id;
+//     })
+//     .catch((error) => {
+//         // The document probably was not created.
+//         console.log("Error creating firestore document: ", error);
+//         return -1;
+//     });
+
+
+// }
