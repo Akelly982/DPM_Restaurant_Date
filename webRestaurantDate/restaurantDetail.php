@@ -56,18 +56,21 @@
 
 
         <!--  add comment component -->
-        <div>
+        <div class="addComment">
             <form class="rdAddCommentForm" id="rdAddCommentF">
                 <h2>Is this restaurant interesting to you</h2>
-
+                <br>
                 <input type="radio" id="posReview" name="userReviewIsPos" value="true">
-                <label for="posReview">YES!!!</label>
+                <label for="posReview" class="posReviewYes">YES!!!</label>
 
                 <input type="radio" id="negReview" name="userReviewIsPos" value="false">
-                <label for="negReview">...Nope</label>
+                <label for="negReview" class="posReviewNo">...Nope</label>
+
+                <br><br><br>
 
                 <h2>Do you have a vibe for this restraunt?</h2>
-                <button id="rdAddCommentBtn"> Leave a comment </button>
+                <br>
+                <button id="rdAddCommentBtn" class="btn_pink"> Leave a comment </button>
             </form>
         </div>
 

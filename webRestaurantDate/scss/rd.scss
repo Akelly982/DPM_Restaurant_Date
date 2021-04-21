@@ -111,6 +111,14 @@ section {
 }
 
 // Display
+.d1024mb {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .d1024mb {
+    display: block;
+  }
+}
 .d768_mb {
   display: none;
 }
@@ -817,6 +825,19 @@ $basicBkgColor: lightGrey;
       }
       .frCategories {
         margin-bottom: 3rem;
+        ul {
+          li {
+            margin-bottom: 0.5rem;
+            a {
+              color: unset;
+              &:hover {
+                color: $blue;
+                border-bottom: 2px solid;
+                transition: $t_05;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -971,33 +992,48 @@ $basicBkgColor: lightGrey;
 }
 
 //add comment section
-.rdAddCommentForm {
-  text-align: center;
-  background-color: white;
-  padding: 6rem 0;
-
-  .rdRadioBtnCont {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    .rdActiveRadioBtn {
-      border-radius: 10px;
-      border-color: red;
-      border: solid 2px;
+.addComment {
+  .rdAddCommentForm {
+    text-align: center;
+    background-color: white;
+    padding: 6rem 0;
+    .rdRadioBtnCont {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .rdActiveRadioBtn {
+        border-radius: 10px;
+        border-color: red;
+        border: solid 2px;
+      }
+      .rdYesRadioBtn {
+        margin-right: 20px;
+        padding: 5px;
+      }
+      .rdNoRadioBtn {
+        margin-left: 20px;
+        padding: 5px;
+      }
     }
-
-    .rdYesRadioBtn {
-      margin-right: 20px;
-      padding: 5px;
+    .posReviewYes {
+      color: $pink;
+      font-weight: bold;
+      margin-right: 2rem;
     }
-    .rdNoRadioBtn {
-      margin-left: 20px;
-      padding: 5px;
+    .posReviewNo {
+      color: #999;
+    }
+    button {
+      color: white;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      &:hover {
+        color: $pink;
+        cursor: pointer;
+      }
     }
   }
 }
-
 // existing user comments section
 .rdCommentContentContainer {
   text-align: center;
@@ -1688,6 +1724,49 @@ $basicBkgColor: lightGrey;
       }
     }
   }
+
+  // Restaurant list
+  .findRest {
+    .findResContainer {
+      display: block;
+      .findResSearch {
+        width: 100%;
+        padding: 0 15px;
+        .findResSearchMb {
+          background-color: $blue;
+          border: 2px solid $blue;
+          color: white;
+          font-weight: bold;
+          padding: 1rem;
+          border-radius: .25rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &::after {
+            content: "+";
+            font-size: 1.5rem;
+          }
+        }
+        .findResSearchMb_active {
+          background-color: white;
+          color: $blue;
+        }
+        .leftNav {
+          display: none;
+          input {
+            width: 100%;
+          }
+        }
+      }
+      .findResContentGrid {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+
+
   // -------------------------
 } // END: BREAKING POINT 1024
 

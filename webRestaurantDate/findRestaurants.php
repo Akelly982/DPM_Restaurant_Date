@@ -19,7 +19,8 @@
     
     <div class="findResContainer">
         <div class="findResSearch">
-            <div class="leftNav">
+            <div class="findResSearchMb d1024mb" onclick="toggleSearch()">Let's find restaurant...</div>
+            <div class="leftNav" id="searchMb">
                 <!-- Search field -->
                 <h2> Search...</h2>
                 <div class="frSearchField">
@@ -66,4 +67,7 @@
 
 <!-- javascript for the page that we are on -->
 <script src="js/pgJavascript/findRestaurants.js"></script>
+
+<script src="js/toggle.js"></script>
+
 

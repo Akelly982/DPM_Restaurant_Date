@@ -114,6 +114,16 @@ section {
   color: #49d649;
 }
 
+.d1024mb {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .d1024mb {
+    display: block;
+  }
+}
+
 .d768_mb {
   display: none;
 }
@@ -964,6 +974,21 @@ footer .footer_inner ul li a:hover {
   margin-bottom: 3rem;
 }
 
+.findRest .findResContainer .findResSearch .frCategories ul li {
+  margin-bottom: 0.5rem;
+}
+
+.findRest .findResContainer .findResSearch .frCategories ul li a {
+  color: unset;
+}
+
+.findRest .findResContainer .findResSearch .frCategories ul li a:hover {
+  color: #4e8eb5;
+  border-bottom: 2px solid;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 .findRest .findResContainer .findResContentGrid {
   margin: 4.75rem 0 3rem 0;
   width: 75%;
@@ -1101,13 +1126,13 @@ footer .footer_inner ul li a:hover {
   margin: 40px;
 }
 
-.rdAddCommentForm {
+.addComment .rdAddCommentForm {
   text-align: center;
   background-color: white;
   padding: 6rem 0;
 }
 
-.rdAddCommentForm .rdRadioBtnCont {
+.addComment .rdAddCommentForm .rdRadioBtnCont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1120,20 +1145,41 @@ footer .footer_inner ul li a:hover {
           justify-content: center;
 }
 
-.rdAddCommentForm .rdRadioBtnCont .rdActiveRadioBtn {
+.addComment .rdAddCommentForm .rdRadioBtnCont .rdActiveRadioBtn {
   border-radius: 10px;
   border-color: red;
   border: solid 2px;
 }
 
-.rdAddCommentForm .rdRadioBtnCont .rdYesRadioBtn {
+.addComment .rdAddCommentForm .rdRadioBtnCont .rdYesRadioBtn {
   margin-right: 20px;
   padding: 5px;
 }
 
-.rdAddCommentForm .rdRadioBtnCont .rdNoRadioBtn {
+.addComment .rdAddCommentForm .rdRadioBtnCont .rdNoRadioBtn {
   margin-left: 20px;
   padding: 5px;
+}
+
+.addComment .rdAddCommentForm .posReviewYes {
+  color: #fd8878;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.addComment .rdAddCommentForm .posReviewNo {
+  color: #999;
+}
+
+.addComment .rdAddCommentForm button {
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+
+.addComment .rdAddCommentForm button:hover {
+  color: #fd8878;
+  cursor: pointer;
 }
 
 .rdCommentContentContainer {
@@ -1884,6 +1930,49 @@ footer .footer_inner ul li a:hover {
   }
   .contact_body .contact_form_container #contact_form .contact_form_element #submit_button {
     margin-left: 0;
+  }
+  .findRest .findResContainer {
+    display: block;
+  }
+  .findRest .findResContainer .findResSearch {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .findRest .findResContainer .findResSearch .findResSearchMb {
+    background-color: #4e8eb5;
+    border: 2px solid #4e8eb5;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .findRest .findResContainer .findResSearch .findResSearchMb::after {
+    content: "+";
+    font-size: 1.5rem;
+  }
+  .findRest .findResContainer .findResSearch .findResSearchMb_active {
+    background-color: white;
+    color: #4e8eb5;
+  }
+  .findRest .findResContainer .findResSearch .leftNav {
+    display: none;
+  }
+  .findRest .findResContainer .findResSearch .leftNav input {
+    width: 100%;
+  }
+  .findRest .findResContainer .findResContentGrid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
