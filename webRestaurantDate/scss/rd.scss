@@ -1227,13 +1227,15 @@ $basicBkgColor: lightGrey;
       margin-bottom: 50px;
 
       .profileMainImg {
-        background-size: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 250px;
         width: 250px;
       }
 
       .profileMainImgRound {
-        background-size: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 250px;
         width: 250px;
         border-radius: 100%;
