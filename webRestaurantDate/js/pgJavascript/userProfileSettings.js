@@ -18,7 +18,17 @@ var heightField = document.getElementById("userHeightField");
 var smokerField = document.getElementById("userSmokerField");
 var summaryField = document.getElementById("userSummaryField");
 
+//image update btn hidden inputs
+var userIdSingle = document.getElementById("userIdSingle");
+var userIdGallery = document.getElementById("userIdGallery");
 
+
+
+//display image
+var userDisplay1Img = document.getElementById("userDisplay1");
+var userDisplay2Img = document.getElementById("userDisplay2");
+{/* <div id="userDisplay1" class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
+<div id="userDisplay2" class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div> */}
 
 
 
@@ -27,7 +37,8 @@ var summaryField = document.getElementById("userSummaryField");
 // ----- FUN..ctions ----------------------
 
 
-function fillUserFields(doc){
+function fillUserFields(doc,uid){
+    //data fields user edit
     firstNameField.setAttribute("value",doc.data().firstName);
     lastNameField.setAttribute("value",doc.data().lastName);
     usernameField.setAttribute("value",doc.data().username);
@@ -37,6 +48,14 @@ function fillUserFields(doc){
     heightField.setAttribute("value",doc.data().height);
     smokerField.setAttribute("value", doc.data().smoker);
     summaryField.innerHTML = doc.data().summary;
+
+    //hidden fields
+    userIdSingle.setAttribute("value", uid);
+    userIdGallery.setAttribute("value", uid);
+
+    //display image
+    userDisplay1Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
+    userDisplay2Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
 }
 
 
@@ -58,8 +77,7 @@ firebase.auth().onAuthStateChanged((user) => {
             if(doc.exists){
                   //console.log(user.uid);
                   userId = user.uid;
-                  fillUserFields(doc);
-
+                  fillUserFields(doc,userId);
             }else{
                 alert("could not find active user document.")
                 window.location.href = 'login.php';

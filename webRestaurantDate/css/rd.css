@@ -1429,11 +1429,13 @@ footer .footer_inner ul li a:hover {
 }
 
 .profilePageCont .profileContentCont .profileMainImgCont .profileMainImg {
+  background-size: contain;
   height: 250px;
   width: 250px;
 }
 
 .profilePageCont .profileContentCont .profileMainImgCont .profileMainImgRound {
+  background-size: contain;
   height: 250px;
   width: 250px;
   border-radius: 100%;
@@ -1467,6 +1469,16 @@ footer .footer_inner ul li a:hover {
 
 .profilePageCont .profileContentCont .profileGalleryContentContainer h2 {
   font-size: 2em;
+}
+
+.profilePageCont .profileContentCont .profileGalleryContentContainer .simpleflexColumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .profilePageCont .profileContentCont .profileGalleryContentContainer .profileGalleryItemGrid {

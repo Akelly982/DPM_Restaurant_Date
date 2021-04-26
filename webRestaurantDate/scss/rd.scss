@@ -1227,11 +1227,13 @@ $basicBkgColor: lightGrey;
       margin-bottom: 50px;
 
       .profileMainImg {
+        background-size: contain;
         height: 250px;
         width: 250px;
       }
 
       .profileMainImgRound {
+        background-size: contain;
         height: 250px;
         width: 250px;
         border-radius: 100%;
@@ -1259,6 +1261,11 @@ $basicBkgColor: lightGrey;
       text-align: center;
       h2 {
         font-size: 2em;
+      }
+
+      .simpleflexColumn{
+        display: flex;
+        flex-direction: column;
       }
 
       .profileGalleryItemGrid {
