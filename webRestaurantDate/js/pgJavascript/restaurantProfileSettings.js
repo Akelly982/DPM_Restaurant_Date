@@ -23,8 +23,21 @@ var cat3 = document.getElementById("catDrop3");
 
 var summaryField = document.getElementById("userSummaryField");
 
+//image update btn hidden inputs
+var userIdSingle = document.getElementById("userIdSingle");
+var userIdSingleHero = document.getElementById("userIdSingleHero");
+var userIdGallery = document.getElementById("userIdGallery");
 
 
+//display image
+var userDisplay1Img = document.getElementById("userDisplay1");
+var userDisplay2Img = document.getElementById("userDisplay2");
+
+//hero image
+var userHeroImg = document.getElementById("userHeroImage");
+
+//gallery parent element
+var galleryGridParent = document.getElementById("rpGalleryGrid");
 
 
 
@@ -32,7 +45,7 @@ var summaryField = document.getElementById("userSummaryField");
 // ----- FUN..ctions ----------------------
 
 
-function fillUserFields(doc){
+function fillUserFields(doc,rid){
     firstNameField.setAttribute("value",doc.data().firstName);
     lastNameField.setAttribute("value",doc.data().lastName);
     usernameField.setAttribute("value",doc.data().username);
@@ -47,7 +60,80 @@ function fillUserFields(doc){
     cat3.value = doc.data().category3;
 
     summaryField.innerHTML = doc.data().summary;
+
+    //hidden fields
+    userIdSingle.setAttribute("value", rid);
+    userIdSingleHero.setAttribute("value", rid);
+    userIdGallery.setAttribute("value", rid);
 }
+
+
+function fillUserDisplay(doc){
+    //display image
+    userDisplay1Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
+    userDisplay2Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
+}
+
+function fillUserHero(doc){
+    userHeroImg.setAttribute("style", "background-image: url(userImage/" + doc.data().heroImgPath  +  doc.data().heroImgExt  + ")")
+}
+
+function fillUserGallery(doc){
+
+    // Items we are going to create
+
+    // <!-- On found doc load item (gallery will be a CSV forEach loop)-->
+    // <div class="rdGalleryItem" style="background-image: url(userImage/tempResImg.png);">
+    // </div>
+
+    // <!-- no gallery items found -->
+    // <div class="rdGalleryItem">
+    //     <h3 class="rdGalleryText">Gallery images for this restraunt have not been uploaded yet. Patience is a virtue..</h3>
+    // </div>
+
+
+    //empty parent grid of current items
+    galleryGridParent.innerHTML = "";
+
+    //get and split userGalleryCSV
+    //CSV comma seperated values
+    var userGalleryCSV = doc.data().galleryCSV;
+    console.log("CSV: " + userGalleryCSV);
+    var strResult = userGalleryCSV.split(",");
+
+
+    console.log("--------- image split ----------");
+    // our image paths seperated
+    strResult.forEach(element => {
+        console.log(element);
+    });
+    
+
+    //console.log(strResult.length);
+    
+    if(strResult.length == 0){
+        console.log("--------- no images found ----------");
+        let item = document.createElement("div");
+        item.setAttribute("class", "rdGalleryItem");
+        galleryGridParent.append(item);
+        item.innerHTML = "<h3 class='rdGalleryText'>Gallery images for this user have not been uploaded yet. Patience is a virtue..</h3>"
+    }else{
+        console.log("--------- create image items ----------");
+        strResult.forEach(element => {
+            let item = document.createElement("div");
+            item.setAttribute("class", "profileGalleryItem");
+            item.setAttribute("style","background-image: url(userImage/"+ element  +");")
+            galleryGridParent.append(item);
+        });
+    }   
+
+    
+
+}
+
+
+
+
 
 
 
@@ -93,7 +179,11 @@ firebase.auth().onAuthStateChanged((user) => {
             if(doc.exists){
                     //console.log(user.uid);
                     resId = user.uid;
-                    fillUserFields(doc);
+                    fillUserFields(doc,resId);
+
+                    fillUserDisplay(doc);
+                    fillUserGallery(doc);
+                    fillUserHero(doc);
             }else{
                 alert("could not find active user document.")
                 //window.location.href = 'login.php';

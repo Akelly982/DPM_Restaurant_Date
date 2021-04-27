@@ -30,57 +30,70 @@
 
     
     //phase 3 -- upload image to directory
-    function uploadToDir($target_dir,$target_file,$imgStringFull) {
-        //upload image file within folder structure 
+//     function uploadToDir($target_dir,$target_file,$imgStringFull) {
+//         //upload image file within folder structure 
 
-        //make sure directories exits if not create
-        if (!file_exists($target_dir)){
-            if(mkdir($target_dir,0777,true)){  //$target dir, 0777 means widest possible access rights and final true allows for folders within folders
-                echo "directory creation successfull <br>";
-                $dirCreation = true;
-            }else{
-                echo "directory creation failed <br>";
-                $dirCreation = false;
-            }
-        }else{
-            echo "directory already exists <br>";
-            $dirCreation = true;
-        }
+//         //make sure directories exits if not create
+//         if (!file_exists($target_dir)){
+//             if(mkdir($target_dir,0777,true)){  //$target dir, 0777 means widest possible access rights and final true allows for folders within folders
+//                 echo "directory creation successfull <br>";
+//                 $dirCreation = true;
+//             }else{
+//                 echo "directory creation failed <br>";
+//                 $dirCreation = false;
+//             }
+//         }else{
+//             echo "directory already exists <br>";
+//             $dirCreation = true;
+//         }
         
 
-        // try and upload file
-        if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)){
-            echo "The file " . htmlspecialchars( basename($_FILES["imageToUpload"]["name"])) . " has been uploaded as " . $imgStringFull;
-            $imageUploaded = true;
-        }else{
-            echo "Sorry, their was an issue uploading your file.  <br>";
-            $imageUploaded = false;
-        }   
+//         // try and upload file
+//         if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)){
+//             echo "The file " . htmlspecialchars( basename($_FILES["imageToUpload"]["name"])) . " has been uploaded as " . $imgStringFull;
+//             $imageUploaded = true;
+//         }else{
+//             echo "Sorry, their was an issue uploading your file.  <br>";
+//             $imageUploaded = false;
+//         }   
 
-        if($imageUploaded && $dirCreation){
-            return true;
-        }else{
-            return false;
-        }
-   }
+//         if($imageUploaded && $dirCreation){
+//             return true;
+//         }else{
+//             return false;
+//         }
+//    }
 
 
 
    //phase 4 --- update user firestore with img data -------
-    function updateUserFirestore($hostUserId,$imageStringCSV) {
+    function updateUserFirestore($hostUserId,$imageStringCSV,$isRestaurant) {
 
         include "../../modularContent/header.php";
 
         include "../../modularContent/firebaseInit.php";
 
+
+
+        $collectionName;
+        $returnFile;
+        if($isRestaurant){
+            $collectionName = "restaurants";
+            $returnFile = "restaurantProfileSettings.php";
+        }else{
+            $collectionName = "users";
+            $returnFile = "userProfileSettings.php";
+        }
+
+
         //inline javascript within php
         echo    '<script type="text/JavaScript">
-                    db.collection("users").doc(\''. $hostUserId .'\').update({
+                    db.collection(\'' .$collectionName. '\').doc(\''. $hostUserId .'\').update({
                         galleryCSV: \''.$imageStringCSV.'\',
                     })    
                     .then((docRef) => {
                         console.log("User path Documents successfully updated!");
-                        window.location.href = "../../userProfileSettings.php";
+                        window.location.href = "../../'.$returnFile.'";
                     })
                     .catch((error) => {
                         console.log("Error updating firestore document: ", error);
@@ -287,7 +300,7 @@
             echo "<br>";
             echo "-------- upload new img path to user db data -----------------";
             echo "<br>";
-            updateUserFirestore($hostUserId,$imgStringForDb);
+            updateUserFirestore($hostUserId,$imgStringForDb,$isRestaurant);
 
 
 

@@ -2,7 +2,7 @@
 
 
     // phase 1   -- check image data ---
-    function checkImage($imageFileExt) {
+    function checkImage($imageFileExt,$fileFieldName) {
 
         $uploadOk = true; //create our check variable
 
@@ -37,7 +37,7 @@
 
     
     //phase 3 -- upload image to directory
-    function uploadToDir($target_dir,$target_file,$imgStringFull) {
+    function uploadToDir($target_dir,$target_file,$imgStringFull,$fileFieldName) {
         //upload image file within folder structure 
 
         //make sure directories exits if not create
@@ -56,8 +56,8 @@
         
 
         // try and upload file
-        if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)){
-            echo "The file " . htmlspecialchars( basename($_FILES["imageToUpload"]["name"])) . " has been uploaded as " . $imgStringFull;
+        if (move_uploaded_file($_FILES[$fileFieldName]["tmp_name"], $target_file)){
+            echo "The file " . htmlspecialchars( basename($_FILES[$fileFieldName]["name"])) . " has been uploaded as " . $imgStringFull;
             $imageUploaded = true;
         }else{
             echo "Sorry, their was an issue uploading your file.  <br>";
@@ -74,21 +74,44 @@
 
 
    //phase 4 --- update user firestore with img data -------
-    function updateUserFirestore($hostUserId,$imageName,$imageExt) {
+    function updateUserFirestore($hostUserId,$imageName,$imageExt,$isRestaurant,$isHero) {
 
         include "../../modularContent/header.php";
 
         include "../../modularContent/firebaseInit.php";
 
+        $collectionName;
+        $returnFile;
+        // console.log("isREs:" . $isRestaurant);
+        // console.log("isREs:" . $isHero);
+        if($isRestaurant){
+            $collectionName = "restaurants";
+            $returnFile = "restaurantProfileSettings.php";
+        }else{
+            $collectionName = "users";
+            $returnFile = "userProfileSettings.php";
+        }
+
+        $imgPathFieldName;
+        $imgExtFieldName;
+        if($isHero){
+            $imgPathFieldName = "heroImgPath";
+            $imgExtFieldName = "heroImgExt";
+        }else{
+            $imgPathFieldName = "iconImgPath";
+            $imgExtFieldName = "iconImgExt";
+        }
+
+
         //inline javascript within php
         echo    '<script type="text/JavaScript">
-                    db.collection("users").doc(\''. $hostUserId .'\').update({
-                        iconImgPath: \''.$imageName.'\',
-                        iconImgExt: \''.$imageExt.'\',
+                    db.collection(\'' .$collectionName. '\').doc(\''. $hostUserId .'\').update({
+                        '. $imgPathFieldName .': \''.$imageName.'\',
+                        '. $imgExtFieldName .': \''.$imageExt.'\',
                     })    
                     .then((docRef) => {
                         console.log("User path Documents successfully updated!");
-                        window.location.href = "../../userProfileSettings.php";
+                        window.location.href = "../../'. $returnFile .'";
                     })
                     .catch((error) => {
                         console.log("Error updating firestore document: ", error);
@@ -98,6 +121,7 @@
 
 
 
+//window.location.href = "../../userProfileSettings.php";
 
 
 
@@ -117,6 +141,7 @@
 
     $isRestaurant = $_POST["userTypeIsRestaurant"];
     $hostUserId = $_POST["uid"];
+    $isHero = $_POST["isHero"];
 
     $fileFieldName = "imageToUpload";
 
@@ -140,6 +165,7 @@
     echo "imgExt: " . $imageFileType . "<br>";
     echo "hostUserId: " . $hostUserId . "<br>";
     echo "isRestaurant: " . $isRestaurant . "<br>";
+    echo "isHeroImage: " . $isHero . "<br>";
 
 
 
@@ -148,7 +174,7 @@
     echo "<br>";
     echo "---------- checking image data -----------";
     echo "<br>";
-    $result = checkImage($imageFileType);
+    $result = checkImage($imageFileType,$fileFieldName);
     if($result){
 
 
@@ -157,11 +183,19 @@
         echo "<br>";
         echo "-------- create target Dir and File -----------------";
         echo "<br>";
+
+        $imageTypeStrInsert;
+        if($isHero){
+            $imageTypeStrInsert = "Hero";
+        }else{
+            $imageTypeStrInsert = "DI";
+        }
+
         // create image name with the generatedUserId and add the file type to the end
         // DI added in between for Display Image / Icon Image same thing....
-        $imgStringFull = $hostUserId . "DI" . $imageFileType;    
+        $imgStringFull = $hostUserId . $imageTypeStrInsert . $imageFileType;    
 
-        $imgString = $hostUserId ."DI";            
+        $imgString = $hostUserId . $imageTypeStrInsert;            
         echo "<br> imgString: " . $imgString;
 
         $target_dir = "../../userImage/";
@@ -177,14 +211,14 @@
         echo "<br>";
         echo "-------- upload image to dir -----------------";
         echo "<br>";
-        $result = uploadToDir($target_dir, $target_file, $imgStringFull);
+        $result = uploadToDir($target_dir, $target_file, $imgStringFull,$fileFieldName);
         if($result){
             
             echo "<br>";
             echo "<br>";
             echo "-------- upload new img path to user db data -----------------";
             echo "<br>";
-            updateUserFirestore($hostUserId,$imgString,$imageFileType);
+            updateUserFirestore($hostUserId,$imgString,$imageFileType,$isRestaurant,$isHero);
 
 
 

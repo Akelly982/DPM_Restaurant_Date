@@ -150,7 +150,7 @@ function createRestrauntItemByInnerHtml(doc){
     resCont.append(resContItem); 
     
     //set inner content for    <div class="findResContentItem"> 
-    resContItem.innerHTML = '<div class="frImage" style="background-image: url(userImage/'+ doc.data().imgPath + doc.data().imgExt + ');">' +
+    resContItem.innerHTML = '<div class="frImage" style="background-image: url(userImage/'+ doc.data().iconImgPath + doc.data().iconImgExt + ');">' +
                             '</div>';
 
     resContItem.append(resContItemText);

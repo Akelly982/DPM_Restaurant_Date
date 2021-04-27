@@ -27,34 +27,54 @@
 
                 <!-- show gallery -->
                 <section class="profileGalleryContentContainer">
-                    <div class="profileGalleryItemGrid" id="upGalleryGrid">
+                    <div class="profileGalleryItemGrid" id="rpGalleryGrid">
                         <div class="profileGalleryItem">
                             <h2 class="profileGalleryText">Loading in your images...</h2>
                         </div>
                     </div>
                 </section>
                 <!-- update gallery -->
-                <form method="POST">
+                <form method="POST" action="php/results/resultAddImageGallery.php" enctype="multipart/form-data">
+                    <!-- fill on page load -->
+                    <input type="hidden" name="userTypeIsRestaurant" value="1">  
+                    <input type="hidden" id="userIdGallery" name="uid">
+                    <!--  -->
+                    <label class="akTextLight">Image Files  (png, jpg, jpeg / Less than 50mb )</label>
+                    <input type="file" class="form-control" id="galleryImagesToUpload" name="galleryImagesToUpload[]" multiple required>
                     <button type="submit"> Update Gallery</button>
                 </form>
 
                 <!-- show Hero -->
                 <div class="profileHeroImgCont">
-                <div class="profileHeroImg" style="background-image: url(userImage/tempUserImg.png);"></div>
+                <div id="userHeroImage" class="profileHeroImg" style="background-image: url(userImage/tempUserImg.png);"></div>
                 </div>
                 <!-- update hero -->
-                <form method="POST">
+                <form class="profileMainImgForm" method="POST" action="php/results/resultAddSingleImage.php" enctype="multipart/form-data">
+                    <!-- fill on page load -->
+                    <input type="hidden" name="userTypeIsRestaurant" value="1">
+                    <input type="hidden" name="isHero" value="1"> 
+                    <input type="hidden" id="userIdSingleHero" name="uid">
+                    <!--  -->
+                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label>
+                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required>
                     <button type="submit"> Update Hero</button>
                 </form>
 
 
                 <!-- show Img   (main and icon img as one image )-->
                 <div class="profileMainImgCont">
-                    <div class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
-                    <div class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div>
+                    <div id="userDisplay1" class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
+                    <div id="userDisplay2" class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div>
                 </div>
                 <!-- update Img -->
-                <form class="profileMainImgForm" method="POST" result="">
+                <form class="profileMainImgForm" method="POST" action="php/results/resultAddSingleImage.php" enctype="multipart/form-data">
+                    <!-- fill on page load -->
+                    <input type="hidden" name="userTypeIsRestaurant" value="1"> 
+                    <input type="hidden" name="isHero" value="0"> 
+                    <input type="hidden" id="userIdSingle" name="uid">
+                    <!--  -->
+                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label>
+                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required>
                     <button type="submit"> Update Display Image</button>
                 </form>
 

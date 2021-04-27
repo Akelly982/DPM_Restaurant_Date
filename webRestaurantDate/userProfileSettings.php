@@ -58,6 +58,7 @@
                 <form class="profileMainImgForm" method="POST" action="php/results/resultAddSingleImage.php" enctype="multipart/form-data">
                     <!-- fill on page load -->
                     <input type="hidden" name="userTypeIsRestaurant" value="0">  
+                    <input type="hidden" name="isHero" value="0"> 
                     <input type="hidden" id="userIdSingle" name="uid">
                     <!--  -->
                     <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label>

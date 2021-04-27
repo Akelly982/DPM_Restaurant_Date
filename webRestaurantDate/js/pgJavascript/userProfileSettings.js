@@ -61,13 +61,13 @@ function fillUserFields(doc,uid){
 
 }
 
-function fillUserDisplay(doc,uid){
+function fillUserDisplay(doc){
     //display image
     userDisplay1Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
     userDisplay2Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
 }
 
-function fillUserGallery(doc,uid){
+function fillUserGallery(doc){
 
     // Items we are going to create
 
@@ -79,9 +79,6 @@ function fillUserGallery(doc,uid){
     // <div class="rdGalleryItem">
     //     <h3 class="rdGalleryText">Gallery images for this restraunt have not been uploaded yet. Patience is a virtue..</h3>
     // </div>
-
-
-
 
 
     //empty parent grid of current items
@@ -106,7 +103,7 @@ function fillUserGallery(doc,uid){
     if(strResult.length == 0){
         console.log("--------- no images found ----------");
         let item = document.createElement("div");
-        item.setAttribute("class", "rdGalleryItem");
+        item.setAttribute("class", "upGalleryItem");
         galleryGridParent.append(item);
         item.innerHTML = "<h3 class='rdGalleryText'>Gallery images for this user have not been uploaded yet. Patience is a virtue..</h3>"
     }else{
@@ -119,7 +116,6 @@ function fillUserGallery(doc,uid){
         });
     }   
 
-    
     
 
 }
@@ -142,8 +138,9 @@ firebase.auth().onAuthStateChanged((user) => {
                   //console.log(user.uid);
                   userId = user.uid;
                   fillUserFields(doc,userId);
-                  fillUserDisplay(doc,userId);
-                  fillUserGallery(doc,userId);
+                  
+                  fillUserDisplay(doc);
+                  fillUserGallery(doc);
                 }else{
                 alert("could not find active user document.")
                 window.location.href = 'login.php';

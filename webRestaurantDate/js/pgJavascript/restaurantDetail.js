@@ -8,6 +8,10 @@ var resSummaryElement = document.getElementById("rdSummary");
 var resAddressElement = document.getElementById("rdAddress");
 var resHeroImg = document.getElementById("resHeroImg");
 
+//galleryGridParent
+
+var galleryGridParent = document.getElementById("rdGalleryGrid");
+
 //get item grid for restraunt detail comments
 var commentGrid = document.querySelector("#rdCommentGrid");
 
@@ -38,7 +42,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 //check in restraunt's collection
                 db.collection("restaurant").doc(user.uid).get().then((doc) =>{
                     if(doc.exists){
-                      //console.log("restaurant user found for jsResDetail");
+                      console.log("restaurant user found for jsResDetail");
                       isRestraunt = true;
                     }else{
                       //cant find user doc connect to AUTH user in RESTRAUNT collection
@@ -69,7 +73,7 @@ function setRestrauntData(doc){
     resNameElement.innerHTML = doc.data().resName;
     resSummaryElement.innerHTML = doc.data().summary;
     resAddressElement.innerHTML = "Location: " + doc.data().address;
-    //resHeroImg.setAttribute("style", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
+    resHeroImg.setAttribute("style", "background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");"   );
     //console.log("background-image: url(userImage/" +  doc.data().heroImgPath + doc.data().heroImgExt + ");" );
 }
 
@@ -165,6 +169,60 @@ function checkSnapshotAndRenderDoc(snapshot){
 }
 
 
+function fillRestaurantGallery(doc){
+
+    // Items we are going to create
+
+    // <!-- On found doc load item (gallery will be a CSV forEach loop)-->
+    // <div class="rdGalleryItem" style="background-image: url(userImage/tempResImg.png);">
+    // </div>
+
+    // <!-- no gallery items found -->
+    // <div class="rdGalleryItem">
+    //     <h3 class="rdGalleryText">Gallery images for this restraunt have not been uploaded yet. Patience is a virtue..</h3>
+    // </div>
+
+
+    //empty parent grid of current items
+    galleryGridParent.innerHTML = "";
+
+    //get and split userGalleryCSV
+    //CSV comma seperated values
+    var userGalleryCSV = doc.data().galleryCSV;
+    //console.log("CSV: " + userGalleryCSV);
+    var strResult = userGalleryCSV.split(",");
+
+
+    // console.log("--------- image split ----------");
+    // // our image paths seperated
+    // strResult.forEach(element => {
+    //     console.log(element);
+    // });
+    
+
+    //console.log(strResult.length); 
+    
+    if(strResult.length == 0){
+        console.log("--------- no images found in gallery ----------");
+        let item = document.createElement("div");
+        item.setAttribute("class", "rdGalleryItem");
+        galleryGridParent.append(item);
+        item.innerHTML = "<h3 class='rdGalleryText'>Gallery images for this restaurant have not been uploaded yet. Patience is a virtue..</h3>"
+    }else{
+        //console.log("--------- create image items ----------");
+        strResult.forEach(element => {
+            let item = document.createElement("div");
+            item.setAttribute("class", "rdGalleryItem");
+            item.setAttribute("style","background-image: url(userImage/"+ element  +");")
+            galleryGridParent.append(item);
+        });
+    }   
+
+    
+
+}
+
+
 
 //--------on js load ---------------------------------
 
@@ -172,6 +230,7 @@ function checkSnapshotAndRenderDoc(snapshot){
 db.collection('restaurants').doc(resId).get().then((doc) =>{
     if (doc.exists) {
         setRestrauntData(doc);
+        fillRestaurantGallery(doc);
     } else {
         // doc.data() will be undefined in this case
         console.log("No such user document found!");
