@@ -22,14 +22,20 @@ var summaryField = document.getElementById("userSummaryField");
 var userIdSingle = document.getElementById("userIdSingle");
 var userIdGallery = document.getElementById("userIdGallery");
 
-
-
 //display image
 var userDisplay1Img = document.getElementById("userDisplay1");
 var userDisplay2Img = document.getElementById("userDisplay2");
-{/* <div id="userDisplay1" class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
-<div id="userDisplay2" class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div> */}
 
+
+//gallery parent element
+var galleryGridParent = document.getElementById("upGalleryGrid");
+
+
+{/* <div class="profileGalleryItemGrid" id="upGalleryGrid">
+                        <div class="profileGalleryItem">
+                            <h2 class="profileGalleryText">Loading in your images...</h2>
+                        </div>
+                    </div> */}
 
 
 
@@ -53,12 +59,70 @@ function fillUserFields(doc,uid){
     userIdSingle.setAttribute("value", uid);
     userIdGallery.setAttribute("value", uid);
 
+}
+
+function fillUserDisplay(doc,uid){
     //display image
     userDisplay1Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
     userDisplay2Img.setAttribute("style", "background-image: url(userImage/" + doc.data().iconImgPath  +  doc.data().iconImgExt  + ")");
 }
 
+function fillUserGallery(doc,uid){
 
+    // Items we are going to create
+
+    // <!-- On found doc load item (gallery will be a CSV forEach loop)-->
+    // <div class="rdGalleryItem" style="background-image: url(userImage/tempResImg.png);">
+    // </div>
+
+    // <!-- no gallery items found -->
+    // <div class="rdGalleryItem">
+    //     <h3 class="rdGalleryText">Gallery images for this restraunt have not been uploaded yet. Patience is a virtue..</h3>
+    // </div>
+
+
+
+
+
+    //empty parent grid of current items
+    galleryGridParent.innerHTML = "";
+
+    //get and split userGalleryCSV
+    //CSV comma seperated values
+    var userGalleryCSV = doc.data().galleryCSV;
+    console.log("CSV: " + userGalleryCSV);
+    var strResult = userGalleryCSV.split(",");
+
+
+    console.log("--------- image split ----------");
+    // our image paths seperated
+    strResult.forEach(element => {
+        console.log(element);
+    });
+    
+
+    //console.log(strResult.length);
+    
+    if(strResult.length == 0){
+        console.log("--------- no images found ----------");
+        let item = document.createElement("div");
+        item.setAttribute("class", "rdGalleryItem");
+        galleryGridParent.append(item);
+        item.innerHTML = "<h3 class='rdGalleryText'>Gallery images for this user have not been uploaded yet. Patience is a virtue..</h3>"
+    }else{
+        console.log("--------- create image items ----------");
+        strResult.forEach(element => {
+            let item = document.createElement("div");
+            item.setAttribute("class", "profileGalleryItem");
+            item.setAttribute("style","background-image: url(userImage/"+ element  +");")
+            galleryGridParent.append(item);
+        });
+    }   
+
+    
+    
+
+}
 
 
 
@@ -78,7 +142,9 @@ firebase.auth().onAuthStateChanged((user) => {
                   //console.log(user.uid);
                   userId = user.uid;
                   fillUserFields(doc,userId);
-            }else{
+                  fillUserDisplay(doc,userId);
+                  fillUserGallery(doc,userId);
+                }else{
                 alert("could not find active user document.")
                 window.location.href = 'login.php';
             }

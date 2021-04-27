@@ -89,7 +89,7 @@
    }
 
 
-
+   //window.location.href = "../../userProfileSettings.php";
 
 
 
@@ -266,12 +266,21 @@
         }
 
 
+        echo "<br>";
+        echo "<br>";
+        echo "-------- fix CSV string -----------------";
+        echo "<br>";
+        echo "CSVpath has extra comma at end: ". $imgStringForDb;
+        echo "<br>";
+        $imgStringForDb = substr($imgStringForDb, 0, -1);
+        echo "CSVpath has extra comma at end: ". $imgStringForDb;
 
         echo "<br>";
         echo "<br>";
         echo "-------- path ready for db -----------------";
         echo "<br>";
         echo "CSVpath: ". $imgStringForDb;
+        
         if($fileResult){
             
             echo "<br>";
