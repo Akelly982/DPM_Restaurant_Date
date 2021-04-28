@@ -25,29 +25,33 @@
 
             <div class="profileContentCont">
 
+                <h2>Your Gallery: </h2>
                 <!-- show gallery -->
-                <section class="profileGalleryContentContainer">
+                <div class="profileGalleryContentContainer">
                     <div class="profileGalleryItemGrid" id="rpGalleryGrid">
                         <div class="profileGalleryItem">
                             <h2 class="profileGalleryText">Loading in your images...</h2>
                         </div>
                     </div>
-                </section>
+                </div>
+                <p><strong>Do you want to update image?</strong></p>
                 <!-- update gallery -->
                 <form method="POST" action="php/results/resultAddImageGallery.php" enctype="multipart/form-data">
                     <!-- fill on page load -->
                     <input type="hidden" name="userTypeIsRestaurant" value="1">  
                     <input type="hidden" id="userIdGallery" name="uid">
                     <!--  -->
-                    <label class="akTextLight">Image Files  (png, jpg, jpeg / Less than 50mb )</label>
-                    <input type="file" class="form-control" id="galleryImagesToUpload" name="galleryImagesToUpload[]" multiple required>
+                    <label class="akTextLight">Image Files  (png, jpg, jpeg / Less than 50mb )</label><br><br>
+                    <input type="file" class="form-control" id="galleryImagesToUpload" name="galleryImagesToUpload[]" multiple required><br><br>
                     <button type="submit"> Update Gallery</button>
                 </form>
 
+                <h2>Your Restaurant Top Image: </h2>
                 <!-- show Hero -->
                 <div class="profileHeroImgCont">
                 <div id="userHeroImage" class="profileHeroImg" style="background-image: url(userImage/tempUserImg.png);"></div>
                 </div>
+                <p><strong>Do you want to update image?</strong></p>
                 <!-- update hero -->
                 <form class="profileMainImgForm" method="POST" action="php/results/resultAddSingleImage.php" enctype="multipart/form-data">
                     <!-- fill on page load -->
@@ -55,17 +59,19 @@
                     <input type="hidden" name="isHero" value="1"> 
                     <input type="hidden" id="userIdSingleHero" name="uid">
                     <!--  -->
-                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label>
-                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required>
+                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label><br><br>
+                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required><br><br>
                     <button type="submit"> Update Hero</button>
                 </form>
 
 
+                <h2>Your Profile Image: </h2>
                 <!-- show Img   (main and icon img as one image )-->
                 <div class="profileMainImgCont">
                     <div id="userDisplay1" class="profileMainImg" style="background-image: url(userImage/tempUserImg.png);"></div>
                     <div id="userDisplay2" class="profileMainImgRound" style="background-image: url(userImage/tempUserImg.png);"></div>
                 </div>
+                <p><strong>Do you want to update image?</strong></p>
                 <!-- update Img -->
                 <form class="profileMainImgForm" method="POST" action="php/results/resultAddSingleImage.php" enctype="multipart/form-data">
                     <!-- fill on page load -->
@@ -73,15 +79,14 @@
                     <input type="hidden" name="isHero" value="0"> 
                     <input type="hidden" id="userIdSingle" name="uid">
                     <!--  -->
-                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label>
-                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required>
+                    <label class="akTextLight">Image File (png, jpg, jpeg / Less than 10mb )</label><br><br>
+                    <input type="file" class="form-control" id="imageToUpload" name="imageToUpload" required><br><br>
                     <button type="submit"> Update Display Image</button>
                 </form>
 
 
 
                 <h2 id="userFirstNameTitle">About you: </h2>
-                <hr>
 
                 <!-- form version Restaurant -->
                 <form class="userProfileForm" id="updateUserForm">

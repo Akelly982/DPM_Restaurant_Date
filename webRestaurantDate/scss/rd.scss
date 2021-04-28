@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  letter-spacing: 1.25px;
+  letter-spacing: 1px;
 }
 body,
 div,
@@ -234,7 +234,11 @@ header {
           }
         }
         .btn_nev {
+          span {
+            margin-right: 1rem;
+          }
           a {
+            margin-right: 1rem;
             &:hover {
               &::after {
                 display: none;
@@ -1152,6 +1156,9 @@ $basicBkgColor: lightGrey;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    a {
+      padding: 1rem 0;
+    }
 
     .leftNavText {
       text-align: left;
@@ -1175,6 +1182,26 @@ $basicBkgColor: lightGrey;
     .hr2 {
       border-color: green;
     }
+
+    .sReview {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 1rem;
+        margin: .5rem 0 0 0 ;
+      }
+      input {
+        font-size: unset;
+        padding: .25rem;
+      }
+      .sGender, .sAge {
+        margin-top: 2rem;
+      }
+    }
   }
 
   .profileContentCont {
@@ -1182,36 +1209,57 @@ $basicBkgColor: lightGrey;
     border-radius: 25px;
     min-height: 400px;
     width: 100%;
-    padding: 25px;
+    padding: 0 3rem 3rem;
 
-    hr {
-      border-width: 1px;
-      margin-left: 0;
+    h2 {
       width: 100%;
-      border-color: white;
+      margin-top: 3rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid #333;
     }
+    // hr {
+    //   border-width: 1px;
+    //   margin-left: 0;
+    //   width: 100%;
+    //   border-color: white;
+    // }
+
+  .akTextLight {
+    color: #999;
+    font-size: 12px;
+  }
+  button {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
 
     .userProfileForm {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      // justify-content: center;
+      // align-items: center;
       padding-top: 20px;
       padding-bottom: 20px;
-
+      label {
+        font-weight: 600;
+      }
       .profileInLine {
         display: flex;
         flex-direction: row;
       }
 
       .profileSettingsText {
-        font-size: 16px;
+        font-size: unset;
         margin-right: 20px;
       }
 
       .profileUpdateField {
-        margin: 10px;
+        margin: .5rem 0 2rem;
         width: 400px;
+        font-size: unset;
+        padding: .5rem;
       }
 
       .updateProfileBtn {
@@ -1260,9 +1308,9 @@ $basicBkgColor: lightGrey;
 
     //profile gallery section
     .profileGalleryContentContainer {
-      text-align: center;
       h2 {
-        font-size: 2em;
+        width: 100%;
+        border-bottom: 2px solid #333;
       }
 
       .simpleflexColumn{
@@ -1278,11 +1326,11 @@ $basicBkgColor: lightGrey;
         height: auto;
         min-height: 150px; //for row overall
         padding: 25px;
-        padding-left: 100px;
-        padding-right: 100px;
+        // padding-left: 100px;
+        // padding-right: 100px;
         display: grid;
         grid-gap: 25px;
-        grid-template-columns: 25% 25% 25%;
+        grid-template-columns: 32% 32% 32%;
         grid-template-rows: auto;
       }
 
@@ -1318,9 +1366,7 @@ $basicBkgColor: lightGrey;
 
 //matches gallery section
 .matchesGalleryContentContainer {
-  text-align: center;
   h2 {
-    font-size: 2em;
   }
 
   .matchesGalleryItemGrid {
@@ -1330,12 +1376,12 @@ $basicBkgColor: lightGrey;
     width: 100%;
     height: auto;
     min-height: 150px; //for row overall
-    padding: 25px;
-    padding-left: 100px;
-    padding-right: 100px;
+    // padding: 25px;
+    // padding-left: 100px;
+    // padding-right: 100px;
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 23% 23% 23% 23%;
     grid-template-rows: auto;
   }
 
@@ -1522,6 +1568,8 @@ $basicBkgColor: lightGrey;
 // User Page
 //
 // =======================================
+
+
 
 //========================================
 //

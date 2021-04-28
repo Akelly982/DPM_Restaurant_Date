@@ -5,7 +5,7 @@
           box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  letter-spacing: 1.25px;
+  letter-spacing: 1px;
 }
 
 body,
@@ -282,6 +282,14 @@ header .hInner nav ul li .btn_l:hover {
   color: white;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+header .hInner nav ul .btn_nev span {
+  margin-right: 1rem;
+}
+
+header .hInner nav ul .btn_nev a {
+  margin-right: 1rem;
 }
 
 header .hInner nav ul .btn_nev a:hover::after {
@@ -1330,6 +1338,10 @@ footer .footer_inner ul li a:hover {
           align-items: flex-start;
 }
 
+.profilePageCont .profileLeftNav a {
+  padding: 1rem 0;
+}
+
 .profilePageCont .profileLeftNav .leftNavText {
   text-align: left;
   color: #3b3b3b;
@@ -1356,19 +1368,57 @@ footer .footer_inner ul li a:hover {
   border-color: green;
 }
 
+.profilePageCont .profileLeftNav .sReview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.profilePageCont .profileLeftNav .sReview button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 1rem;
+  margin: .5rem 0 0 0;
+}
+
+.profilePageCont .profileLeftNav .sReview input {
+  font-size: unset;
+  padding: .25rem;
+}
+
+.profilePageCont .profileLeftNav .sReview .sGender, .profilePageCont .profileLeftNav .sReview .sAge {
+  margin-top: 2rem;
+}
+
 .profilePageCont .profileContentCont {
   background-color: white;
   border-radius: 25px;
   min-height: 400px;
   width: 100%;
-  padding: 25px;
+  padding: 0 3rem 3rem;
 }
 
-.profilePageCont .profileContentCont hr {
-  border-width: 1px;
-  margin-left: 0;
+.profilePageCont .profileContentCont h2 {
   width: 100%;
-  border-color: white;
+  margin-top: 3rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid #333;
+}
+
+.profilePageCont .profileContentCont .akTextLight {
+  color: #999;
+  font-size: 12px;
+}
+
+.profilePageCont .profileContentCont button {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 .profilePageCont .profileContentCont .userProfileForm {
@@ -1379,14 +1429,12 @@ footer .footer_inner ul li a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.profilePageCont .profileContentCont .userProfileForm label {
+  font-weight: 600;
 }
 
 .profilePageCont .profileContentCont .userProfileForm .profileInLine {
@@ -1400,13 +1448,15 @@ footer .footer_inner ul li a:hover {
 }
 
 .profilePageCont .profileContentCont .userProfileForm .profileSettingsText {
-  font-size: 16px;
+  font-size: unset;
   margin-right: 20px;
 }
 
 .profilePageCont .profileContentCont .userProfileForm .profileUpdateField {
-  margin: 10px;
+  margin: .5rem 0 2rem;
   width: 400px;
+  font-size: unset;
+  padding: .5rem;
 }
 
 .profilePageCont .profileContentCont .userProfileForm .updateProfileBtn {
@@ -1465,12 +1515,9 @@ footer .footer_inner ul li a:hover {
   background-size: cover;
 }
 
-.profilePageCont .profileContentCont .profileGalleryContentContainer {
-  text-align: center;
-}
-
 .profilePageCont .profileContentCont .profileGalleryContentContainer h2 {
-  font-size: 2em;
+  width: 100%;
+  border-bottom: 2px solid #333;
 }
 
 .profilePageCont .profileContentCont .profileGalleryContentContainer .simpleflexColumn {
@@ -1492,13 +1539,11 @@ footer .footer_inner ul li a:hover {
   height: auto;
   min-height: 150px;
   padding: 25px;
-  padding-left: 100px;
-  padding-right: 100px;
   display: -ms-grid;
   display: grid;
   grid-gap: 25px;
-  -ms-grid-columns: 25% 25% 25%;
-      grid-template-columns: 25% 25% 25%;
+  -ms-grid-columns: 32% 32% 32%;
+      grid-template-columns: 32% 32% 32%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
 }
@@ -1525,14 +1570,6 @@ footer .footer_inner ul li a:hover {
   margin: 40px;
 }
 
-.matchesGalleryContentContainer {
-  text-align: center;
-}
-
-.matchesGalleryContentContainer h2 {
-  font-size: 2em;
-}
-
 .matchesGalleryContentContainer .matchesGalleryItemGrid {
   -ms-grid-column-align: center;
       justify-self: center;
@@ -1541,14 +1578,11 @@ footer .footer_inner ul li a:hover {
   width: 100%;
   height: auto;
   min-height: 150px;
-  padding: 25px;
-  padding-left: 100px;
-  padding-right: 100px;
   display: -ms-grid;
   display: grid;
   grid-gap: 25px;
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-columns: 23% 23% 23% 23%;
+      grid-template-columns: 23% 23% 23% 23%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
 }

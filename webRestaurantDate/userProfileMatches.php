@@ -23,21 +23,30 @@
                 <?php
                     include "modularContent/profileNav.php";
                 ?>
-                <div>
-                    <input type="radio" id="isPosTrue" name="isPosRadio" value="true" checked>
-                    <label for="isPosTrue">positive reviews</label>
-                    <input type="radio" id="isPosFalse" name="isPosRadio" value="false">
-                    <label for="isPosFalse">negitive reviews</label>
+                <div class="sReview">
+                    <div>
+                        <p><strong>Reviews</strong></p>
+                        <input type="radio" id="isPosTrue" name="isPosRadio" value="true" checked>
+                        <label for="isPosTrue">positive reviews</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="isPosFalse" name="isPosRadio" value="false">
+                        <label for="isPosFalse">negitive reviews</label>
+                    </div>
                     <button id="searchByReviewTypeBtn"> Search by Review Type </button>
 
-                    <div class="">
+                    <div class="sGender">
+                        <p><strong>Gender</strong></p>
                         <input type="text" id="byGenderTextField">
+                        <br>
                         <button id="byGenderBtn"> Gender </button>
                     </div>
 
-                    <div class="">
+                    <div class="sAge">
+                        <p><strong>Age</strong></p>
                         <input type="number" id="byAgeRangeNumber">
-                        <button id="byAgeRangeHighBtn"> Age range high  </button>
+                        <br>
+                        <button id="byAgeRangeHighBtn"> Age range high </button>
                         <button id="byAgeRangeLowBtn"> Age range low  </button>
                     </div>
                 </div>
@@ -47,7 +56,7 @@
             <div class="profileContentCont">
                 <!-- user matches gallery -->
                 <div class="matchesGalleryContentContainer">
-                        <h2> Matches </h2>
+                        <h2>Your Matches !</h2>
                         <div class="matchesGalleryItemGrid" id="matchesGalleryGrid">
 
                             <!-- generic on html load item -->
