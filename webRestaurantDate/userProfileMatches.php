@@ -42,13 +42,13 @@
                         <button id="byGenderBtn"> Gender </button>
                     </div>
 
-                    <div class="sAge">
+                    <!-- <div class="sAge">
                         <p><strong>Age</strong></p>
                         <input type="number" id="byAgeRangeNumber">
                         <br>
                         <button id="byAgeRangeHighBtn"> Age range high </button>
                         <button id="byAgeRangeLowBtn"> Age range low  </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

@@ -9,8 +9,8 @@ isPosFalseRadio = document.getElementById("isPosFalse");
 //btns
 searchByReviewPosBtn = document.getElementById("searchByReviewTypeBtn");
 genderBtn = document.getElementById("byGenderBtn");
-ageRangeHighBtn = document.getElementById("byAgeRangeHighBtn");
-ageRangeLowBtn = document.getElementById("byAgeRangeLowBtn");
+//ageRangeHighBtn = document.getElementById("byAgeRangeHighBtn");
+//ageRangeLowBtn = document.getElementById("byAgeRangeLowBtn");
 
 
 
@@ -311,126 +311,130 @@ function matchesByGender(userId,isPosStr,genderStr){
 }
 
 
-function getBirthdayYearHigh(userBirthday,ageRange){
-    //needs to return a date plus ageRange in years
-
-    //console.log(userBirthday   + "  //  " + ageRange );
-    //user date to seperate out and increment year
-    var d = new Date(userBirthday);
-    d.setFullYear(parseInt(d.getFullYear()) + parseInt(ageRange));   // should be just yyyy as int
-    var dateHigh = d.getFullYear() + "-00-00";
-
-    //console.log("highDate: " + dateHigh);
-    return dateHigh;    
-}
-
-function getBirthdayYearLow(userBirthday,ageRange){
-    //needs to return a date plus ageRange in years
-
-    //user date to seperate out and increment year
-    var d = new Date(userBirthday);
-    d.setFullYear(parseInt(d.getFullYear()) - parseInt(ageRange));   // should be just yyyy as int
-    var dateLow = d.getFullYear() + "-00-00";
-
-    return dateLow;    
-}
 
 
-function matchesByAgeRangeHigh(userId,isPosStr,ageRange){
 
-    //outer outer loop
-    db.collection('users').doc(userId).get().then((doc) =>{
-        if (doc.exists) {
-            var userBirthday = doc.data().birthday;
 
-            var dateHigh = getBirthdayYearHigh(userBirthday,ageRange);
+// function getBirthdayYearHigh(userBirthday,ageRange){
+//     //needs to return a date plus ageRange in years
+
+//     //console.log(userBirthday   + "  //  " + ageRange );
+//     //user date to seperate out and increment year
+//     var d = new Date(userBirthday);
+//     d.setFullYear(parseInt(d.getFullYear()) + parseInt(ageRange));   // should be just yyyy as int
+//     var dateHigh = d.getFullYear() + "-00-00";
+
+//     //console.log("highDate: " + dateHigh);
+//     return dateHigh;    
+// }
+
+// function getBirthdayYearLow(userBirthday,ageRange){
+//     //needs to return a date plus ageRange in years
+
+//     //user date to seperate out and increment year
+//     var d = new Date(userBirthday);
+//     d.setFullYear(parseInt(d.getFullYear()) - parseInt(ageRange));   // should be just yyyy as int
+//     var dateLow = d.getFullYear() + "-00-00";
+
+//     return dateLow;    
+// }
+
+
+// function matchesByAgeRangeHigh(userId,isPosStr,ageRange){
+
+//     //outer outer loop
+//     db.collection('users').doc(userId).get().then((doc) =>{
+//         if (doc.exists) {
+//             var userBirthday = doc.data().birthday;
+
+//             var dateHigh = getBirthdayYearHigh(userBirthday,ageRange);
             
-            console.log("Age range High setup for where stmt -------------------------");
-            console.log(userBirthday   + "  //  " + ageRange );
-            console.log(dateHigh);
+//             console.log("Age range High setup for where stmt -------------------------");
+//             console.log(userBirthday   + "  //  " + ageRange );
+//             console.log(dateHigh);
             
             
-            var matchUserArray = [];
-            var resArray = [];
+//             var matchUserArray = [];
+//             var resArray = [];
 
-            //outerloop
-            db.collection('users').doc(userId).collection('restaurantComments').where('isPosReview','==', isPosStr ).get().then((snapshot) => {
-                //console.log("User Pos reviews comments found = " + snapshot.size);
+//             //outerloop
+//             db.collection('users').doc(userId).collection('restaurantComments').where('isPosReview','==', isPosStr ).get().then((snapshot) => {
+//                 //console.log("User Pos reviews comments found = " + snapshot.size);
 
-                //If user is new and has no comments update user
-                if(snapshot.size == 0){
-                    parentGrid.innerHTML = "";
-                    createUserNoItems();
-                }
+//                 //If user is new and has no comments update user
+//                 if(snapshot.size == 0){
+//                     parentGrid.innerHTML = "";
+//                     createUserNoItems();
+//                 }
 
-                snapshot.docs.forEach(userCommentdoc => {
+//                 snapshot.docs.forEach(userCommentdoc => {
                     
-                    updateResArray(userCommentdoc.data().restaurantId,resArray);      
+//                     updateResArray(userCommentdoc.data().restaurantId,resArray);      
 
                     
-                })
+//                 })
 
 
-                console.log("resArray: -----------------");
-                resArray.forEach(e =>{
-                    console.log ("resId: " + e);
-                })
+//                 console.log("resArray: -----------------");
+//                 resArray.forEach(e =>{
+//                     console.log ("resId: " + e);
+//                 })
                 
 
-                //inner loop
-                resArray.forEach(elemResId =>{ 
-                    db.collection('restaurants').doc(elemResId).collection('comments').where('isPosReview', '==' ,isPosStr).where('birthday','>',dateHigh).get().then((snapshot) => {
-                        //console.log( "Restaurant "+ userCommentdoc.data().restaurantId +" has " + snapshot.size + " Pos review from users.");
-                        snapshot.docs.forEach(resCommentDoc => {
+//                 //inner loop
+//                 resArray.forEach(elemResId =>{ 
+//                     db.collection('restaurants').doc(elemResId).collection('comments').where('isPosReview', '==' ,isPosStr).where('birthday','>',dateHigh).get().then((snapshot) => {
+//                         //console.log( "Restaurant "+ userCommentdoc.data().restaurantId +" has " + snapshot.size + " Pos review from users.");
+//                         snapshot.docs.forEach(resCommentDoc => {
                     
-                            // temp user built with matchUser constructor
-                            //REF SHOULD LOOK LIKE THIS
-                            // ---> constructor(userId,username,firstName,lastName,summary,imgName,imgExt,birthday,gender,height,smoker) {
-                            var tempUser = new MatchUser(
-                                resCommentDoc.data().userId,
-                                resCommentDoc.data().username,
-                                resCommentDoc.data().userFirstName,
-                                resCommentDoc.data().userLastName,
-                                resCommentDoc.data().summary,
-                                resCommentDoc.data().userImgPath,
-                                resCommentDoc.data().userImgExt,
-                                resCommentDoc.data().birthday,
-                                resCommentDoc.data().gender,
-                                resCommentDoc.data().height,
-                                resCommentDoc.data().smoker
-                            )
-                            //console.log(tempUser.getUserId());
+//                             // temp user built with matchUser constructor
+//                             //REF SHOULD LOOK LIKE THIS
+//                             // ---> constructor(userId,username,firstName,lastName,summary,imgName,imgExt,birthday,gender,height,smoker) {
+//                             var tempUser = new MatchUser(
+//                                 resCommentDoc.data().userId,
+//                                 resCommentDoc.data().username,
+//                                 resCommentDoc.data().userFirstName,
+//                                 resCommentDoc.data().userLastName,
+//                                 resCommentDoc.data().summary,
+//                                 resCommentDoc.data().userImgPath,
+//                                 resCommentDoc.data().userImgExt,
+//                                 resCommentDoc.data().birthday,
+//                                 resCommentDoc.data().gender,
+//                                 resCommentDoc.data().height,
+//                                 resCommentDoc.data().smoker
+//                             )
+//                             //console.log(tempUser.getUserId());
                     
-                            //add user to array (works more like a list though)
-                                //if user already in array increase their matchCounter
-                            updateMatchUserArray(userId,tempUser,matchUserArray);
-                        })
+//                             //add user to array (works more like a list though)
+//                                 //if user already in array increase their matchCounter
+//                             updateMatchUserArray(userId,tempUser,matchUserArray);
+//                         })
                     
-                        //console.log("Array Size: " + matchUserArray.length);
+//                         //console.log("Array Size: " + matchUserArray.length);
                 
-                        userItemManager(matchUserArray);   //this will run multiple times        
+//                         userItemManager(matchUserArray);   //this will run multiple times        
 
-                    })
+//                     })
 
 
-                })// inner loop
+//                 })// inner loop
                 
-            }) //outer loop
+//             }) //outer loop
 
 
 
 
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such user document found!");
-            setRestrauntDataError();
-        }
-    }).catch((error) =>{
+//         } else {
+//             // doc.data() will be undefined in this case
+//             console.log("No such user document found!");
+//             setRestrauntDataError();
+//         }
+//     }).catch((error) =>{
         
-    });
+//     });
 
 
-}
+// }
 
 
 
@@ -523,49 +527,49 @@ genderBtn.addEventListener('click', (event) =>{
 
 
 
-ageRangeHighBtn.addEventListener('click', (event) =>{
-    event.preventDefault();
+// ageRangeHighBtn.addEventListener('click', (event) =>{
+//     event.preventDefault();
 
-    //get ageRange txtfield value
-    var ageRange = document.querySelector('#byAgeRangeNumber').value;
-    var isPosStr;
+//     //get ageRange txtfield value
+//     var ageRange = document.querySelector('#byAgeRangeNumber').value;
+//     var isPosStr;
 
-    if(ageRange.length == 0){
-        alert("Please fill in the age range number field.");
-    }else if(ageRange < 0){
-        alert("Age range cant be less than 0.");
-    }else{
-        isPosStr = getIsPosRadioValue();
-        if(isPosStr == "true" || isPosStr == "false"){
-            //console.log(ageRange);
-            matchesByAgeRangeHigh(userId,isPosStr,ageRange);
-        }
+//     if(ageRange.length == 0){
+//         alert("Please fill in the age range number field.");
+//     }else if(ageRange < 0){
+//         alert("Age range cant be less than 0.");
+//     }else{
+//         isPosStr = getIsPosRadioValue();
+//         if(isPosStr == "true" || isPosStr == "false"){
+//             //console.log(ageRange);
+//             matchesByAgeRangeHigh(userId,isPosStr,ageRange);
+//         }
         
-    }
+//     }
 
-})
+// })
 
-ageRangeLowBtn.addEventListener('click', (event) =>{
-    event.preventDefault();
+// ageRangeLowBtn.addEventListener('click', (event) =>{
+//     event.preventDefault();
 
-    //get ageRange txtfield value
-    var ageRange = document.querySelector('#byAgeRangeNumber').value;
-    var isPosStr;
+//     //get ageRange txtfield value
+//     var ageRange = document.querySelector('#byAgeRangeNumber').value;
+//     var isPosStr;
 
-    if(ageRange.length == 0){
-        alert("Please fill in the age range number field.");
-    }else if(ageRange < 0){
-        alert("Age range cant be less than 0.");
-    }else{
-        isPosStr = getIsPosRadioValue();
-        if(isPosStr == "true" || isPosStr == "false"){
-            //console.log(ageRange);
-            //matchesByAgeRangeLow(userId,isPosStr,ageRange);  //does not yet exist
-        }
+//     if(ageRange.length == 0){
+//         alert("Please fill in the age range number field.");
+//     }else if(ageRange < 0){
+//         alert("Age range cant be less than 0.");
+//     }else{
+//         isPosStr = getIsPosRadioValue();
+//         if(isPosStr == "true" || isPosStr == "false"){
+//             //console.log(ageRange);
+//             //matchesByAgeRangeLow(userId,isPosStr,ageRange);  //does not yet exist
+//         }
         
-    }
+//     }
 
-})
+// })
 
 
 
