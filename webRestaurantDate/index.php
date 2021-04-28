@@ -87,7 +87,7 @@
                         <p>Food and drink are part of our life. That is why, in the relationship, if the couple has similar sense of food and drink, it will make a great relationship.</p>
                     </div>
                     <div class="btn_w_p">
-                        <a href="">JOIN NOW</a>
+                        <a href="signUpPg1.php">JOIN NOW</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                         <p>Additionally, users reviews could be great benefit for your business.</p>
                     </div>
                 <div class="btn_black">
-                    <a href="">Create your page</a>
+                    <a href="signUpPg1.php">Create your page</a>
                 </div>
             </div>        
             <div class="home_restJoin_img gs_reveal gs_reveal_fromRight"></div>
